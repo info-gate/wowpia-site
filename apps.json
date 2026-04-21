@@ -1,0 +1,76 @@
+{
+  "apps": [
+    {
+      "id": "barolingo",
+      "name": "Barolingo",
+      "tagEn": "Hear English in order.",
+      "tagKo": "들리는 순서 그대로 영어를.",
+      "iconLetter": "B",
+      "iconClass": "icon-barolingo",
+      "status": "live-soon",
+      "statusLabel": "Live Soon",
+      "href": "https://info-gate.github.io/barolingo/",
+      "footerText": "Learn more"
+    },
+    {
+      "id": "nailva",
+      "name": "Nailva",
+      "tagEn": "Value, polished into nails.",
+      "tagKo": "네일에 깃드는 가치.",
+      "iconLetter": "N",
+      "iconClass": "icon-nailva",
+      "status": "beta",
+      "statusLabel": "Beta",
+      "href": null,
+      "footerText": "Coming to this page"
+    },
+    {
+      "id": "moodva",
+      "name": "Moodva",
+      "tagEn": "Habits that grow you.",
+      "tagKo": "좋은 습관이 쌓이는 하루.",
+      "iconLetter": "M",
+      "iconClass": "icon-moodva",
+      "status": "beta",
+      "statusLabel": "Beta",
+      "href": null,
+      "footerText": "Coming to this page"
+    },
+    {
+      "id": "canvly",
+      "name": "Canvly.art",
+      "tagEn": "CRM built for art galleries.",
+      "tagKo": "갤러리를 위한 CRM.",
+      "iconLetter": "C",
+      "iconClass": "icon-canvly",
+      "status": "live",
+      "statusLabel": "Live",
+      "href": "https://canvly.art",
+      "footerText": "Visit canvly.art"
+    },
+    {
+      "id": "eqquest",
+      "name": "EQ-Quest",
+      "tagEn": "Little quests for emotional skill.",
+      "tagKo": "감정을 다루는 작은 퀘스트.",
+      "iconLetter": "E",
+      "iconClass": "icon-eqquest",
+      "status": "soon",
+      "statusLabel": "Soon",
+      "href": null,
+      "footerText": "In design"
+    },
+    {
+      "id": "pawfriend",
+      "name": "Pawfriend",
+      "tagEn": "A friend by your pet's side.",
+      "tagKo": "반려동물의 곁을 지키는 친구.",
+      "iconLetter": "P",
+      "iconClass": "icon-pawfriend",
+      "status": "soon",
+      "statusLabel": "Soon",
+      "href": null,
+      "footerText": "In design"
+    }
+  ]
+}

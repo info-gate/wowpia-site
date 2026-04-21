@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wowpia — small apps, quietly made</title>
+  <meta name="description" content="wowpia는 조용한 관찰에서 시작해 매일 쓰이는 작은 앱을 만듭니다. Barolingo, Nailva, Moodva, Canvly.art, EQ-Quest, Pawfriend.">
+  <link rel="canonical" href="https://wowpia.kr/">
+  <meta property="og:title" content="wowpia — small apps, quietly made">
+  <meta property="og:description" content="Small apps. Surprising utility.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wowpia.kr/">
+  <meta property="og:image" content="https://wowpia.kr/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://wowpia.kr/og-image.png">
+  <meta name="theme-color" content="#1D9E75">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FAFAF7;
+      --ink: #0F1419;
+      --ink-soft: #3A3F47;
+      --ink-mute: #7A828C;
+      --rule: #E5E5E0;
+      --accent: #1D9E75;
+      --accent-dark: #157A5A;
+      --amber: #D97706;
+      --live: #1D9E75;
+      --beta: #D97706;
+      --soon: #9CA3AF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+
+    /* Nav */
+    nav {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--rule);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      background: rgba(250, 250, 247, 0.85);
+    }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; }
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: -0.5px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .logo em { color: var(--accent); font-style: normal; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    @media (max-width: 640px) {
+      .nav-links { gap: 20px; }
+      .nav-links a { font-size: 13px; }
+    }
+
+    /* Hero */
+    .hero {
+      padding: 96px 0 80px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero-eyebrow {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: clamp(42px, 7vw, 80px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 28px;
+      max-width: 900px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--accent);
+    }
+    .hero .sub {
+      font-size: 19px;
+      color: var(--ink-soft);
+      max-width: 620px;
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+    .hero .sub-ko {
+      font-size: 15px;
+      color: var(--ink-mute);
+      max-width: 620px;
+    }
+
+    /* Section header */
+    .section { padding: 96px 0; border-bottom: 1px solid var(--rule); }
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 12px;
+    }
+    .section h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: clamp(32px, 4.5vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 48px;
+      max-width: 720px;
+    }
+    .section h2 em { font-style: italic; color: var(--accent); font-weight: 500; }
+
+    /* Apps grid */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .app-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 16px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+      text-decoration: none;
+      color: var(--ink);
+      position: relative;
+    }
+    .app-card:hover {
+      transform: translateY(-2px);
+      border-color: #D5D7DC;
+      box-shadow: 0 10px 30px rgba(15, 20, 25, 0.06);
+    }
+    .app-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .app-name {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+    }
+    .app-tag {
+      font-size: 15px;
+      color: var(--ink-soft);
+      line-height: 1.45;
+    }
+    .app-tag-ko {
+      font-size: 13px;
+      color: var(--ink-mute);
+      line-height: 1.45;
+      margin-top: -10px;
+    }
+    .app-status {
+      position: absolute;
+      top: 32px;
+      right: 28px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      color: #fff;
+    }
+    .app-status.live { background: var(--live); }
+    .app-status.beta { background: var(--beta); }
+    .app-status.soon { background: var(--soon); }
+    .app-footer {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+      font-size: 13px;
+      color: var(--ink-mute);
+      font-weight: 500;
+    }
+    .app-footer .arrow {
+      display: inline-block;
+      transition: transform 0.15s;
+    }
+    .app-card:hover .app-footer .arrow { transform: translateX(4px); color: var(--accent); }
+
+    /* Per-app colors */
+    .icon-barolingo { background: linear-gradient(135deg, #1D9E75, #157A5A); }
+    .icon-nailva { background: linear-gradient(135deg, #E91E63, #AD1457); }
+    .icon-moodva { background: linear-gradient(135deg, #6366F1, #4338CA); }
+    .icon-canvly { background: linear-gradient(135deg, #0F172A, #334155); }
+    .icon-eqquest { background: linear-gradient(135deg, #F59E0B, #D97706); }
+    .icon-pawfriend { background: linear-gradient(135deg, #14B8A6, #0F766E); }
+
+    /* About section */
+    .about-body {
+      font-size: 20px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      max-width: 640px;
+      margin-bottom: 20px;
+    }
+    .about-body em { font-style: italic; color: var(--ink); }
+    .about-body-ko {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink-mute);
+      max-width: 640px;
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+      margin-top: 32px;
+    }
+
+    /* Contact */
+    .contact-block { display: flex; flex-direction: column; gap: 12px; }
+    .contact-block a {
+      font-family: 'Fraunces', serif;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+      align-self: flex-start;
+    }
+    .contact-block a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* Footer */
+    footer {
+      padding: 48px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--ink-mute);
+    }
+    footer a { color: var(--ink-mute); text-decoration: underline; margin: 0 6px; }
+    footer a:hover { color: var(--accent); }
+
+    /* Utility */
+    @media (max-width: 640px) {
+      .wrap { padding: 0 24px; }
+      .hero { padding: 64px 0 56px; }
+      .section { padding: 72px 0; }
+      .app-card { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a href="#" class="logo">wow<em>pia</em></a>
+      <div class="nav-links">
+        <a href="#apps">Apps</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-eyebrow">A studio of everyday wonder</div>
+      <h1>Engineering<br/><em>everyday wonder.</em></h1>
+      <p class="sub">wowpia builds tools at the intersection of creativity, practicality, and care — each one a quiet wonder, used daily.</p>
+      <p class="sub-ko">창의와 쓸모가 만나는 곳. wowpia는 매일 쓰이는 작은 경이를 조용히 설계합니다.</p>
+    </div>
+  </section>
+
+  <!-- Apps -->
+  <section class="section" id="apps">
+    <div class="wrap">
+      <div class="section-label">Portfolio</div>
+      <h2>Current <em>work.</em></h2>
+      <div class="apps-grid" id="apps-grid"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-label">About</div>
+      <h2>A wider wonder,<br/><em>engineered daily.</em></h2>
+      <p class="about-body">
+        wowpia is a studio designing everyday wonder — apps where <em>creativity, practicality, and care</em> meet. Each app begins with a quiet observation (a habit someone wants to build, a sentence they can't parse, a process stuck in a spreadsheet) and ends as something a person would reach for every day.
+      </p>
+      <p class="about-body">
+        We are building toward a wider wonder: a world where everyday tools surprise you, quietly, with how well they fit. No dashboards demanding attention. No notification floods. Just well-made tools that earn their spot on your home screen.
+      </p>
+      <p class="about-body-ko">
+        wowpia는 <em>창의, 쓸모, 배려</em>가 만나는 앱을 설계하는 스튜디오입니다. 습관을 만들고 싶은 마음, 해석되지 않는 문장, 엑셀에 갇힌 업무 — 조용한 관찰에서 시작해 매일 쓰이는 도구로 완성합니다. 우리가 향하는 곳은 <em>더 넓은 놀라움의 세계</em>, 매일의 도구가 조용히 당신을 감탄시키는 곳입니다. 요란한 대시보드 없이, 알림의 홍수 없이, 홈 화면의 자리를 천천히 얻어내는 잘 만든 도구들입니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="section-label">Contact</div>
+      <h2>Get <em>in touch.</em></h2>
+      <div class="contact-block">
+        <a href="mailto:parkbongjun23@gmail.com">parkbongjun23@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 wowpia · Seoul, Korea<br>
+    <a href="#apps">Apps</a> ·
+    <a href="#about">About</a> ·
+    <a href="#contact">Contact</a>
+  </footer>
+
+  <script>
+    // 앱 카드 렌더링 — apps.json에서 데이터만 갱신하면 카드 자동 반영
+    (async () => {
+      const grid = document.getElementById('apps-grid');
+      if (!grid) return;
+      try {
+        const res = await fetch('apps.json?v=' + Date.now());
+        const { apps } = await res.json();
+        const statusToClass = {
+          'live': 'live',
+          'live-soon': 'live',
+          'beta': 'beta',
+          'soon': 'soon',
+        };
+        const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({
+          '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+        })[c]);
+        grid.innerHTML = apps.map((a) => {
+          const clickable = Boolean(a.href);
+          const tagOpen = clickable
+            ? `<a class="app-card" href="${esc(a.href)}" target="_blank" rel="noopener">`
+            : `<div class="app-card" role="article">`;
+          const tagClose = clickable ? '</a>' : '</div>';
+          return `${tagOpen}
+            <span class="app-status ${esc(statusToClass[a.status] || 'soon')}">${esc(a.statusLabel)}</span>
+            <div class="app-icon ${esc(a.iconClass)}">${esc(a.iconLetter)}</div>
+            <div class="app-name">${esc(a.name)}</div>
+            <div class="app-tag">${esc(a.tagEn)}</div>
+            <div class="app-tag-ko">${esc(a.tagKo)}</div>
+            <div class="app-footer">${esc(a.footerText)} <span class="arrow">→</span></div>
+          ${tagClose}`;
+        }).join('');
+      } catch (err) {
+        grid.innerHTML = '<p style="color:var(--ink-mute);grid-column:1/-1;">Failed to load apps.</p>';
+        console.error('apps.json load failed:', err);
+      }
+    })();
+  </script>
+
+</body>
+</html>
