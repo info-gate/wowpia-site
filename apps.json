@@ -7,10 +7,10 @@
       "tagKo": "들리는 순서 그대로 영어를.",
       "iconLetter": "B",
       "iconClass": "icon-barolingo",
-      "status": "live-soon",
-      "statusLabel": "Live Soon",
-      "href": "https://info-gate.github.io/barolingo/",
-      "footerText": "Learn more"
+      "status": "live",
+      "statusLabel": "Live",
+      "href": "https://play.google.com/store/apps/details?id=com.barolingo.app",
+      "footerText": "View on Play Store"
     },
     {
       "id": "nailva",
