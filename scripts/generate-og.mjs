@@ -59,7 +59,7 @@ const ogHtml = `<!DOCTYPE html><html><head>
 </style></head><body>
   <div class="logo">wow<em>pia</em></div>
   <h1>Engineering<br/><em>everyday wonder.</em></h1>
-  <p class="sub">A studio designing creative, practical, useful apps — each a quiet wonder, used daily.</p>
+  <p class="sub">A product brand by Info-Gate Inc. — creative, practical, useful apps, used daily.</p>
   <div class="meta">wowpia.kr</div>
 </body></html>`;
 
