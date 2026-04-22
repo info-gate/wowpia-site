@@ -71,6 +71,18 @@
       "statusLabel": "Soon",
       "href": null,
       "footerText": "In design"
+    },
+    {
+      "id": "nailoop",
+      "name": "Nailoop",
+      "tagEn": "Show off your nails.",
+      "tagKo": "내 네일, 보여주고 싶어.",
+      "iconLetter": "N",
+      "iconClass": "icon-nailoop",
+      "status": "soon",
+      "statusLabel": "Soon",
+      "href": null,
+      "footerText": "In design"
     }
   ]
 }
