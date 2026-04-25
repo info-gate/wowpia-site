@@ -15,14 +15,14 @@
     {
       "id": "nailva",
       "name": "Nailva",
-      "tagEn": "Value, polished into nails.",
-      "tagKo": "네일에 깃드는 가치.",
+      "tagEn": "Nail salon CRM — customers, bookings, revenue.",
+      "tagKo": "네일샵 사장님을 위한 CRM — 고객·예약·매출 한 번에.",
       "iconLetter": "N",
       "iconClass": "icon-nailva",
-      "status": "beta",
-      "statusLabel": "Beta",
-      "href": null,
-      "footerText": "Coming to this page"
+      "status": "live",
+      "statusLabel": "Live",
+      "href": "https://play.google.com/store/apps/details?id=com.wowpia.nailshopmanager",
+      "footerText": "View on Play Store"
     },
     {
       "id": "moodva",
@@ -75,14 +75,14 @@
     {
       "id": "nailoop",
       "name": "Nailoop",
-      "tagEn": "Show off your nails.",
-      "tagKo": "내 네일, 보여주고 싶어.",
+      "tagEn": "Show off your nails — social + booking for nail lovers.",
+      "tagKo": "내 네일 자랑 + 샵 예약, 한 번에.",
       "iconLetter": "N",
       "iconClass": "icon-nailoop",
-      "status": "soon",
-      "statusLabel": "Soon",
-      "href": null,
-      "footerText": "In design"
+      "status": "beta",
+      "statusLabel": "iOS Coming Soon",
+      "href": "https://info-gate.github.io/nailoop/",
+      "footerText": "Landing page (App Store review in progress)"
     }
   ]
 }
