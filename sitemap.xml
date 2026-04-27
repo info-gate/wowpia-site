@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://wowpia.kr/</loc></url>
   <url><loc>https://wowpia.kr/blog/</loc></url>
-  <url><loc>https://wowpia.kr/blog/hello-world/</loc></url>
+  <url><loc>https://wowpia.kr/blog/en/</loc></url>
+  <url><loc>https://wowpia.kr/blog/ja/</loc></url>
+  <url>
+    <loc>https://wowpia.kr/blog/hello-world/</loc>
+    <lastmod>2026-04-27</lastmod>
+  </url>
+  <url>
+    <loc>https://wowpia.kr/blog/en/아이폰-hwp-파일-열기-en/</loc>
+    <lastmod>2026-04-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wowpia.kr/blog/en/아이폰-hwp-파일-열기-en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://wowpia.kr/blog/아이폰-hwp-파일-열기/"/>
+  </url>
+  <url>
+    <loc>https://wowpia.kr/blog/아이폰-hwp-파일-열기/</loc>
+    <lastmod>2026-04-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wowpia.kr/blog/en/아이폰-hwp-파일-열기-en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://wowpia.kr/blog/아이폰-hwp-파일-열기/"/>
+  </url>
 </urlset>
