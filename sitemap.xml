@@ -6,8 +6,16 @@
   <url><loc>https://wowpia.kr/blog/en/</loc></url>
   <url><loc>https://wowpia.kr/blog/ja/</loc></url>
   <url>
+    <loc>https://wowpia.kr/blog/ja/hello-world-ja/</loc>
+    <lastmod>2026-04-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://wowpia.kr/blog/ja/hello-world-ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://wowpia.kr/blog/hello-world/"/>
+  </url>
+  <url>
     <loc>https://wowpia.kr/blog/hello-world/</loc>
     <lastmod>2026-04-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://wowpia.kr/blog/ja/hello-world-ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://wowpia.kr/blog/hello-world/"/>
   </url>
   <url>
     <loc>https://wowpia.kr/blog/en/how-to-open-hwp-files-on/</loc>

@@ -5,7 +5,13 @@
     <link>https://wowpia.kr/blog/ja/</link>
     <description>wowpia ブログ — アプリリリースノート、開発日誌、Tips.</description>
     <language>ja-JP</language>
-    <lastBuildDate>Mon, 27 Apr 2026 14:40:20 GMT</lastBuildDate>
-
+    <lastBuildDate>Mon, 27 Apr 2026 16:26:22 GMT</lastBuildDate>
+<item>
+      <title><![CDATA[wowpia ブログ オープン — 毎日何かを作る人々へ]]></title>
+      <link>https://wowpia.kr/blog/ja/hello-world-ja/</link>
+      <guid isPermaLink="true">https://wowpia.kr/blog/ja/hello-world-ja/</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[wowpia が作るアプリとツール、そしてその裏側のストーリー。]]></description>
+    </item>
   </channel>
 </rss>
