@@ -1,0 +1,26 @@
+{
+  "name": "wowpia-site",
+  "version": "1.0.0",
+  "description": "The main hub for wowpia — a studio engineering everyday wonder.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/build-blog.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/info-gate/wowpia-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/info-gate/wowpia-site/issues"
+  },
+  "homepage": "https://github.com/info-gate/wowpia-site#readme",
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^18.0.2"
+  }
+}

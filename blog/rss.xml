@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>wowpia Blog</title>
+    <link>https://wowpia.kr/blog/</link>
+    <description>wowpia 블로그 — 앱 출시 노트, 개발 일기, 사용 팁.</description>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 27 Apr 2026 14:19:45 GMT</lastBuildDate>
+<item>
+      <title><![CDATA[wowpia 블로그 오픈 — 매일 무언가를 만드는 사람들에게]]></title>
+      <link>https://wowpia.kr/blog/hello-world/</link>
+      <guid isPermaLink="true">https://wowpia.kr/blog/hello-world/</guid>
+      <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[wowpia가 만드는 앱과 도구, 그리고 그 뒤의 이야기.]]></description>
+    </item>
+  </channel>
+</rss>
