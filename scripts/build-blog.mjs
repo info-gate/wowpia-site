@@ -36,8 +36,10 @@ function loadPosts() {
   const posts = files.map(f => {
     const raw = readFileSync(resolve(POSTS_DIR, f), 'utf-8');
     const { data, content } = matter(raw);
-    const slug = basename(f, '.md').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+    // frontmatter slug 우선, 없으면 파일명에서 추출
+    const slug = data.slug || basename(f, '.md').replace(/^\d{4}-\d{2}-\d{2}-/, '');
     const date = data.date ? new Date(data.date) : new Date();
+    const lang = data.lang || 'ko';
     return {
       slug,
       file: f,
@@ -45,7 +47,11 @@ function loadPosts() {
       description: data.description || '',
       date,
       tags: data.tags || [],
-      lang: data.lang || 'ko',
+      lang,
+      // ko = /blog/{slug}/, 그 외 = /blog/{lang}/{slug}/
+      urlPath: lang === 'ko' ? `/blog/${slug}/` : `/blog/${lang}/${slug}/`,
+      // 같은 translationKey 다른 언어 = 번역 버전 (hreflang 자동 연결)
+      translationKey: data.translationKey || slug,
       cover: data.cover || null,
       content,
     };
@@ -153,12 +159,19 @@ const SHARED_CSS = `
       display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
     }`;
 
-function navHtml(activePage = 'blog') {
+const LANG_LABELS = { ko: '한국어', en: 'English', ja: '日本語' };
+
+function navHtml(activePage = 'blog', lang = 'ko') {
+  const blogIndex = lang === 'ko' ? '/blog/' : `/blog/${lang}/`;
   return `<nav class="nav">
     <a class="nav-brand" href="/">wow<em>pia</em></a>
     <div class="nav-links">
       <a href="/" ${activePage === 'home' ? 'aria-current="page"' : ''}>Home</a>
-      <a href="/blog/" ${activePage === 'blog' ? 'aria-current="page"' : ''}>Blog</a>
+      <a href="${blogIndex}" ${activePage === 'blog' ? 'aria-current="page"' : ''}>Blog</a>
+      <span style="color:var(--ink-mute);font-size:12px">|</span>
+      <a href="/blog/" style="font-size:12px;color:${lang === 'ko' ? 'var(--accent)' : 'var(--ink-mute)'}">KO</a>
+      <a href="/blog/en/" style="font-size:12px;color:${lang === 'en' ? 'var(--accent)' : 'var(--ink-mute)'}">EN</a>
+      <a href="/blog/ja/" style="font-size:12px;color:${lang === 'ja' ? 'var(--accent)' : 'var(--ink-mute)'}">JA</a>
     </div>
   </nav>`;
 }
@@ -170,11 +183,20 @@ function footerHtml() {
   </footer>`;
 }
 
-function renderPost(post) {
+function renderPost(post, allPosts) {
   const html = marked.parse(post.content);
   const dateStr = post.date.toISOString().slice(0, 10);
-  const url = `${SITE_URL}/blog/${post.slug}/`;
+  const url = `${SITE_URL}${post.urlPath}`;
   const ogImage = post.cover || `${SITE_URL}/og-image.png`;
+
+  // hreflang — 같은 translationKey 가진 다른 언어 버전
+  const translations = allPosts.filter(p => p.translationKey === post.translationKey && p.lang !== post.lang);
+  const hreflangTags = [
+    `<link rel="alternate" hreflang="${post.lang}" href="${url}">`,
+    ...translations.map(t => `<link rel="alternate" hreflang="${t.lang}" href="${SITE_URL}${t.urlPath}">`),
+    translations.length > 0 ? `<link rel="alternate" hreflang="x-default" href="${url}">` : '',
+  ].filter(Boolean).join('\n  ');
+
   return `<!DOCTYPE html>
 <html lang="${post.lang}">
 <head>
@@ -183,11 +205,13 @@ function renderPost(post) {
   <title>${escape(post.title)} — wowpia</title>
   <meta name="description" content="${escape(post.description)}">
   <link rel="canonical" href="${url}">
+  ${hreflangTags}
   <meta property="og:type" content="article">
   <meta property="og:title" content="${escape(post.title)}">
   <meta property="og:description" content="${escape(post.description)}">
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="${ogImage}">
+  <meta property="og:locale" content="${post.lang === 'ko' ? 'ko_KR' : post.lang === 'ja' ? 'ja_JP' : 'en_US'}">
   <meta property="article:published_time" content="${post.date.toISOString()}">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
@@ -198,6 +222,7 @@ function renderPost(post) {
     "description": post.description,
     "image": ogImage,
     "datePublished": post.date.toISOString(),
+    "inLanguage": post.lang,
     "url": url,
     "publisher": { "@type": "Organization", "name": "wowpia", "url": SITE_URL },
     "author": { "@type": "Organization", "name": "wowpia" },
@@ -206,12 +231,13 @@ function renderPost(post) {
   <style>${SHARED_CSS}</style>
 </head>
 <body>
-  ${navHtml('blog')}
+  ${navHtml('blog', post.lang)}
   <main class="container">
     <article>
       <div class="post-meta">
         <time datetime="${dateStr}">${dateStr}</time>
         ${(post.tags || []).map(t => `<span class="tag">${escape(t)}</span>`).join('')}
+        ${translations.length > 0 ? translations.map(t => `<a href="${t.urlPath}" class="tag" style="background:var(--accent-soft,#d8f3e6);color:var(--accent-dark)">${LANG_LABELS[t.lang]}</a>`).join('') : ''}
       </div>
       <h1>${escape(post.title)}</h1>
       ${post.description ? `<p class="post-desc">${escape(post.description)}</p>` : ''}
@@ -223,11 +249,12 @@ function renderPost(post) {
 </html>`;
 }
 
-function renderIndex(posts) {
-  const items = posts.map(p => {
+function renderIndex(posts, lang = 'ko') {
+  const langPosts = posts.filter(p => p.lang === lang);
+  const items = langPosts.map(p => {
     const dateStr = p.date.toISOString().slice(0, 10);
     return `<li>
-      <a href="/blog/${p.slug}/">
+      <a href="${p.urlPath}">
         <div class="post-meta">
           <time datetime="${dateStr}">${dateStr}</time>
           ${(p.tags || []).slice(0, 3).map(t => `<span class="tag">${escape(t)}</span>`).join('')}
@@ -236,27 +263,44 @@ function renderIndex(posts) {
         ${p.description ? `<p class="post-card-desc">${escape(p.description)}</p>` : ''}
       </a>
     </li>`;
-  }).join('');
+  }).join('') || `<li style="color:var(--ink-mute);text-align:center;padding:60px 0;">No posts yet in ${LANG_LABELS[lang]}.</li>`;
+
+  const indexUrl = lang === 'ko' ? `${SITE_URL}/blog/` : `${SITE_URL}/blog/${lang}/`;
+  const titleByLang = { ko: 'Blog — wowpia', en: 'Blog — wowpia', ja: 'ブログ — wowpia' };
+  const descByLang = {
+    ko: 'wowpia 블로그 — 앱 출시 노트, 개발 일기, 사용 팁.',
+    en: 'wowpia blog — app release notes, dev journal, how-to tips.',
+    ja: 'wowpia ブログ — アプリリリースノート、開発日誌、活用Tips.',
+  };
+  const headingByLang = { ko: 'Blog', en: 'Blog', ja: 'ブログ' };
+
+  // hreflang for index
+  const hreflangs = ['ko', 'en', 'ja'].map(l => {
+    const url = l === 'ko' ? `${SITE_URL}/blog/` : `${SITE_URL}/blog/${l}/`;
+    return `<link rel="alternate" hreflang="${l}" href="${url}">`;
+  }).join('\n  ');
 
   return `<!DOCTYPE html>
-<html lang="ko">
+<html lang="${lang}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog — wowpia</title>
-  <meta name="description" content="wowpia 블로그 — 앱 출시 노트, 개발 일기, 사용 팁.">
-  <link rel="canonical" href="${SITE_URL}/blog/">
-  <meta property="og:title" content="wowpia Blog">
-  <meta property="og:description" content="앱 출시 노트, 개발 일기, 사용 팁.">
-  <meta property="og:url" content="${SITE_URL}/blog/">
+  <title>${titleByLang[lang]}</title>
+  <meta name="description" content="${descByLang[lang]}">
+  <link rel="canonical" href="${indexUrl}">
+  ${hreflangs}
+  <link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog/">
+  <meta property="og:title" content="${titleByLang[lang]}">
+  <meta property="og:description" content="${descByLang[lang]}">
+  <meta property="og:url" content="${indexUrl}">
   <meta property="og:image" content="${SITE_URL}/og-image.png">${SHARED_HEAD}
   <style>${SHARED_CSS}</style>
 </head>
 <body>
-  ${navHtml('blog')}
+  ${navHtml('blog', lang)}
   <main class="container">
-    <h1 style="font-family:'Fraunces',serif;font-size:36px;font-weight:600;margin-bottom:6px;letter-spacing:-0.01em;">Blog</h1>
-    <p style="color:var(--ink-soft);margin-bottom:32px;">앱 출시 노트, 개발 일기, 사용 팁.</p>
+    <h1 style="font-family:'Fraunces',serif;font-size:36px;font-weight:600;margin-bottom:6px;letter-spacing:-0.01em;">${headingByLang[lang]}</h1>
+    <p style="color:var(--ink-soft);margin-bottom:32px;">${descByLang[lang]}</p>
     <ul class="post-list">${items}</ul>
   </main>
   ${footerHtml()}
@@ -264,22 +308,32 @@ function renderIndex(posts) {
 </html>`;
 }
 
-function renderRSS(posts) {
-  const items = posts.slice(0, 30).map(p => `<item>
+function renderRSS(posts, lang = 'ko') {
+  const langPosts = posts.filter(p => p.lang === lang).slice(0, 30);
+  const items = langPosts.map(p => `<item>
       <title><![CDATA[${p.title}]]></title>
-      <link>${SITE_URL}/blog/${p.slug}/</link>
-      <guid isPermaLink="true">${SITE_URL}/blog/${p.slug}/</guid>
+      <link>${SITE_URL}${p.urlPath}</link>
+      <guid isPermaLink="true">${SITE_URL}${p.urlPath}</guid>
       <pubDate>${p.date.toUTCString()}</pubDate>
       <description><![CDATA[${p.description}]]></description>
     </item>`).join('\n');
 
+  const titleByLang = { ko: 'wowpia Blog', en: 'wowpia Blog', ja: 'wowpia ブログ' };
+  const descByLang = {
+    ko: 'wowpia 블로그 — 앱 출시 노트, 개발 일기, 사용 팁.',
+    en: 'wowpia blog — app release notes, dev journal, how-to tips.',
+    ja: 'wowpia ブログ — アプリリリースノート、開発日誌、Tips.',
+  };
+  const langCode = { ko: 'ko-KR', en: 'en-US', ja: 'ja-JP' };
+  const indexUrl = lang === 'ko' ? `${SITE_URL}/blog/` : `${SITE_URL}/blog/${lang}/`;
+
   return `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
   <channel>
-    <title>wowpia Blog</title>
-    <link>${SITE_URL}/blog/</link>
-    <description>wowpia 블로그 — 앱 출시 노트, 개발 일기, 사용 팁.</description>
-    <language>ko-KR</language>
+    <title>${titleByLang[lang]}</title>
+    <link>${indexUrl}</link>
+    <description>${descByLang[lang]}</description>
+    <language>${langCode[lang]}</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 ${items}
   </channel>
@@ -287,14 +341,38 @@ ${items}
 }
 
 function renderSitemap(posts) {
-  const urls = [
-    `${SITE_URL}/`,
-    `${SITE_URL}/blog/`,
-    ...posts.map(p => `${SITE_URL}/blog/${p.slug}/`),
+  const indexUrls = [
+    { loc: `${SITE_URL}/`, hreflang: null },
+    { loc: `${SITE_URL}/blog/`, hreflang: 'ko' },
+    { loc: `${SITE_URL}/blog/en/`, hreflang: 'en' },
+    { loc: `${SITE_URL}/blog/ja/`, hreflang: 'ja' },
   ];
+
+  // post URLs with hreflang alternates
+  const postsByKey = {};
+  for (const p of posts) {
+    if (!postsByKey[p.translationKey]) postsByKey[p.translationKey] = [];
+    postsByKey[p.translationKey].push(p);
+  }
+
+  const postEntries = posts.map(p => {
+    const alternates = postsByKey[p.translationKey];
+    const xhtmlLinks = alternates.length > 1
+      ? alternates.map(a => `    <xhtml:link rel="alternate" hreflang="${a.lang}" href="${SITE_URL}${a.urlPath}"/>`).join('\n') + '\n'
+      : '';
+    return `  <url>
+    <loc>${SITE_URL}${p.urlPath}</loc>
+    <lastmod>${p.date.toISOString().slice(0, 10)}</lastmod>
+${xhtmlLinks}  </url>`;
+  });
+
+  const indexEntries = indexUrls.map(u => `  <url><loc>${u.loc}</loc></url>`);
+
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(u => `  <url><loc>${u}</loc></url>`).join('\n')}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${indexEntries.join('\n')}
+${postEntries.join('\n')}
 </urlset>`;
 }
 
@@ -304,24 +382,31 @@ function main() {
   const posts = loadPosts();
   console.log(`▶ ${posts.length} posts loaded`);
 
-  // 개별 post HTML
+  // 개별 post HTML — lang 별 디렉토리
   for (const post of posts) {
-    const dir = resolve(OUT_DIR, post.slug);
+    const relPath = post.urlPath.replace(/^\//, '').replace(/\/$/, '');
+    const dir = resolve(OUT_DIR, ...relPath.split('/').slice(1)); // blog/{slug} or blog/en/{slug}
     if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
-    writeFileSync(resolve(dir, 'index.html'), renderPost(post));
-    console.log(`  ✓ /blog/${post.slug}/`);
+    writeFileSync(resolve(dir, 'index.html'), renderPost(post, posts));
+    console.log(`  ✓ ${post.urlPath} [${post.lang}]`);
   }
 
-  // 블로그 인덱스
-  writeFileSync(resolve(OUT_DIR, 'index.html'), renderIndex(posts));
-  console.log(`  ✓ /blog/`);
+  // 언어별 블로그 인덱스
+  for (const lang of ['ko', 'en', 'ja']) {
+    const dir = lang === 'ko' ? OUT_DIR : resolve(OUT_DIR, lang);
+    if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
+    writeFileSync(resolve(dir, 'index.html'), renderIndex(posts, lang));
+    writeFileSync(resolve(dir, 'rss.xml'), renderRSS(posts, lang));
+    console.log(`  ✓ /blog/${lang === 'ko' ? '' : lang + '/'} + rss.xml`);
+  }
 
-  // RSS + sitemap
-  writeFileSync(resolve(OUT_DIR, 'rss.xml'), renderRSS(posts));
+  // 통합 sitemap (모든 언어)
   writeFileSync(resolve(ROOT, 'sitemap.xml'), renderSitemap(posts));
-  console.log(`  ✓ /blog/rss.xml + /sitemap.xml`);
+  console.log(`  ✓ /sitemap.xml (all langs)`);
 
-  console.log(`\n✅ blog built — ${posts.length} posts`);
+  // 언어별 통계
+  const byLang = posts.reduce((acc, p) => { acc[p.lang] = (acc[p.lang] || 0) + 1; return acc; }, {});
+  console.log(`\n✅ blog built — ${posts.length} posts:`, byLang);
 }
 
 main();
