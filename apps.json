@@ -79,10 +79,22 @@
       "tagKo": "내 네일 자랑 + 샵 예약, 한 번에.",
       "iconLetter": "N",
       "iconClass": "icon-nailoop",
-      "status": "beta",
-      "statusLabel": "iOS Coming Soon",
-      "href": "https://info-gate.github.io/nailoop/",
-      "footerText": "Landing page (App Store review in progress)"
+      "status": "live",
+      "statusLabel": "Live",
+      "href": "https://play.google.com/store/apps/details?id=com.nailoop.app",
+      "footerText": "View on Play Store"
+    },
+    {
+      "id": "opendocs",
+      "name": "OpenDocs",
+      "tagEn": "Open every document — PDF, HWP, Word, Excel and more.",
+      "tagKo": "모든 문서를 한 번에 — PDF·HWP·Word·Excel·이미지.",
+      "iconLetter": "O",
+      "iconClass": "icon-opendocs",
+      "status": "review",
+      "statusLabel": "Review",
+      "href": "https://info-gate.github.io/opendocs/",
+      "footerText": "Landing page (Play Store review in progress)"
     }
   ]
 }
