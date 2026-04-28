@@ -4,7 +4,9 @@
   "description": "The main hub for wowpia — a studio engineering everyday wonder.",
   "main": "index.js",
   "scripts": {
-    "build": "node scripts/build-blog.mjs",
+    "build": "node scripts/build-blog.mjs && node scripts/build-app-links.mjs",
+    "build:blog": "node scripts/build-blog.mjs",
+    "build:links": "node scripts/build-app-links.mjs",
     "serve": "node scripts/serve.mjs"
   },
   "repository": {

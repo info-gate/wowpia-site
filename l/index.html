@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nailoop 다운로드 — wowpia</title>
+  <meta name="description" content="네일 SNS + 예약 — 네일 자랑 + 샵 예약 한 번에 — wowpia.kr/l">
+  <meta name="robots" content="noindex,follow">
+  <meta property="og:title" content="Nailoop — wowpia">
+  <meta property="og:description" content="네일 SNS + 예약 — 네일 자랑 + 샵 예약 한 번에">
+  <meta property="og:image" content="https://wowpia.kr/og-image.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="canonical" href="https://wowpia.kr/l/">
+  <script>
+    (function() {
+      var ua = navigator.userAgent || '';
+      var isIOS = /iPhone|iPad|iPod/.test(ua);
+      var isAndroid = /Android/.test(ua);
+      var play = "https://play.google.com/store/apps/details?id=com.nailoop.app";
+      var app = "";
+      var land = "";
+      var url = null;
+      if (isIOS) url = app || play || land;
+      else if (isAndroid) url = play || app || land;
+      // 모바일이면 1초 후 자동 redirect (사용자가 화면 인지 후)
+      if (url) setTimeout(function() { location.replace(url); }, 800);
+    })();
+  </script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,'Pretendard','Apple SD Gothic Neo',sans-serif;background:#FAFAF7;color:#0F1419;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;line-height:1.5}
+    .card{max-width:480px;width:100%;background:#fff;border-radius:20px;padding:36px 28px;box-shadow:0 12px 40px rgba(0,0,0,0.08);text-align:center}
+    .accent-bar{height:6px;background:#FF6B9D;border-radius:3px;margin:0 -28px 28px;border-top-left-radius:20px;border-top-right-radius:20px}
+    h1{font-size:32px;font-weight:800;margin-bottom:8px;letter-spacing:-0.5px}
+    h1 em{color:#FF6B9D;font-style:normal}
+    .desc{color:#4b5159;margin-bottom:28px;font-size:15px}
+    .btns{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+    .btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 18px;background:#0F1419;color:#fff;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .1s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-landing{background:#FF6B9D}
+    .footer{font-size:12px;color:#7a828c;margin-top:8px}
+    .footer a{color:#FF6B9D;text-decoration:none;font-weight:600}
+    .small{font-size:11px;color:#7a828c;margin-top:6px}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="accent-bar"></div>
+    <h1>Nailoop<em>.</em></h1>
+    <p class="desc">네일 SNS + 예약 — 네일 자랑 + 샵 예약 한 번에</p>
+    <div class="btns">
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.nailoop.app">▶ Google Play 에서 받기</a>
+      
+      
+    </div>
+    <p class="small">모바일에서는 잠시 후 자동으로 스토어로 이동합니다.</p>
+    <p class="footer">— <a href="/">wowpia.kr</a> · Nailoop</p>
+  </div>
+</body>
+</html>
