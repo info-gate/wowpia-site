@@ -26,6 +26,19 @@ const SITE_URL = 'https://wowpia.kr';
 
 marked.setOptions({ gfm: true, breaks: false });
 
+// 모든 링크 새창에서 열리게 (target="_blank" + rel="noopener")
+// 단, 같은 도메인(wowpia.kr) 또는 상대 경로는 같은 창
+marked.use({
+  renderer: {
+    link({ href, title, text }) {
+      const isInternal = href.startsWith('/') || href.startsWith('#') || href.startsWith('https://wowpia.kr');
+      const titleAttr = title ? ` title="${title.replace(/"/g, '&quot;')}"` : '';
+      const targetAttr = isInternal ? '' : ' target="_blank" rel="noopener noreferrer"';
+      return `<a href="${href}"${titleAttr}${targetAttr}>${text}</a>`;
+    },
+  },
+});
+
 function escape(s) {
   return String(s ?? '').replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
 }
