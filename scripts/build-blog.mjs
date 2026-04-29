@@ -196,8 +196,14 @@ function footerHtml() {
   </footer>`;
 }
 
+/** marked 의 strikethrough 가 한 paragraph 내 짝지은 ~ 를 strike 로 처리하는 함정 회피.
+ *  숫자~숫자 (범위 표현) 를 en-dash 로 치환. `~~text~~` 의도된 strike 는 보존. */
+function preprocessMarkdown(content) {
+  return content.replace(/(\d)~(?!~)(\d)/g, '$1–$2');
+}
+
 function renderPost(post, allPosts) {
-  const html = marked.parse(post.content);
+  const html = marked.parse(preprocessMarkdown(post.content));
   const dateStr = post.date.toISOString().slice(0, 10);
   const url = `${SITE_URL}${post.urlPath}`;
   const ogImage = post.cover || `${SITE_URL}/og-image.png`;
