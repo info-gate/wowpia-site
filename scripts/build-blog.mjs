@@ -202,8 +202,20 @@ function preprocessMarkdown(content) {
   return content.replace(/(\d)~(?!~)(\d)/g, '$1–$2');
 }
 
+/** 발음 syntax `[pron:word]` → 클릭 시 음성 재생 span. Web Speech API.
+ *  Barolingo 영어 학습 글에서 활용 — LLM 이 [pron:apple] 같이 wrap 하면 click 가능. */
+function applyPronunciation(html, lang) {
+  // 본문 lang 기준 — 'ko' / 'ja' 글의 경우 영어 발음 학습 컨텍스트
+  // 'en' 글은 본문 자체가 영어라 wrap 안 함
+  if (lang === 'en') return html;
+  return html.replace(/\[pron:([^\]]+)\]/g, (_, word) => {
+    const safe = word.replace(/"/g, '&quot;');
+    return `<span class="pron-word" data-word="${safe}" title="클릭하여 발음 듣기" role="button" tabindex="0">${safe} <span class="pron-icon">🔊</span></span>`;
+  });
+}
+
 function renderPost(post, allPosts) {
-  const html = marked.parse(preprocessMarkdown(post.content));
+  const html = applyPronunciation(marked.parse(preprocessMarkdown(post.content)), post.lang);
   const dateStr = post.date.toISOString().slice(0, 10);
   const url = `${SITE_URL}${post.urlPath}`;
   const ogImage = post.cover || `${SITE_URL}/og-image.png`;
@@ -264,6 +276,34 @@ function renderPost(post, allPosts) {
     </article>
   </main>
   ${footerHtml()}
+  <style>
+    .pron-word { display: inline-flex; align-items: center; gap: 4px; padding: 1px 6px; background: #e0f2fe; color: #0369a1; border-radius: 4px; cursor: pointer; font-weight: 600; transition: background 0.15s, transform 0.1s; user-select: none; }
+    .pron-word:hover { background: #bae6fd; }
+    .pron-word:active { transform: scale(0.98); }
+    .pron-word.playing { background: #1d9e75; color: #fff; }
+    .pron-icon { font-size: 0.85em; opacity: 0.7; }
+  </style>
+  <script>
+    (function() {
+      if (!('speechSynthesis' in window)) return;
+      document.querySelectorAll('.pron-word').forEach(el => {
+        const speak = () => {
+          const word = el.dataset.word;
+          if (!word) return;
+          window.speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance(word);
+          u.lang = 'en-US';
+          u.rate = 0.9;
+          el.classList.add('playing');
+          u.onend = () => el.classList.remove('playing');
+          u.onerror = () => el.classList.remove('playing');
+          window.speechSynthesis.speak(u);
+        };
+        el.addEventListener('click', speak);
+        el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); speak(); } });
+      });
+    })();
+  </script>
 </body>
 </html>`;
 }

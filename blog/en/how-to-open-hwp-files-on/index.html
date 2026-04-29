@@ -299,5 +299,33 @@ Hancom occasionally updates the HWP format spec. App developers push updates to 
     <div>© 2026 Info-Gate Inc. — wowpia</div>
     <div><a href="https://wowpia.kr">wowpia.kr</a></div>
   </footer>
+  <style>
+    .pron-word { display: inline-flex; align-items: center; gap: 4px; padding: 1px 6px; background: #e0f2fe; color: #0369a1; border-radius: 4px; cursor: pointer; font-weight: 600; transition: background 0.15s, transform 0.1s; user-select: none; }
+    .pron-word:hover { background: #bae6fd; }
+    .pron-word:active { transform: scale(0.98); }
+    .pron-word.playing { background: #1d9e75; color: #fff; }
+    .pron-icon { font-size: 0.85em; opacity: 0.7; }
+  </style>
+  <script>
+    (function() {
+      if (!('speechSynthesis' in window)) return;
+      document.querySelectorAll('.pron-word').forEach(el => {
+        const speak = () => {
+          const word = el.dataset.word;
+          if (!word) return;
+          window.speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance(word);
+          u.lang = 'en-US';
+          u.rate = 0.9;
+          el.classList.add('playing');
+          u.onend = () => el.classList.remove('playing');
+          u.onerror = () => el.classList.remove('playing');
+          window.speechSynthesis.speak(u);
+        };
+        el.addEventListener('click', speak);
+        el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); speak(); } });
+      });
+    })();
+  </script>
 </body>
 </html>
