@@ -214,8 +214,14 @@
       color: #fff;
     }
     .app-status.live { background: var(--live); }
+    .app-status.review { background: #3a7afe; }
     .app-status.beta { background: var(--beta); }
     .app-status.soon { background: var(--soon); }
+    .group-heading { grid-column: 1 / -1; margin: 32px 0 8px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
+    .group-heading:first-child { margin-top: 0; }
+    .group-heading h3 { font-size: 14px; font-weight: 700; color: var(--ink); letter-spacing: 0.5px; }
+    .group-heading .count { color: var(--ink-mute); font-weight: 500; margin-left: 8px; font-size: 13px; }
+    .group-heading .desc { color: var(--ink-mute); font-size: 12px; margin-top: 2px; }
     .app-footer {
       margin-top: auto;
       padding-top: 16px;
@@ -372,14 +378,19 @@
         const statusToClass = {
           'live': 'live',
           'live-soon': 'live',
+          'review': 'review',
           'beta': 'beta',
-          'review': 'beta',
           'soon': 'soon',
         };
+        const GROUPS = [
+          { key: 'live', title: '서비스중', desc: '현재 다운로드/사용 가능' },
+          { key: 'preparing', title: '준비중', desc: '심사 또는 베타 진행 중 — 곧 공개' },
+          { key: 'planned', title: '계획중', desc: '개발 예정' },
+        ];
         const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({
           '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
         })[c]);
-        grid.innerHTML = apps.map((a) => {
+        const renderCard = (a) => {
           const clickable = Boolean(a.href);
           const tagOpen = clickable
             ? `<a class="app-card" href="${esc(a.href)}" target="_blank" rel="noopener">`
@@ -393,6 +404,14 @@
             <div class="app-tag-ko">${esc(a.tagKo)}</div>
             <div class="app-footer">${esc(a.footerText)} <span class="arrow">→</span></div>
           ${tagClose}`;
+        };
+        grid.innerHTML = GROUPS.map((g) => {
+          const items = apps.filter((a) => (a.group || 'planned') === g.key);
+          if (items.length === 0) return '';
+          return `<div class="group-heading">
+            <h3>${esc(g.title)}<span class="count">${items.length}</span></h3>
+            <div class="desc">${esc(g.desc)}</div>
+          </div>${items.map(renderCard).join('')}`;
         }).join('');
       } catch (err) {
         grid.innerHTML = '<p style="color:var(--ink-mute);grid-column:1/-1;">Failed to load apps.</p>';

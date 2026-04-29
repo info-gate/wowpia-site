@@ -8,9 +8,10 @@
       "iconLetter": "B",
       "iconClass": "icon-barolingo",
       "status": "live",
-      "statusLabel": "Live",
+      "statusLabel": "서비스중",
       "href": "https://play.google.com/store/apps/details?id=com.barolingo.app",
-      "footerText": "View on Play Store"
+      "footerText": "View on Play Store",
+      "group": "live"
     },
     {
       "id": "nailva",
@@ -20,21 +21,10 @@
       "iconLetter": "N",
       "iconClass": "icon-nailva",
       "status": "live",
-      "statusLabel": "Live",
+      "statusLabel": "서비스중",
       "href": "https://play.google.com/store/apps/details?id=com.wowpia.nailshopmanager",
-      "footerText": "View on Play Store"
-    },
-    {
-      "id": "moodva",
-      "name": "Moodva",
-      "tagEn": "Habits that grow you.",
-      "tagKo": "좋은 습관이 쌓이는 하루.",
-      "iconLetter": "M",
-      "iconClass": "icon-moodva",
-      "status": "beta",
-      "statusLabel": "Beta",
-      "href": null,
-      "footerText": "Coming to this page"
+      "footerText": "View on Play Store",
+      "group": "live"
     },
     {
       "id": "canvly",
@@ -44,33 +34,10 @@
       "iconLetter": "C",
       "iconClass": "icon-canvly",
       "status": "live",
-      "statusLabel": "Live",
+      "statusLabel": "서비스중",
       "href": "https://canvly.art",
-      "footerText": "Visit canvly.art"
-    },
-    {
-      "id": "eqquest",
-      "name": "EQ-Quest",
-      "tagEn": "Little quests for emotional skill.",
-      "tagKo": "감정을 다루는 작은 퀘스트.",
-      "iconLetter": "E",
-      "iconClass": "icon-eqquest",
-      "status": "soon",
-      "statusLabel": "Soon",
-      "href": null,
-      "footerText": "In design"
-    },
-    {
-      "id": "pawfriend",
-      "name": "Pawfriend",
-      "tagEn": "A friend by your pet's side.",
-      "tagKo": "반려동물의 곁을 지키는 친구.",
-      "iconLetter": "P",
-      "iconClass": "icon-pawfriend",
-      "status": "soon",
-      "statusLabel": "Soon",
-      "href": null,
-      "footerText": "In design"
+      "footerText": "Visit canvly.art",
+      "group": "live"
     },
     {
       "id": "nailoop",
@@ -80,9 +47,10 @@
       "iconLetter": "N",
       "iconClass": "icon-nailoop",
       "status": "live",
-      "statusLabel": "Live",
+      "statusLabel": "서비스중",
       "href": "https://play.google.com/store/apps/details?id=com.nailoop.app",
-      "footerText": "View on Play Store"
+      "footerText": "View on Play Store",
+      "group": "live"
     },
     {
       "id": "opendocs",
@@ -92,9 +60,49 @@
       "iconLetter": "O",
       "iconClass": "icon-opendocs",
       "status": "review",
-      "statusLabel": "Review",
+      "statusLabel": "심사중",
       "href": "https://info-gate.github.io/opendocs/",
-      "footerText": "Landing page (Play Store review in progress)"
+      "footerText": "Landing page (Play Store review in progress)",
+      "group": "preparing"
+    },
+    {
+      "id": "moodva",
+      "name": "Moodva",
+      "tagEn": "Habits that grow you.",
+      "tagKo": "좋은 습관이 쌓이는 하루.",
+      "iconLetter": "M",
+      "iconClass": "icon-moodva",
+      "status": "beta",
+      "statusLabel": "베타",
+      "href": null,
+      "footerText": "Coming to this page",
+      "group": "preparing"
+    },
+    {
+      "id": "eqquest",
+      "name": "EQ-Quest",
+      "tagEn": "Little quests for emotional skill.",
+      "tagKo": "감정을 다루는 작은 퀘스트.",
+      "iconLetter": "E",
+      "iconClass": "icon-eqquest",
+      "status": "soon",
+      "statusLabel": "계획중",
+      "href": null,
+      "footerText": "In design",
+      "group": "planned"
+    },
+    {
+      "id": "pawfriend",
+      "name": "Pawfriend",
+      "tagEn": "A friend by your pet's side.",
+      "tagKo": "반려동물의 곁을 지키는 친구.",
+      "iconLetter": "P",
+      "iconClass": "icon-pawfriend",
+      "status": "soon",
+      "statusLabel": "계획중",
+      "href": null,
+      "footerText": "In design",
+      "group": "planned"
     }
   ]
 }
