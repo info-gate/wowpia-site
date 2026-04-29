@@ -59,11 +59,11 @@
       "tagKo": "모든 문서를 한 번에 — PDF·HWP·Word·Excel·이미지.",
       "iconLetter": "O",
       "iconClass": "icon-opendocs",
-      "status": "review",
-      "statusLabel": "심사중",
-      "href": "https://info-gate.github.io/opendocs/",
-      "footerText": "Landing page (Play Store review in progress)",
-      "group": "preparing"
+      "status": "live",
+      "statusLabel": "서비스중",
+      "href": "https://apps.apple.com/kr/app/opendocs/id6763845346",
+      "footerText": "View on App Store",
+      "group": "live"
     },
     {
       "id": "moodva",
