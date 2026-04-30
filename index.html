@@ -235,6 +235,27 @@
       transition: transform 0.15s;
     }
     .app-card:hover .app-footer .arrow { transform: translateX(4px); color: var(--accent); }
+    .store-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: all 0.15s;
+      border: 1px solid var(--rule);
+      background: #fff;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .store-btn:hover { border-color: var(--ink); transform: translateY(-1px); }
+    .store-btn.ios { background: #000; color: #fff; border-color: #000; }
+    .store-btn.android { background: #01875f; color: #fff; border-color: #01875f; }
+    .store-btn.web { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .store-btn .label-sub { font-weight: 400; opacity: 0.85; font-size: 10px; }
 
     /* Per-app colors */
     .icon-barolingo { background: linear-gradient(135deg, #1D9E75, #157A5A); }
@@ -391,19 +412,33 @@
           '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
         })[c]);
         const renderCard = (a) => {
-          const clickable = Boolean(a.href);
-          const tagOpen = clickable
-            ? `<a class="app-card" href="${esc(a.href)}" target="_blank" rel="noopener">`
-            : `<div class="app-card" role="article">`;
-          const tagClose = clickable ? '</a>' : '</div>';
-          return `${tagOpen}
+          // 카드 자체는 link 아닌 div (안에 store buttons 가 link)
+          const stores = [];
+          if (a.ios) stores.push(`<a class="store-btn ios" href="${esc(a.ios)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">App Store</a>`);
+          if (a.android) stores.push(`<a class="store-btn android" href="${esc(a.android)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Google Play</a>`);
+          if (!a.ios && !a.android && a.web) stores.push(`<a class="store-btn web" href="${esc(a.web)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Visit Site</a>`);
+          if (!a.ios && !a.android && !a.web && a.href) {
+            // legacy fallback (eqquest/pawfriend 같이 link 없는 경우)
+            return `<div class="app-card" role="article">
+              <span class="app-status ${esc(statusToClass[a.status] || 'soon')}">${esc(a.statusLabel)}</span>
+              <div class="app-icon ${esc(a.iconClass)}">${esc(a.iconLetter)}</div>
+              <div class="app-name">${esc(a.name)}</div>
+              <div class="app-tag">${esc(a.tagEn)}</div>
+              <div class="app-tag-ko">${esc(a.tagKo)}</div>
+              <div class="app-footer" style="color:var(--ink-mute);font-size:12px">${esc(a.footerText || '')}</div>
+            </div>`;
+          }
+          const footer = stores.length > 0
+            ? `<div class="app-footer"><div class="store-buttons">${stores.join('')}</div></div>`
+            : `<div class="app-footer" style="color:var(--ink-mute);font-size:12px">${esc(a.footerText || '')}</div>`;
+          return `<div class="app-card" role="article">
             <span class="app-status ${esc(statusToClass[a.status] || 'soon')}">${esc(a.statusLabel)}</span>
             <div class="app-icon ${esc(a.iconClass)}">${esc(a.iconLetter)}</div>
             <div class="app-name">${esc(a.name)}</div>
             <div class="app-tag">${esc(a.tagEn)}</div>
             <div class="app-tag-ko">${esc(a.tagKo)}</div>
-            <div class="app-footer">${esc(a.footerText)} <span class="arrow">→</span></div>
-          ${tagClose}`;
+            ${footer}
+          </div>`;
         };
         grid.innerHTML = GROUPS.map((g) => {
           const items = apps.filter((a) => (a.group || 'planned') === g.key);
