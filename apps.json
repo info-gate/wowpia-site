@@ -9,9 +9,11 @@
       "iconClass": "icon-barolingo",
       "status": "live",
       "statusLabel": "서비스중",
-      "href": "https://play.google.com/store/apps/details?id=com.barolingo.app",
-      "footerText": "View on Play Store",
-      "group": "live"
+      "href": "https://apps.apple.com/kr/app/barolingo/id6762762921",
+      "footerText": "View on App Store",
+      "group": "live",
+      "ios": "https://apps.apple.com/kr/app/barolingo/id6762762921",
+      "android": null
     },
     {
       "id": "nailva",
@@ -24,7 +26,9 @@
       "statusLabel": "서비스중",
       "href": "https://play.google.com/store/apps/details?id=com.wowpia.nailshopmanager",
       "footerText": "View on Play Store",
-      "group": "live"
+      "group": "live",
+      "ios": null,
+      "android": "https://play.google.com/store/apps/details?id=com.wowpia.nailshopmanager"
     },
     {
       "id": "canvly",
@@ -37,7 +41,10 @@
       "statusLabel": "서비스중",
       "href": "https://canvly.art",
       "footerText": "Visit canvly.art",
-      "group": "live"
+      "group": "live",
+      "ios": null,
+      "android": null,
+      "web": "https://canvly.art"
     },
     {
       "id": "nailoop",
@@ -48,9 +55,11 @@
       "iconClass": "icon-nailoop",
       "status": "live",
       "statusLabel": "서비스중",
-      "href": "https://play.google.com/store/apps/details?id=com.nailoop.app",
-      "footerText": "View on Play Store",
-      "group": "live"
+      "href": "https://apps.apple.com/kr/app/nailoop/id6763687316",
+      "footerText": "View on App Store",
+      "group": "live",
+      "ios": "https://apps.apple.com/kr/app/nailoop/id6763687316",
+      "android": null
     },
     {
       "id": "opendocs",
@@ -63,7 +72,9 @@
       "statusLabel": "서비스중",
       "href": "https://apps.apple.com/kr/app/opendocs/id6763845346",
       "footerText": "View on App Store",
-      "group": "live"
+      "group": "live",
+      "ios": "https://apps.apple.com/kr/app/opendocs/id6763845346",
+      "android": null
     },
     {
       "id": "moodva",
@@ -72,11 +83,13 @@
       "tagKo": "좋은 습관이 쌓이는 하루.",
       "iconLetter": "M",
       "iconClass": "icon-moodva",
-      "status": "beta",
-      "statusLabel": "베타",
-      "href": null,
-      "footerText": "Coming to this page",
-      "group": "preparing"
+      "status": "live",
+      "statusLabel": "서비스중",
+      "href": "https://apps.apple.com/kr/app/moodva/id6761009900",
+      "footerText": "iOS · Android",
+      "group": "live",
+      "ios": "https://apps.apple.com/kr/app/moodva/id6761009900",
+      "android": "https://play.google.com/store/apps/details?id=com.moodva.moodva"
     },
     {
       "id": "eqquest",
