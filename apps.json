@@ -92,6 +92,20 @@
       "android": "https://play.google.com/store/apps/details?id=com.moodva.moodva"
     },
     {
+      "id": "trendreel",
+      "name": "TrendReel",
+      "tagEn": "Trends → daily YouTube Shorts. Set-and-forget.",
+      "tagKo": "트렌드 자동 → 매일 YouTube 영상. 다국어.",
+      "iconLetter": "T",
+      "iconClass": "icon-trendreel",
+      "status": "beta",
+      "statusLabel": "베타",
+      "group": "preparing",
+      "href": "https://wowpia.kr/trendreel/",
+      "web": "https://wowpia.kr/trendreel/",
+      "footerText": "Beta 신청"
+    },
+    {
       "id": "eqquest",
       "name": "EQ-Quest",
       "tagEn": "Little quests for emotional skill.",
