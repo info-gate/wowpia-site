@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>갤러리 운영 SaaS 완전 정리 — 전시 기획부터 작품 판매·작가 정산까지 — wowpia</title>
+  <meta name="description" content="갤러리 운영 SaaS가 무엇이고 왜 필요한지 실무 중심으로 정리했습니다. 작품 관리, 작가 계약, 온라인 판매까지 하나의 플랫폼으로 해결하는 방법을 확인하세요.">
+  <link rel="canonical" href="https://wowpia.kr/blog/갤러리-운영-saas/">
+  <link rel="alternate" hreflang="ko" href="https://wowpia.kr/blog/갤러리-운영-saas/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="갤러리 운영 SaaS 완전 정리 — 전시 기획부터 작품 판매·작가 정산까지">
+  <meta property="og:description" content="갤러리 운영 SaaS가 무엇이고 왜 필요한지 실무 중심으로 정리했습니다. 작품 관리, 작가 계약, 온라인 판매까지 하나의 플랫폼으로 해결하는 방법을 확인하세요.">
+  <meta property="og:url" content="https://wowpia.kr/blog/갤러리-운영-saas/">
+  <meta property="og:image" content="https://wowpia.kr/og-image.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-05-02T00:00:00.000Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "갤러리 운영 SaaS 완전 정리 — 전시 기획부터 작품 판매·작가 정산까지",
+  "description": "갤러리 운영 SaaS가 무엇이고 왜 필요한지 실무 중심으로 정리했습니다. 작품 관리, 작가 계약, 온라인 판매까지 하나의 플랫폼으로 해결하는 방법을 확인하세요.",
+  "image": "https://wowpia.kr/og-image.png",
+  "datePublished": "2026-05-02T00:00:00.000Z",
+  "inLanguage": "ko",
+  "url": "https://wowpia.kr/blog/갤러리-운영-saas/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "wowpia",
+    "url": "https://wowpia.kr"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "wowpia"
+  }
+}
+  </script>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#1D9E75">
+  <style>
+    :root {
+      --bg: #FAFAF7; --ink: #0F1419; --ink-soft: #3A3F47; --ink-mute: #7A828C;
+      --rule: #E5E5E0; --accent: #1D9E75; --accent-dark: #157A5A;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg); color: var(--ink);
+      font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { color: var(--accent); }
+
+    .nav {
+      max-width: 760px; margin: 0 auto; padding: 24px 24px 16px;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-brand {
+      font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600;
+      color: var(--ink); text-decoration: none;
+    }
+    .nav-brand em { color: var(--accent); font-style: italic; }
+    .nav-links { display: flex; gap: 20px; font-size: 14px; }
+    .nav-links a { color: var(--ink-soft); text-decoration: none; font-weight: 500; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 80px; }
+
+    .post-meta {
+      color: var(--ink-mute); font-size: 13px; margin-bottom: 8px;
+      display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+    }
+    .post-meta time { font-family: 'JetBrains Mono', monospace; }
+    .post-meta .tag {
+      padding: 2px 8px; background: var(--rule); border-radius: 4px;
+      font-size: 11px; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.4px;
+    }
+
+    article h1 {
+      font-family: 'Fraunces', serif; font-size: 38px; line-height: 1.2;
+      margin-bottom: 8px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em;
+    }
+    article .post-desc {
+      font-size: 18px; color: var(--ink-soft); margin: 8px 0 32px;
+      padding-bottom: 24px; border-bottom: 1px solid var(--rule); line-height: 1.5;
+    }
+    article h2 {
+      font-family: 'Fraunces', serif; font-size: 26px; margin: 36px 0 12px;
+      font-weight: 600; color: var(--ink);
+    }
+    article h3 { font-size: 20px; margin: 28px 0 10px; font-weight: 600; }
+    article p { margin-bottom: 18px; color: var(--ink); }
+    article ul, article ol { margin-bottom: 18px; padding-left: 24px; }
+    article li { margin-bottom: 6px; }
+    article code {
+      background: #F1F0EA; padding: 2px 6px; border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--accent-dark);
+    }
+    article pre {
+      background: #1A1D22; color: #F1F0EA; padding: 18px; border-radius: 8px;
+      margin: 18px 0; overflow-x: auto;
+    }
+    article pre code { background: transparent; color: inherit; padding: 0; font-size: 14px; }
+    article blockquote {
+      border-left: 3px solid var(--accent); padding-left: 18px;
+      color: var(--ink-soft); font-style: italic; margin: 18px 0;
+    }
+    article img { max-width: 100%; height: auto; border-radius: 8px; margin: 18px 0; }
+
+    .post-list { list-style: none; padding: 0; }
+    .post-list li {
+      padding: 24px 0; border-bottom: 1px solid var(--rule);
+    }
+    .post-list li:last-child { border-bottom: none; }
+    .post-list a {
+      text-decoration: none; color: inherit; display: block;
+    }
+    .post-list a:hover .post-title { color: var(--accent); }
+    .post-title {
+      font-family: 'Fraunces', serif; font-size: 22px; line-height: 1.3;
+      margin: 6px 0; color: var(--ink); transition: color 0.15s;
+    }
+    .post-card-desc { color: var(--ink-soft); font-size: 15px; line-height: 1.55; }
+
+    .footer {
+      max-width: 760px; margin: 0 auto; padding: 32px 24px;
+      border-top: 1px solid var(--rule); color: var(--ink-mute); font-size: 13px;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }</style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="nav-brand" href="/">wow<em>pia</em></a>
+    <div class="nav-links">
+      <a href="/" >Home</a>
+      <a href="/blog/" aria-current="page">Blog</a>
+      <span style="color:var(--ink-mute);font-size:12px">|</span>
+      <a href="/blog/" style="font-size:12px;color:var(--accent)">KO</a>
+      <a href="/blog/en/" style="font-size:12px;color:var(--ink-mute)">EN</a>
+      <a href="/blog/ja/" style="font-size:12px;color:var(--ink-mute)">JA</a>
+    </div>
+  </nav>
+  <main class="container">
+    <article>
+      <div class="post-meta">
+        <time datetime="2026-05-02">2026-05-02</time>
+        <span class="tag">갤러리운영</span><span class="tag">갤러리SaaS</span><span class="tag">미술플랫폼</span><span class="tag">Canvly</span><span class="tag">전시관리</span><span class="tag">갤러리디지털전환</span><span class="tag">한국미술</span>
+        
+      </div>
+      <h1>갤러리 운영 SaaS 완전 정리 — 전시 기획부터 작품 판매·작가 정산까지</h1>
+      <p class="post-desc">갤러리 운영 SaaS가 무엇이고 왜 필요한지 실무 중심으로 정리했습니다. 작품 관리, 작가 계약, 온라인 판매까지 하나의 플랫폼으로 해결하는 방법을 확인하세요.</p>
+      <p>갤러리 운영 SaaS는 전시 기획, 작품 등록, 작가 계약, 수익 정산을 하나의 클라우드 플랫폼에서 처리하는 솔루션입니다. 엑셀·종이 계약서 중심의 아날로그 운영에서 벗어나 업무 효율과 데이터 관리를 동시에 잡을 수 있습니다.</p>
+<p>국내 갤러리 운영 현장에는 아직 비효율이 많습니다. 작품 재고는 엑셀로, 작가 연락은 카카오톡으로, 계약서는 종이로 각각 따로 관리하는 갤러리가 대부분입니다. 갤러리 운영 SaaS는 이 파편화된 업무를 통합해 시간과 비용을 줄여줍니다.</p>
+<hr>
+<h2>갤러리 운영 SaaS란? 기존 방식과의 결정적 차이</h2>
+<p>전통적인 갤러리 운영은 도구가 부서마다 다릅니다. 재고는 스프레드시트, 일정은 캘린더 앱, 판매 기록은 별도 회계 프로그램... 이 모든 것이 따로 돌아가면 데이터 누락, 소통 오류, 반복 작업이 쌓입니다.</p>
+<p>SaaS 방식은 이 모든 기능을 하나의 플랫폼으로 묶습니다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>기존 방식</th>
+<th>SaaS 방식</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>작품 관리</td>
+<td>엑셀 + 사진 폴더</td>
+<td>디지털 카탈로그 + 검색</td>
+</tr>
+<tr>
+<td>작가 계약</td>
+<td>종이 계약·이메일</td>
+<td>전자계약 + 자동 정산</td>
+</tr>
+<tr>
+<td>전시 일정</td>
+<td>종이 캘린더</td>
+<td>팀 공유 온라인 캘린더</td>
+</tr>
+<tr>
+<td>판매·수익</td>
+<td>수기 장부</td>
+<td>실시간 대시보드</td>
+</tr>
+<tr>
+<td>관람객 소통</td>
+<td>전화·SNS</td>
+<td>통합 CRM</td>
+</tr>
+</tbody></table>
+<p>단순한 디지털화가 아닙니다. 갤러리를 운영하는 방식 자체를 바꾸는 전환입니다.</p>
+<hr>
+<h2>갤러리 운영 SaaS의 핵심 기능 5가지</h2>
+<h3>1. 작품·재고 디지털 관리</h3>
+<p>작품마다 고해상도 이미지, 작가 정보, 규격, 가격, 소장 이력을 한 곳에 저장합니다. 검색과 필터 기능 덕분에 수백 점의 작품도 즉시 조회할 수 있습니다.</p>
+<h3>2. 작가 계약 및 커미션 자동 정산</h3>
+<p>작가와의 계약 조건을 미리 등록해두면, 판매가 발생할 때마다 커미션이 자동으로 계산됩니다. 반복되는 정산 오류와 분쟁을 줄이는 데 결정적입니다.</p>
+<h3>3. 전시 기획 및 일정 관리</h3>
+<p>전시 일정, 작품 배치, 초청 작가 정보를 하나의 캘린더에서 팀과 공유합니다. 오픈 준비부터 마감까지 체크리스트 형식으로 진행 상황을 관리할 수 있습니다.</p>
+<h3>4. 온라인 전시·판매 채널</h3>
+<p>오프라인 갤러리에 머물지 않고, 플랫폼 안에서 온라인으로 작품을 소개하고 판매까지 연결합니다. 별도 쇼핑몰을 구축할 필요가 없습니다.</p>
+<h3>5. 관람객 데이터(CRM) 활용</h3>
+<p>방문 이력, 구매 내역, 관심 작품 데이터가 쌓이면 맞춤형 전시 추천과 VIP 관리가 가능해집니다. 단발성 방문자를 충성 고객으로 전환하는 핵심 기능입니다.</p>
+<hr>
+<h2>한국 갤러리 운영에 SaaS가 필요한 현실적 이유</h2>
+<p>한국 미술 시장은 최근 몇 년 사이 빠르게 커졌습니다. 아트페어 붐, MZ세대의 미술 소비 확대, 온라인 작품 거래 증가가 맞물리며 갤러리에 새로운 수요가 생겼습니다.</p>
+<p>그런데 운영 방식이 따라가지 못하는 경우가 많습니다.</p>
+<ul>
+<li>소규모 갤러리일수록 담당자 한 명이 모든 업무를 처리</li>
+<li>작가와의 계약·정산 분쟁이 반복적으로 발생</li>
+<li>온라인 채널 없이 오프라인만으로는 노출에 한계</li>
+<li>관람객 데이터를 쌓지 못해 마케팅 효율이 낮음</li>
+</ul>
+<p>갤러리 운영 SaaS의 가장 큰 장점은 <strong>초기 투자 없이 시작할 수 있다</strong>는 점입니다. 별도 서버나 IT 팀이 필요 없고, 구독 형태로 사용하면서 갤러리 규모에 맞게 기능을 확장할 수 있습니다.</p>
+<hr>
+<h2>Canvly로 시작하는 갤러리 디지털 전환</h2>
+<p>국내 갤러리 운영자를 위해 설계된 <strong>Canvly</strong>는 작품 관리, 작가 계약, 전시 기획, 온라인 판매를 하나의 화면에서 처리할 수 있도록 구성되어 있습니다.</p>
+<p>특히 한국 미술 시장의 특성을 반영한 점이 다릅니다. 국내 커미션 정산 구조, 한국어 인터페이스, 전자계약 연동까지 — 외산 툴을 쓰면서 생기는 불편함 없이 바로 실무에 적용할 수 있습니다.</p>
+<p>1인 갤러리부터 다수의 전시를 동시 운영하는 중형 갤러리까지, Canvly는 각 규모에 맞는 기능 구성을 제공합니다.</p>
+<hr>
+<h2>갤러리 운영 SaaS 도입 전 체크리스트</h2>
+<p>도입을 고려 중이라면 먼저 이 항목들을 점검해보세요.</p>
+<ul>
+<li><input disabled="" type="checkbox"> 작품 재고를 디지털로 관리하고 있는가?</li>
+<li><input disabled="" type="checkbox"> 작가 정산 과정에서 반복적인 오류가 생기는가?</li>
+<li><input disabled="" type="checkbox"> SNS 외의 온라인 채널을 통한 작품 판매를 원하는가?</li>
+<li><input disabled="" type="checkbox"> 관람객 데이터를 마케팅에 활용하고 싶은가?</li>
+<li><input disabled="" type="checkbox"> 팀원과 일정·업무를 실시간으로 공유해야 하는가?</li>
+</ul>
+<p>두 개 이상 해당된다면 갤러리 운영 SaaS 도입을 진지하게 검토할 시점입니다.</p>
+<hr>
+<p>갤러리 운영의 디지털 전환은 선택이 아니라 생존 전략이 되고 있습니다. 작품의 가치를 알리고, 작가와의 신뢰를 쌓고, 관람객을 고객으로 만드는 모든 과정을 하나의 플랫폼에서 관리할 수 있을 때 — 갤러리는 더 많은 에너지를 본질, 즉 &#39;좋은 전시&#39;에 집중할 수 있습니다.</p>
+<p><strong>Canvly</strong>는 그 변화를 가장 현실적으로 시작할 수 있는 출발점입니다.</p>
+<hr>
+<h2>📱 Canvly 다운로드</h2>
+<p>👉 <a href="https://wowpia.kr/c">**wowpia.kr/c**</a> — 한 번에 받기</p>
+<p><a href="https://canvly.art" target="_blank" rel="noopener noreferrer">소개 페이지</a> — <em>곧 출시 예정</em></p>
+
+    </article>
+  </main>
+  <footer class="footer">
+    <div>© 2026 Info-Gate Inc. — wowpia</div>
+    <div><a href="https://wowpia.kr">wowpia.kr</a></div>
+  </footer>
+  <style>
+    .pron-word { display: inline-flex; align-items: center; gap: 4px; padding: 1px 6px; background: #e0f2fe; color: #0369a1; border-radius: 4px; cursor: pointer; font-weight: 600; transition: background 0.15s, transform 0.1s; user-select: none; }
+    .pron-word:hover { background: #bae6fd; }
+    .pron-word:active { transform: scale(0.98); }
+    .pron-word.playing { background: #1d9e75; color: #fff; }
+    .pron-icon { font-size: 0.85em; opacity: 0.7; }
+  </style>
+  <script>
+    (function() {
+      if (!('speechSynthesis' in window)) return;
+      document.querySelectorAll('.pron-word').forEach(el => {
+        const speak = () => {
+          const word = el.dataset.word;
+          if (!word) return;
+          window.speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance(word);
+          u.lang = 'en-US';
+          u.rate = 0.9;
+          el.classList.add('playing');
+          u.onend = () => el.classList.remove('playing');
+          u.onerror = () => el.classList.remove('playing');
+          window.speechSynthesis.speak(u);
+        };
+        el.addEventListener('click', speak);
+        el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); speak(); } });
+      });
+    })();
+  </script>
+</body>
+</html>
