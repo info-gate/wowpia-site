@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barolingo 1.0.4 — Thank You to Our First Learners — wowpia</title>
+  <meta name="description" content="Barolingo 1.0.4 update — onboarding fix, AI chunk explanation in 10 languages (lazy LLM cache), email update">
+  <link rel="canonical" href="https://wowpia.kr/blog/en/barolingo-1-0-4-update-first-users-en/">
+  <link rel="alternate" hreflang="en" href="https://wowpia.kr/blog/en/barolingo-1-0-4-update-first-users-en/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Barolingo 1.0.4 — Thank You to Our First Learners">
+  <meta property="og:description" content="Barolingo 1.0.4 update — onboarding fix, AI chunk explanation in 10 languages (lazy LLM cache), email update">
+  <meta property="og:url" content="https://wowpia.kr/blog/en/barolingo-1-0-4-update-first-users-en/">
+  <meta property="og:image" content="https://wowpia.kr/og-image.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-05-02T00:00:00.000Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Barolingo 1.0.4 — Thank You to Our First Learners",
+  "description": "Barolingo 1.0.4 update — onboarding fix, AI chunk explanation in 10 languages (lazy LLM cache), email update",
+  "image": "https://wowpia.kr/og-image.png",
+  "datePublished": "2026-05-02T00:00:00.000Z",
+  "inLanguage": "en",
+  "url": "https://wowpia.kr/blog/en/barolingo-1-0-4-update-first-users-en/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "wowpia",
+    "url": "https://wowpia.kr"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "wowpia"
+  }
+}
+  </script>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#1D9E75">
+  <style>
+    :root {
+      --bg: #FAFAF7; --ink: #0F1419; --ink-soft: #3A3F47; --ink-mute: #7A828C;
+      --rule: #E5E5E0; --accent: #1D9E75; --accent-dark: #157A5A;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg); color: var(--ink);
+      font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { color: var(--accent); }
+
+    .nav {
+      max-width: 760px; margin: 0 auto; padding: 24px 24px 16px;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-brand {
+      font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600;
+      color: var(--ink); text-decoration: none;
+    }
+    .nav-brand em { color: var(--accent); font-style: italic; }
+    .nav-links { display: flex; gap: 20px; font-size: 14px; }
+    .nav-links a { color: var(--ink-soft); text-decoration: none; font-weight: 500; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 80px; }
+
+    .post-meta {
+      color: var(--ink-mute); font-size: 13px; margin-bottom: 8px;
+      display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+    }
+    .post-meta time { font-family: 'JetBrains Mono', monospace; }
+    .post-meta .tag {
+      padding: 2px 8px; background: var(--rule); border-radius: 4px;
+      font-size: 11px; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.4px;
+    }
+
+    article h1 {
+      font-family: 'Fraunces', serif; font-size: 38px; line-height: 1.2;
+      margin-bottom: 8px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em;
+    }
+    article .post-desc {
+      font-size: 18px; color: var(--ink-soft); margin: 8px 0 32px;
+      padding-bottom: 24px; border-bottom: 1px solid var(--rule); line-height: 1.5;
+    }
+    article h2 {
+      font-family: 'Fraunces', serif; font-size: 26px; margin: 36px 0 12px;
+      font-weight: 600; color: var(--ink);
+    }
+    article h3 { font-size: 20px; margin: 28px 0 10px; font-weight: 600; }
+    article p { margin-bottom: 18px; color: var(--ink); }
+    article ul, article ol { margin-bottom: 18px; padding-left: 24px; }
+    article li { margin-bottom: 6px; }
+    article code {
+      background: #F1F0EA; padding: 2px 6px; border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--accent-dark);
+    }
+    article pre {
+      background: #1A1D22; color: #F1F0EA; padding: 18px; border-radius: 8px;
+      margin: 18px 0; overflow-x: auto;
+    }
+    article pre code { background: transparent; color: inherit; padding: 0; font-size: 14px; }
+    article blockquote {
+      border-left: 3px solid var(--accent); padding-left: 18px;
+      color: var(--ink-soft); font-style: italic; margin: 18px 0;
+    }
+    article img { max-width: 100%; height: auto; border-radius: 8px; margin: 18px 0; }
+
+    .post-list { list-style: none; padding: 0; }
+    .post-list li {
+      padding: 24px 0; border-bottom: 1px solid var(--rule);
+    }
+    .post-list li:last-child { border-bottom: none; }
+    .post-list a {
+      text-decoration: none; color: inherit; display: block;
+    }
+    .post-list a:hover .post-title { color: var(--accent); }
+    .post-title {
+      font-family: 'Fraunces', serif; font-size: 22px; line-height: 1.3;
+      margin: 6px 0; color: var(--ink); transition: color 0.15s;
+    }
+    .post-card-desc { color: var(--ink-soft); font-size: 15px; line-height: 1.55; }
+
+    .footer {
+      max-width: 760px; margin: 0 auto; padding: 32px 24px;
+      border-top: 1px solid var(--rule); color: var(--ink-mute); font-size: 13px;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }</style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="nav-brand" href="/">wow<em>pia</em></a>
+    <div class="nav-links">
+      <a href="/" >Home</a>
+      <a href="/blog/en/" aria-current="page">Blog</a>
+      <span style="color:var(--ink-mute);font-size:12px">|</span>
+      <a href="/blog/" style="font-size:12px;color:var(--ink-mute)">KO</a>
+      <a href="/blog/en/" style="font-size:12px;color:var(--accent)">EN</a>
+      <a href="/blog/ja/" style="font-size:12px;color:var(--ink-mute)">JA</a>
+    </div>
+  </nav>
+  <main class="container">
+    <article>
+      <div class="post-meta">
+        <time datetime="2026-05-02">2026-05-02</time>
+        <span class="tag">Barolingo</span><span class="tag">EnglishLearning</span><span class="tag">ChunkMethod</span><span class="tag">ESL</span><span class="tag">AppUpdate</span>
+        
+      </div>
+      <h1>Barolingo 1.0.4 — Thank You to Our First Learners</h1>
+      <p class="post-desc">Barolingo 1.0.4 update — onboarding fix, AI chunk explanation in 10 languages (lazy LLM cache), email update</p>
+      <h2>To Our First Real Learners</h2>
+<p>Today, the first real users showed up in the Barolingo ranking. We don&#39;t know your names but we wanted to say it across the screen — <strong>thank you</strong>.</p>
+<p>We&#39;re a tiny indie app studio. Each new daily user is a big deal. Here&#39;s what changed in 1.0.4 based on your feedback.</p>
+<h2>What&#39;s New in 1.0.4</h2>
+<h3>1. Notification taps &amp; relaunches now skip onboarding</h3>
+<p>Tapping a learning reminder, or simply reopening the app, used to drop you back into the onboarding screen even when you were already logged in. Fixed — <strong>logged-in users now go straight to the home screen</strong>.</p>
+<p>Under the hood: token-based session restore → /me fetch → correct routing branch (main / onboarding / sign-in).</p>
+<h3>2. 💡 Chunk &quot;Explain More&quot; — auto in your language (10 supported)</h3>
+<p>The short translation next to each English chunk isn&#39;t always enough. In the dictionary, tap the new <strong>&quot;💡 Explain&quot;</strong> button on any chunk and an AI will show a <strong>4-layer explanation</strong>:</p>
+<ul>
+<li><strong>Literal</strong> — word-by-word translation</li>
+<li><strong>Natural</strong> — how a native speaker would actually say it in your language</li>
+<li><strong>Nuance</strong> — when to use it (formal vs casual, common situations)</li>
+<li><strong>Similar expressions</strong> — alternative ways to say the same thing</li>
+</ul>
+<p>Korean users get Korean, <strong>Japanese learners get 日本語, Turkish/Mongolian/Bengali/Nepali/Burmese/Kazakh/Uzbek users automatically get their own language</strong> — 10 languages total.</p>
+<p>Technical detail: Claude Haiku generates the explanation on first request only, then it&#39;s cached in the database. The next person who looks up the same chunk in the same language gets the cached version instantly.</p>
+<h3>3. Contact email updated</h3>
+<p>Contact email is now <code>wowpia0127@gmail.com</code> (Settings + Help screens).</p>
+<h2>Coming in 1.1</h2>
+<ul>
+<li><strong>Ranking cheer button</strong> 👏 — 1-tap encourage other learners</li>
+<li><strong>Country flags</strong> 🇰🇷 🇺🇸 🇯🇵 — see which country fellow learners are from</li>
+<li><strong>Better TTS</strong> — exploring OpenAI TTS API</li>
+<li><strong>Streak fire</strong> 🔥 — 3/7/30-day rewards</li>
+<li><strong>Friend invite</strong> — both sides get a bonus</li>
+</ul>
+<h2>Built Together</h2>
+<p>Small app, but we genuinely want it to help someone learn English. Feedback and bug reports always welcome.</p>
+<p>📱 Download: <a href="https://apps.apple.com/us/app/barolingo/id6762762921" target="_blank" rel="noopener noreferrer">App Store</a> · <a href="https://play.google.com/store/apps/details?id=com.barolingo.app" target="_blank" rel="noopener noreferrer">Google Play</a></p>
+<p>📧 Contact: <a href="mailto:wowpia0127@gmail.com" target="_blank" rel="noopener noreferrer">wowpia0127@gmail.com</a></p>
+
+    </article>
+  </main>
+  <footer class="footer">
+    <div>© 2026 Info-Gate Inc. — wowpia</div>
+    <div><a href="https://wowpia.kr">wowpia.kr</a></div>
+  </footer>
+  <style>
+    .pron-word { display: inline-flex; align-items: center; gap: 4px; padding: 1px 6px; background: #e0f2fe; color: #0369a1; border-radius: 4px; cursor: pointer; font-weight: 600; transition: background 0.15s, transform 0.1s; user-select: none; }
+    .pron-word:hover { background: #bae6fd; }
+    .pron-word:active { transform: scale(0.98); }
+    .pron-word.playing { background: #1d9e75; color: #fff; }
+    .pron-icon { font-size: 0.85em; opacity: 0.7; }
+  </style>
+  <script>
+    (function() {
+      if (!('speechSynthesis' in window)) return;
+      document.querySelectorAll('.pron-word').forEach(el => {
+        const speak = () => {
+          const word = el.dataset.word;
+          if (!word) return;
+          window.speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance(word);
+          u.lang = 'en-US';
+          u.rate = 0.9;
+          el.classList.add('playing');
+          u.onend = () => el.classList.remove('playing');
+          u.onerror = () => el.classList.remove('playing');
+          window.speechSynthesis.speak(u);
+        };
+        el.addEventListener('click', speak);
+        el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); speak(); } });
+      });
+    })();
+  </script>
+</body>
+</html>
