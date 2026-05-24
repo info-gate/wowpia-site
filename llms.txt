@@ -1,13 +1,13 @@
 # wowpia (Info-Gate Inc.)
 
-> wowpia는 한국 서울 기반의 앱·SaaS 스튜디오 **주식회사 인포게이트(Info-Gate Inc.)** 의 프로덕트 브랜드입니다. 모바일 앱과 B2B SaaS 를 모두 만들며, "Engineering everyday wonder" 를 모토로 합니다. 연락: parkbongjun23@gmail.com
+> wowpia는 한국 서울 기반의 앱·SaaS 스튜디오 **주식회사 인포게이트(Info-Gate Inc.)** 의 프로덕트 브랜드입니다. 모바일 앱과 B2B SaaS 를 모두 만들며, "Engineering everyday wonder" 를 모토로 합니다. 연락: wowpia0127@gmail.com
 
 회사: 주식회사 인포게이트 (Info-Gate Inc.)
 브랜드: wowpia
 도메인: https://wowpia.kr/
 위치: 대한민국 서울
 설립자/대표: 박봉준 (BongJun Park)
-이메일: parkbongjun23@gmail.com
+이메일: wowpia0127@gmail.com
 
 ## 모바일 앱 (Live)
 
@@ -53,4 +53,4 @@
 ## 문의
 
 비즈니스 / B2B SaaS 문의 (CellOps · Canvly · Koinonia · TrendReel), 앱 제휴, 채용 모두 다음으로:
-- 📧 parkbongjun23@gmail.com
+- 📧 wowpia0127@gmail.com
