@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://wowpia.kr/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://wowpia.kr/trendreel/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://wowpia.kr/blog/</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
+  <url><loc>https://wowpia.kr/</loc></url>
+  <url><loc>https://wowpia.kr/blog/</loc></url>
   <url><loc>https://wowpia.kr/blog/en/</loc></url>
   <url><loc>https://wowpia.kr/blog/ja/</loc></url>
+  <url>
+    <loc>https://wowpia.kr/blog/es/aprende-coreano-con-k-pop-5/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://wowpia.kr/blog/es/aprende-coreano-con-k-pop-5/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://wowpia.kr/blog/id/belajar-bahasa-korea-dari-k-pop/"/>
+  </url>
+  <url>
+    <loc>https://wowpia.kr/blog/id/belajar-bahasa-korea-dari-k-pop/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://wowpia.kr/blog/es/aprende-coreano-con-k-pop-5/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://wowpia.kr/blog/id/belajar-bahasa-korea-dari-k-pop/"/>
+  </url>
+  <url>
+    <loc>https://wowpia.kr/blog/en/k-pop-korean-language-learning-5/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wowpia.kr/blog/en/k-pop-korean-language-learning-5/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://wowpia.kr/blog/ja/k-pop/"/>
+  </url>
+  <url>
+    <loc>https://wowpia.kr/blog/k-pop-한국어-배우기/</loc>
+    <lastmod>2026-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://wowpia.kr/blog/ja/k-pop/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wowpia.kr/blog/en/k-pop-korean-language-learning-5/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://wowpia.kr/blog/ja/k-pop/"/>
+  </url>
   <url>
     <loc>https://wowpia.kr/blog/en/barolingo-korean-premium-launch-en/</loc>
     <lastmod>2026-05-19</lastmod>
