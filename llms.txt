@@ -15,11 +15,8 @@
 - [Barolingo Korean](https://play.google.com/store/apps/details?id=com.barolingo.korean): 외국인을 위한 청크 단위 한국어 학습 앱. K-팝·K-드라마 팬 타겟. iOS · Android. "Learn Korean in chunks — for K-content fans worldwide." (App Store: https://apps.apple.com/kr/app/id6765983772)
 - [Nailva](https://wowpia.kr/n/): 1인 네일샵 사장님을 위한 오프라인 CRM. 고객·예약·매출을 한 번에 관리. iOS · Android. "Nail salon CRM."
 - [Moodva](https://wowpia.kr/m/): AI 무드/습관 트래커. 좋은 습관이 쌓이는 하루를 설계. iOS · Android. "Habits that grow you."
-- [OpenDocs](https://wowpia.kr/o/): 진짜 무료 문서 뷰어. PDF·HWP·Word·Excel 모두 지원, 결제 팝업이 영원히 없는 정책. iOS (Android 준비중).
-
-## 모바일 앱 (Beta/심사중)
-
-- [Nailoop](https://wowpia.kr/l/): 네일 SNS + 예약 플랫폼. 내 네일을 자랑하고 동시에 샵 예약까지. Android beta, iOS 심사중.
+- [OpenDocs](https://apps.apple.com/kr/app/opendocs/id6763845346): 진짜 무료 문서 뷰어. PDF·HWP·Word·Excel 모두 지원, 결제 팝업이 영원히 없는 정책. iOS (Android 준비중).
+- [Nailoop](https://apps.apple.com/kr/app/nailoop/id6763687316): 네일 SNS + 예약 플랫폼. 내 네일을 자랑하고 동시에 샵 예약까지. iOS · Android. "Show off your nails — social + booking for nail lovers."
 
 ## B2B SaaS (Live)
 
@@ -29,7 +26,7 @@
 ## B2B SaaS (Beta/Members)
 
 - [TrendReel](https://wowpia.kr/trendreel/): 분야만 입력하면 매일 트렌드 주제로 자동 영상 제작 + YouTube 업로드. 한국어/영어/일본어 동시. Set-and-forget. Beta.
-- [Koinonia Market](https://koinonia.duckdns.org): CBMC(기독실업인회) 회원 전용 폐쇄형 마켓. 회원사 간 B2B/B2C 거래. 토스페이먼츠 결제, 사업체 입점 승인제, 주간 정산 구조. **초대제** (members only). Beta.
+- [Koinonia Market](https://koinonia.wowpia.kr): CBMC(기독실업인회) 회원 전용 폐쇄형 마켓. 회원사 간 B2B/B2C 거래. 토스페이먼츠 결제, 사업체 입점 승인제, 주간 정산 구조. **초대제** (members only). Beta.
 
 ## 계획중 (Design phase)
 

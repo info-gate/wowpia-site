@@ -117,11 +117,13 @@
       "iconLetter": "N",
       "iconClass": "icon-nailoop",
       "iconUrl": "icons/nailoop.png",
-      "status": "beta",
-      "statusLabel": "iOS Coming Soon",
-      "group": "preparing",
-      "href": "https://info-gate.github.io/nailoop/",
-      "footerText": "Landing page (App Store review in progress)"
+      "status": "live",
+      "statusLabel": "Live",
+      "group": "live",
+      "href": "https://apps.apple.com/kr/app/nailoop/id6763687316",
+      "ios": "https://apps.apple.com/kr/app/nailoop/id6763687316",
+      "android": "https://play.google.com/store/apps/details?id=com.nailoop.app",
+      "footerText": "View on App Store"
     },
     {
       "id": "trendreel",
@@ -149,8 +151,8 @@
       "status": "beta",
       "statusLabel": "Members Only",
       "group": "preparing",
-      "href": "https://koinonia.duckdns.org",
-      "web": "https://koinonia.duckdns.org",
+      "href": "https://koinonia.wowpia.kr",
+      "web": "https://koinonia.wowpia.kr",
       "footerText": "By invitation"
     },
     {

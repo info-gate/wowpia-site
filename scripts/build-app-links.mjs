@@ -52,6 +52,7 @@ const APPS = {
     description: '네일 SNS + 예약 — 네일 자랑 + 샵 예약 한 번에',
     color: '#FF6B9D',
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.nailoop.app',
+    appStoreUrl: 'https://apps.apple.com/kr/app/nailoop/id6763687316',
   },
 };
 
