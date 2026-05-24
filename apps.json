@@ -140,6 +140,7 @@
       "tagKo": "분야만 입력하면 매일 트렌드 영상 자동 제작·업로드. 한·영·일 동시.",
       "iconLetter": "T",
       "iconClass": "icon-trendreel",
+      "iconUrl": "icons/trendreel.svg",
       "status": "beta",
       "statusLabel": "Beta",
       "group": "preparing",
