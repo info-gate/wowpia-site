@@ -56,11 +56,13 @@
       "iconLetter": "M",
       "iconClass": "icon-moodva",
       "iconUrl": "icons/moodva.png",
-      "status": "beta",
-      "statusLabel": "Beta",
-      "group": "preparing",
-      "href": "https://play.google.com/store/apps/details?id=com.moodva.moodva",
-      "footerText": "Coming to this page"
+      "status": "live",
+      "statusLabel": "Live",
+      "group": "live",
+      "href": "https://apps.apple.com/kr/app/moodva/id6761009900",
+      "ios": "https://apps.apple.com/kr/app/moodva/id6761009900",
+      "android": "https://play.google.com/store/apps/details?id=com.moodva.moodva",
+      "footerText": "View on App Store"
     },
     {
       "id": "canvly",
@@ -100,11 +102,12 @@
       "iconLetter": "O",
       "iconClass": "icon-opendocs",
       "iconUrl": "icons/opendocs.png",
-      "status": "soon",
-      "statusLabel": "Soon",
-      "group": "planned",
+      "status": "live",
+      "statusLabel": "Live",
+      "group": "live",
       "href": "https://apps.apple.com/kr/app/opendocs/id6763845346",
-      "footerText": "In development"
+      "ios": "https://apps.apple.com/kr/app/opendocs/id6763845346",
+      "footerText": "View on App Store"
     },
     {
       "id": "nailoop",
