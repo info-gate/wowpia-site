@@ -1,10 +1,40 @@
 User-agent: *
 Allow: /
 
-# 크롤러 안내 — 모든 봇 환영
+# 크롤러 안내 — 모든 봇 환영 (Google, Bing, Naver, Daum 등)
 # 사이트맵 (다국어 ko/en/ja 통합)
 Sitemap: https://wowpia.kr/sitemap.xml
 
+# LLM-friendly resource (https://llmstxt.org/)
+# 회사·서비스 요약을 LLM 친화 마크다운으로 제공
+# llms.txt: https://wowpia.kr/llms.txt
+
+# AI/LLM 크롤러 명시 허용 (검색·답변에 wowpia 정보 포함되도록)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 # 차단 디렉토리 (있는 경우만)
+User-agent: *
 Disallow: /admin/
 Disallow: /api/
+Disallow: /m/
+Disallow: /n/
+Disallow: /c/
+Disallow: /b/
+Disallow: /o/
+Disallow: /l/

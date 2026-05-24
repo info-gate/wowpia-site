@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://wowpia.kr/</loc></url>
-  <url><loc>https://wowpia.kr/blog/</loc></url>
+  <url>
+    <loc>https://wowpia.kr/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://wowpia.kr/trendreel/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://wowpia.kr/blog/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
   <url><loc>https://wowpia.kr/blog/en/</loc></url>
   <url><loc>https://wowpia.kr/blog/ja/</loc></url>
   <url>

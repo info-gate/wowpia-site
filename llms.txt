@@ -1,0 +1,58 @@
+# wowpia (Info-Gate Inc.)
+
+> wowpia는 한국 서울 기반의 앱·SaaS 스튜디오 **주식회사 인포게이트(Info-Gate Inc.)** 의 프로덕트 브랜드입니다. 모바일 앱과 B2B SaaS 를 모두 만들며, "Engineering everyday wonder" 를 모토로 합니다. 연락: parkbongjun23@gmail.com
+
+회사: 주식회사 인포게이트 (Info-Gate Inc.)
+브랜드: wowpia
+도메인: https://wowpia.kr/
+위치: 대한민국 서울
+설립자/대표: 박봉준 (BongJun Park)
+이메일: parkbongjun23@gmail.com
+
+## 모바일 앱 (Live)
+
+- [Barolingo](https://wowpia.kr/b/): AI 영어 학습 앱. 청크 단위로 들리는 순서 그대로 영어를 배우는 듣기 훈련. iOS · Android. "Hear English in order."
+- [Nailva](https://wowpia.kr/n/): 1인 네일샵 사장님을 위한 오프라인 CRM. 고객·예약·매출을 한 번에 관리. iOS · Android. "Nail salon CRM."
+- [Moodva](https://wowpia.kr/m/): AI 무드/습관 트래커. 좋은 습관이 쌓이는 하루를 설계. iOS · Android. "Habits that grow you."
+- [OpenDocs](https://wowpia.kr/o/): 진짜 무료 문서 뷰어. PDF·HWP·Word·Excel 모두 지원, 결제 팝업이 영원히 없는 정책. iOS (Android 준비중).
+
+## 모바일 앱 (Beta/심사중)
+
+- [Nailoop](https://wowpia.kr/l/): 네일 SNS + 예약 플랫폼. 내 네일을 자랑하고 동시에 샵 예약까지. Android beta, iOS 심사중.
+
+## B2B SaaS (Live)
+
+- [Canvly.art](https://canvly.art): 갤러리 운영자를 위한 올인원 SaaS. 작품·전시·고객·매출을 통합 관리. 웹 기반.
+- [CellOps](https://cellops.duckdns.org): **배터리 / 태양광 ESS 실시간 관제 SaaS**. BMS 텔레메트리 수신, 셀 편차·온도·SOC·알람 모니터링. **하드웨어 중립** 설계로 어떤 배터리든 BMS만 연결하면 관제 가능. 다중 사이트 1화면 관제. 대기업(LG/삼성/한화) 자체 ESS lock-in 시장의 틈새를 노립니다. Phase 1 가동중, 시뮬레이터·실시간 차트·알람 룰엔진·텔레그램 알림 완비.
+
+## B2B SaaS (Beta/Members)
+
+- [TrendReel](https://wowpia.kr/trendreel/): 분야만 입력하면 매일 트렌드 주제로 자동 영상 제작 + YouTube 업로드. 한국어/영어/일본어 동시. Set-and-forget. Beta.
+- [Koinonia Market](https://koinonia.duckdns.org): CBMC(기독실업인회) 회원 전용 폐쇄형 마켓. 회원사 간 B2B/B2C 거래. 토스페이먼츠 결제, 사업체 입점 승인제, 주간 정산 구조. **초대제** (members only). Beta.
+
+## 계획중 (Design phase)
+
+- EQ-Quest: 감정을 다루는 작은 퀘스트. 자녀·청소년 정서 스킬 게이미피케이션. (모바일 앱, 설계중)
+- Pawfriend: 반려동물의 곁을 지키는 친구. (모바일 앱, 설계중)
+- Focus Timer: 광고 없이 집중하고, 통계로 내 하루를 증명하는 포모도로 타이머. (모바일 앱, 설계중)
+
+## 기술 스택 (공통)
+
+- Frontend: Next.js, TypeScript, Tailwind CSS
+- Backend: Next.js Route Handlers, Prisma, PostgreSQL (시계열은 TimescaleDB)
+- 모바일: Expo, Capacitor
+- 인프라: 자체 호스팅 (Linux) + PM2 + Nginx + Let's Encrypt + Cloudflare Pages
+- 결제: 토스페이먼츠 (사내 표준)
+- 알림: Telegram Bot, 이메일
+
+## Optional
+
+- [Blog (Korean)](https://wowpia.kr/blog/): 제품 출시 노트, 기술·디자인 노트
+- [Blog (English)](https://wowpia.kr/blog/en/): English posts
+- [Blog (Japanese)](https://wowpia.kr/blog/ja/): 日本語 posts
+- [Sitemap (XML)](https://wowpia.kr/sitemap.xml)
+
+## 문의
+
+비즈니스 / B2B SaaS 문의 (CellOps · Canvly · Koinonia · TrendReel), 앱 제휴, 채용 모두 다음으로:
+- 📧 parkbongjun23@gmail.com
