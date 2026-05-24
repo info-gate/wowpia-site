@@ -259,7 +259,15 @@
       font-weight: 600;
       color: #fff;
       flex-shrink: 0;
+      overflow: hidden;
     }
+    .app-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .app-icon.img-icon { background: #fff; border: 1px solid var(--rule); padding: 0; }
     .app-name {
       font-family: 'Fraunces', serif;
       font-size: 22px;
@@ -438,49 +446,49 @@
         </div>
         <article class="app-card" itemscope itemtype="https://schema.org/MobileApplication">
           <span class="app-status live">Live</span>
-          <div class="app-icon icon-barolingo">B</div>
+          <div class="app-icon img-icon"><img src="icons/barolingo.png" alt="Barolingo icon" loading="lazy" width="48" height="48"></div>
           <div class="app-name" itemprop="name">Barolingo</div>
           <div class="app-tag" itemprop="description">AI 영어 학습 — 청크 단위 듣기 훈련. Hear English in order.</div>
           <div class="app-footer"><a href="https://wowpia.kr/b/" itemprop="url">Download →</a></div>
         </article>
         <article class="app-card" itemscope itemtype="https://schema.org/MobileApplication">
           <span class="app-status live">Live</span>
-          <div class="app-icon icon-barolingo-korean">B</div>
+          <div class="app-icon img-icon"><img src="icons/barolingo-korean.png" alt="Barolingo Korean icon" loading="lazy" width="48" height="48"></div>
           <div class="app-name" itemprop="name">Barolingo Korean</div>
           <div class="app-tag" itemprop="description">외국인을 위한 청크 단위 한국어 학습 — K-팝·K-드라마 팬 타겟. Learn Korean in chunks for K-content fans worldwide.</div>
           <div class="app-footer"><a href="https://play.google.com/store/apps/details?id=com.barolingo.korean" itemprop="url" target="_blank" rel="noopener">Download →</a></div>
         </article>
         <article class="app-card" itemscope itemtype="https://schema.org/MobileApplication">
           <span class="app-status live">Live</span>
-          <div class="app-icon icon-nailva">N</div>
+          <div class="app-icon img-icon"><img src="icons/nailva.png" alt="Nailva icon" loading="lazy" width="48" height="48"></div>
           <div class="app-name" itemprop="name">Nailva</div>
           <div class="app-tag" itemprop="description">1인 네일샵 사장님을 위한 오프라인 CRM — 고객·예약·매출 한 번에.</div>
           <div class="app-footer"><a href="https://wowpia.kr/n/" itemprop="url">Download →</a></div>
         </article>
         <article class="app-card" itemscope itemtype="https://schema.org/MobileApplication">
           <span class="app-status live">Live</span>
-          <div class="app-icon icon-moodva">M</div>
+          <div class="app-icon img-icon"><img src="icons/moodva.png" alt="Moodva icon" loading="lazy" width="48" height="48"></div>
           <div class="app-name" itemprop="name">Moodva</div>
           <div class="app-tag" itemprop="description">AI 무드/습관 트래커 — 좋은 습관이 쌓이는 하루.</div>
           <div class="app-footer"><a href="https://wowpia.kr/m/" itemprop="url">Download →</a></div>
         </article>
         <article class="app-card" itemscope itemtype="https://schema.org/WebApplication">
           <span class="app-status live">Live</span>
-          <div class="app-icon icon-canvly">C</div>
+          <div class="app-icon img-icon"><img src="icons/canvly.png" alt="Canvly icon" loading="lazy" width="48" height="48"></div>
           <div class="app-name" itemprop="name">Canvly.art</div>
           <div class="app-tag" itemprop="description">갤러리 운영자를 위한 올인원 SaaS — 작품·전시·고객·매출 통합 관리.</div>
           <div class="app-footer"><a href="https://canvly.art" itemprop="url">Visit canvly.art →</a></div>
         </article>
         <article class="app-card" itemscope itemtype="https://schema.org/WebApplication">
           <span class="app-status live">Live</span>
-          <div class="app-icon icon-cellops">C</div>
+          <div class="app-icon img-icon"><img src="icons/cellops.png" alt="CellOps icon" loading="lazy" width="48" height="48"></div>
           <div class="app-name" itemprop="name">CellOps</div>
           <div class="app-tag" itemprop="description">배터리·태양광 ESS 실시간 관제 SaaS — 하드웨어 중립, 다중 사이트 1화면 관제. BMS 텔레메트리 수신, 셀 편차·온도·SOC·알람 모니터링.</div>
           <div class="app-footer"><a href="https://cellops.duckdns.org" itemprop="url">Visit CellOps →</a></div>
         </article>
         <article class="app-card" itemscope itemtype="https://schema.org/MobileApplication">
           <span class="app-status live">Live</span>
-          <div class="app-icon icon-opendocs">O</div>
+          <div class="app-icon img-icon"><img src="icons/opendocs.png" alt="OpenDocs icon" loading="lazy" width="48" height="48"></div>
           <div class="app-name" itemprop="name">OpenDocs</div>
           <div class="app-tag" itemprop="description">무료 문서 뷰어 — PDF·HWP·Word·Excel. 결제 팝업 없음, 영원히 무료.</div>
           <div class="app-footer"><a href="https://wowpia.kr/o/" itemprop="url">Download →</a></div>
@@ -492,7 +500,7 @@
         </div>
         <article class="app-card" itemscope itemtype="https://schema.org/MobileApplication">
           <span class="app-status beta">Beta</span>
-          <div class="app-icon icon-nailoop">L</div>
+          <div class="app-icon img-icon"><img src="icons/nailoop.png" alt="Nailoop icon" loading="lazy" width="48" height="48"></div>
           <div class="app-name" itemprop="name">Nailoop</div>
           <div class="app-tag" itemprop="description">네일 SNS + 예약 — 내 네일 자랑 + 샵 예약 한 번에.</div>
           <div class="app-footer"><a href="https://wowpia.kr/l/" itemprop="url">Download →</a></div>
@@ -506,7 +514,7 @@
         </article>
         <article class="app-card" itemscope itemtype="https://schema.org/WebApplication">
           <span class="app-status beta">Members</span>
-          <div class="app-icon icon-koinonia">K</div>
+          <div class="app-icon img-icon"><img src="icons/koinonia.svg" alt="Koinonia mark" loading="lazy" width="48" height="48"></div>
           <div class="app-name" itemprop="name">Koinonia Market</div>
           <div class="app-tag" itemprop="description">CBMC(기독실업인회) 회원 전용 폐쇄형 마켓 — 회원사 간 B2B/B2C 거래. 초대제, 프리미엄.</div>
           <div class="app-footer" style="color:var(--ink-mute);font-size:12px">By invitation</div>
@@ -603,6 +611,13 @@
         const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({
           '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
         })[c]);
+        const renderIcon = (a) => {
+          // iconUrl 우선 — 없으면 letter+gradient 폴백
+          if (a.iconUrl) {
+            return `<div class="app-icon img-icon"><img src="${esc(a.iconUrl)}" alt="${esc(a.name)} icon" loading="lazy" width="48" height="48"></div>`;
+          }
+          return `<div class="app-icon ${esc(a.iconClass)}">${esc(a.iconLetter)}</div>`;
+        };
         const renderCard = (a) => {
           // 카드 자체는 link 아닌 div (안에 store buttons 가 link)
           const stores = [];
@@ -613,7 +628,7 @@
             // legacy fallback (eqquest/pawfriend 같이 link 없는 경우)
             return `<div class="app-card" role="article">
               <span class="app-status ${esc(statusToClass[a.status] || 'soon')}">${esc(a.statusLabel)}</span>
-              <div class="app-icon ${esc(a.iconClass)}">${esc(a.iconLetter)}</div>
+              ${renderIcon(a)}
               <div class="app-name">${esc(a.name)}</div>
               <div class="app-tag">${esc(a.tagEn)}</div>
               <div class="app-tag-ko">${esc(a.tagKo)}</div>
@@ -625,7 +640,7 @@
             : `<div class="app-footer" style="color:var(--ink-mute);font-size:12px">${esc(a.footerText || '')}</div>`;
           return `<div class="app-card" role="article">
             <span class="app-status ${esc(statusToClass[a.status] || 'soon')}">${esc(a.statusLabel)}</span>
-            <div class="app-icon ${esc(a.iconClass)}">${esc(a.iconLetter)}</div>
+            ${renderIcon(a)}
             <div class="app-name">${esc(a.name)}</div>
             <div class="app-tag">${esc(a.tagEn)}</div>
             <div class="app-tag-ko">${esc(a.tagKo)}</div>
