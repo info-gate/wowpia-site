@@ -33,6 +33,22 @@
       "footerText": "View on Play Store"
     },
     {
+      "id": "barolingo-korean",
+      "name": "Barolingo Korean",
+      "category": "mobile",
+      "tagEn": "Learn Korean in chunks — for K-content fans worldwide.",
+      "tagKo": "외국인을 위한 청크 단위 한국어 학습 — K-팝·K-드라마 팬 타겟.",
+      "iconLetter": "B",
+      "iconClass": "icon-barolingo-korean",
+      "status": "live",
+      "statusLabel": "Live",
+      "group": "live",
+      "href": "https://play.google.com/store/apps/details?id=com.barolingo.korean",
+      "ios": "https://apps.apple.com/kr/app/id6765983772",
+      "android": "https://play.google.com/store/apps/details?id=com.barolingo.korean",
+      "footerText": "Download"
+    },
+    {
       "id": "moodva",
       "name": "Moodva",
       "category": "mobile",

@@ -12,6 +12,7 @@
 ## 모바일 앱 (Live)
 
 - [Barolingo](https://wowpia.kr/b/): AI 영어 학습 앱. 청크 단위로 들리는 순서 그대로 영어를 배우는 듣기 훈련. iOS · Android. "Hear English in order."
+- [Barolingo Korean](https://play.google.com/store/apps/details?id=com.barolingo.korean): 외국인을 위한 청크 단위 한국어 학습 앱. K-팝·K-드라마 팬 타겟. iOS · Android. "Learn Korean in chunks — for K-content fans worldwide." (App Store: https://apps.apple.com/kr/app/id6765983772)
 - [Nailva](https://wowpia.kr/n/): 1인 네일샵 사장님을 위한 오프라인 CRM. 고객·예약·매출을 한 번에 관리. iOS · Android. "Nail salon CRM."
 - [Moodva](https://wowpia.kr/m/): AI 무드/습관 트래커. 좋은 습관이 쌓이는 하루를 설계. iOS · Android. "Habits that grow you."
 - [OpenDocs](https://wowpia.kr/o/): 진짜 무료 문서 뷰어. PDF·HWP·Word·Excel 모두 지원, 결제 팝업이 영원히 없는 정책. iOS (Android 준비중).
