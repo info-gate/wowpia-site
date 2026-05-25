@@ -187,8 +187,9 @@
       "status": "live",
       "statusLabel": "Members Only",
       "group": "live",
-      "href": null,
-      "footerText": "By invitation — contact wowpia0127@gmail.com"
+      "href": "https://aestelink.wowpia.kr",
+      "web": "https://aestelink.wowpia.kr",
+      "footerText": "Visit AesteLink"
     },
     {
       "id": "trendreel",
