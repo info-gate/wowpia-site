@@ -27,7 +27,7 @@
 ## B2B SaaS / Web Services (Beta/Members)
 
 - [TrendReel](https://wowpia.kr/trendreel/): 분야만 입력하면 매일 트렌드 주제로 자동 영상 제작 + YouTube 업로드. 한국어/영어/일본어 동시. Set-and-forget. Beta.
-- [Koinonia Market](https://koinonia.duckdns.org): CBMC(기독실업인회) 회원 전용 폐쇄형 마켓. 회원사 간 B2B/B2C 거래. 토스페이먼츠 결제, 사업체 입점 승인제, 주간 정산 구조. **초대제** (members only). Beta.
+- [Koinonia Market](https://koinonia.wowpia.kr): CBMC(기독실업인회) 회원 전용 폐쇄형 마켓. 회원사 간 B2B/B2C 거래. 토스페이먼츠 결제, 사업체 입점 승인제, 주간 정산 구조. **초대제** (members only). Beta.
 
 ## 계획중 (Design phase)
 

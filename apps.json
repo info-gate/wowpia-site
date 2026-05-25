@@ -187,9 +187,8 @@
       "status": "live",
       "statusLabel": "Members Only",
       "group": "live",
-      "href": "https://aestelink.duckdns.org",
-      "web": "https://aestelink.duckdns.org",
-      "footerText": "By invitation"
+      "href": null,
+      "footerText": "By invitation — contact wowpia0127@gmail.com"
     },
     {
       "id": "trendreel",
@@ -219,8 +218,8 @@
       "status": "beta",
       "statusLabel": "Members Only",
       "group": "preparing",
-      "href": "https://koinonia.duckdns.org",
-      "web": "https://koinonia.duckdns.org",
+      "href": "https://koinonia.wowpia.kr",
+      "web": "https://koinonia.wowpia.kr",
       "footerText": "By invitation"
     }
   ]
