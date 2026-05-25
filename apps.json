@@ -216,9 +216,9 @@
       "iconLetter": "K",
       "iconClass": "icon-koinonia",
       "iconUrl": "icons/koinonia.svg",
-      "status": "beta",
+      "status": "live",
       "statusLabel": "Members Only",
-      "group": "preparing",
+      "group": "live",
       "href": "https://koinonia.wowpia.kr",
       "web": "https://koinonia.wowpia.kr",
       "footerText": "By invitation"
