@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>wowpia — 앱·SaaS 스튜디오 (주식회사 인포게이트) | Engineering everyday wonder</title>
-  <meta name="description" content="주식회사 인포게이트(wowpia)는 모바일 앱과 B2B SaaS를 만드는 한국 스튜디오입니다. Barolingo(영어 학습), Barolingo Korean(외국인 대상 한국어 학습), Nailva·Nailoop(네일샵), Moodva(습관), Canvly.art(갤러리 CRM), CellOps(배터리·태양광 ESS 관제 SaaS), TrendReel(자동 YouTube), OpenDocs(무료 문서 뷰어), Koinonia Market(B2B 폐쇄형 마켓).">
-  <meta name="keywords" content="wowpia, 인포게이트, Info-Gate, Barolingo, Barolingo Korean, 한국어 학습, K-pop Korean, Nailva, Moodva, Canvly, CellOps, TrendReel, OpenDocs, Koinonia, 한국 앱 스튜디오, B2B SaaS, ESS 관제, 배터리 관제, 갤러리 CRM, 네일샵 CRM">
+  <meta name="description" content="주식회사 인포게이트(wowpia)는 모바일 앱과 B2B SaaS를 만드는 한국 스튜디오입니다. 모바일: Barolingo(영어), Barolingo Korean(한국어), Nailva·Nailoop(네일샵), Moodva(습관), OpenDocs(문서 뷰어). 웹 서비스(B2B SaaS): Canvly.art(갤러리 CRM), AesteLink(한국 병원↔일본 폐쇄형 수발주), CellOps(배터리·태양광 ESS 관제), TrendReel(자동 YouTube), Koinonia Market(폐쇄형 마켓).">
+  <meta name="keywords" content="wowpia, 인포게이트, Info-Gate, Barolingo, Barolingo Korean, 한국어 학습, K-pop Korean, Nailva, Moodva, Canvly, AesteLink, CellOps, TrendReel, OpenDocs, Koinonia, 한국 앱 스튜디오, B2B SaaS, ESS 관제, 배터리 관제, 갤러리 CRM, 네일샵 CRM, 한일 수발주, 폐쇄형 B2B">
   <meta name="author" content="Info-Gate Inc. (주식회사 인포게이트)">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="canonical" href="https://wowpia.kr/">
@@ -76,10 +76,11 @@
     "@type": "ItemList",
     "name": "wowpia 제품 포트폴리오",
     "itemListOrder": "https://schema.org/ItemListOrderAscending",
-    "numberOfItems": 13,
+    "numberOfItems": 14,
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "item": { "@type": "MobileApplication", "name": "Barolingo", "description": "AI 영어 학습 — 청크 단위 듣기 훈련. Hear English in order.", "operatingSystem": "Android, iOS", "applicationCategory": "EducationApplication", "url": "https://wowpia.kr/b/" } },
       { "@type": "ListItem", "position": 13, "item": { "@type": "MobileApplication", "name": "Barolingo Korean", "description": "외국인을 위한 청크 단위 한국어 학습 — K-팝·K-드라마 팬 타겟. Learn Korean in chunks for K-content fans worldwide.", "operatingSystem": "Android, iOS", "applicationCategory": "EducationApplication", "url": "https://play.google.com/store/apps/details?id=com.barolingo.korean" } },
+      { "@type": "ListItem", "position": 14, "item": { "@type": "WebApplication", "name": "AesteLink", "description": "한국 병원 ↔ 일본 수주처 폐쇄형 B2B 수발주 SaaS — 피부·항노화 카테고리. Closed B2B sourcing between Korean clinics and Japanese suppliers.", "applicationCategory": "BusinessApplication", "url": "https://aestelink.duckdns.org" } },
       { "@type": "ListItem", "position": 2, "item": { "@type": "MobileApplication", "name": "Nailva", "description": "1인 네일샵 사장님을 위한 오프라인 CRM — 고객·예약·매출 한 번에.", "operatingSystem": "Android, iOS", "applicationCategory": "BusinessApplication", "url": "https://wowpia.kr/n/" } },
       { "@type": "ListItem", "position": 3, "item": { "@type": "MobileApplication", "name": "Moodva", "description": "AI 무드/습관 트래커 — 좋은 습관이 쌓이는 하루.", "operatingSystem": "Android, iOS", "applicationCategory": "LifestyleApplication", "url": "https://wowpia.kr/m/" } },
       { "@type": "ListItem", "position": 4, "item": { "@type": "WebApplication", "name": "Canvly.art", "description": "갤러리 운영자를 위한 올인원 SaaS — 작품·전시·고객·매출.", "applicationCategory": "BusinessApplication", "url": "https://canvly.art" } },
@@ -354,6 +355,25 @@
     .icon-cellops { background: linear-gradient(135deg, #10B981, #047857); }
     .icon-koinonia { background: linear-gradient(135deg, #1B365D, #C9A961); }
     .icon-barolingo-korean { background: linear-gradient(135deg, #1D9E75, #0E5C42); }
+    .icon-aestelink { background: linear-gradient(135deg, #0F2A47, #5E98F0); }
+
+    /* Category header (Mobile / Web) */
+    .cat-heading { grid-column: 1 / -1; margin: 56px 0 8px; }
+    .cat-heading:first-child { margin-top: 0; }
+    .cat-heading h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: 28px;
+      letter-spacing: -0.5px;
+      color: var(--ink);
+      margin: 0;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+    }
+    .cat-heading h2 .cat-icon { font-size: 22px; }
+    .cat-heading h2 .cat-count { font-size: 13px; font-weight: 500; color: var(--ink-mute); letter-spacing: 1px; text-transform: uppercase; }
+    .cat-heading .cat-desc { color: var(--ink-mute); font-size: 14px; margin-top: 6px; max-width: 720px; line-height: 1.5; }
     .icon-focus-timer { background: linear-gradient(135deg, #475569, #1E293B); }
 
     /* About section */
@@ -439,10 +459,15 @@
       <div class="section-label">Portfolio</div>
       <h2>Current <em>work.</em></h2>
       <div class="apps-grid" id="apps-grid">
-        <!-- Static fallback: visible until JS hydrates with apps.json. Also indexable by crawlers/LLMs without JS execution. -->
+        <!-- Static fallback: visible until JS hydrates with apps.json. Also indexable by crawlers/LLMs without JS execution.
+             Layout: 2 categories (📱 Mobile · 🌐 Web Services), each with status sub-groups (Live / Beta / Soon). -->
+        <div class="cat-heading">
+          <h2><span class="cat-icon">📱</span> Mobile Apps <span class="cat-count">9</span></h2>
+          <div class="cat-desc">iOS · Android 스토어에 출시·준비중인 모바일 앱들. 영어 학습, 한국어 학습, 네일샵 운영, 무료 문서 뷰어, 습관 트래커 등.</div>
+        </div>
         <div class="group-heading">
-          <h3>서비스중<span class="count">8</span></h3>
-          <div class="desc">현재 다운로드/사용 가능</div>
+          <h3>서비스중<span class="count">6</span></h3>
+          <div class="desc">현재 다운로드 가능</div>
         </div>
         <article class="app-card" itemscope itemtype="https://schema.org/MobileApplication">
           <span class="app-status live">Live</span>
@@ -502,25 +527,6 @@
         </article>
 
         <div class="group-heading">
-          <h3>준비중<span class="count">2</span></h3>
-          <div class="desc">심사 또는 베타 진행 중 — 곧 공개</div>
-        </div>
-        <article class="app-card" itemscope itemtype="https://schema.org/WebApplication">
-          <span class="app-status beta">Beta</span>
-          <div class="app-icon img-icon"><img src="icons/trendreel.svg" alt="TrendReel icon" loading="lazy" width="48" height="48"></div>
-          <div class="app-name" itemprop="name">TrendReel</div>
-          <div class="app-tag" itemprop="description">분야만 입력하면 매일 트렌드 주제로 자동 영상 제작 + YouTube 업로드. 한국어/영어/일본어 동시. Set-and-forget.</div>
-          <div class="app-footer"><a href="https://wowpia.kr/trendreel/" itemprop="url">View landing →</a></div>
-        </article>
-        <article class="app-card" itemscope itemtype="https://schema.org/WebApplication">
-          <span class="app-status beta">Members</span>
-          <div class="app-icon img-icon"><img src="icons/koinonia.svg" alt="Koinonia mark" loading="lazy" width="48" height="48"></div>
-          <div class="app-name" itemprop="name">Koinonia Market</div>
-          <div class="app-tag" itemprop="description">CBMC(기독실업인회) 회원 전용 폐쇄형 마켓 — 회원사 간 B2B/B2C 거래. 초대제, 프리미엄.</div>
-          <div class="app-footer"><a href="https://koinonia.duckdns.org" itemprop="url" target="_blank" rel="noopener">Visit →</a></div>
-        </article>
-
-        <div class="group-heading">
           <h3>계획중<span class="count">3</span></h3>
           <div class="desc">설계 단계</div>
         </div>
@@ -544,6 +550,55 @@
           <div class="app-name">Focus Timer</div>
           <div class="app-tag">광고 없이 집중하고, 통계로 내 하루를 증명하는 포모도로 타이머.</div>
           <div class="app-footer" style="color:var(--ink-mute);font-size:12px">In design</div>
+        </article>
+
+        <div class="cat-heading">
+          <h2><span class="cat-icon">🌐</span> Web Services <span class="cat-count">5</span></h2>
+          <div class="cat-desc">브라우저에서 바로 쓰는 B2B SaaS — 갤러리 CRM, KR↔JP 폐쇄형 수발주, 배터리·태양광 ESS 관제, 자동 영상 생성, 회원 전용 마켓.</div>
+        </div>
+        <div class="group-heading">
+          <h3>서비스중<span class="count">3</span></h3>
+          <div class="desc">현재 사용 가능</div>
+        </div>
+        <article class="app-card" itemscope itemtype="https://schema.org/WebApplication">
+          <span class="app-status live">Live</span>
+          <div class="app-icon img-icon"><img src="icons/canvly.png" alt="Canvly icon" loading="lazy" width="48" height="48"></div>
+          <div class="app-name" itemprop="name">Canvly.art</div>
+          <div class="app-tag" itemprop="description">갤러리 운영자를 위한 올인원 SaaS — 작품·전시·고객·매출 통합 관리.</div>
+          <div class="app-footer"><a href="https://canvly.art" itemprop="url" target="_blank" rel="noopener">Visit canvly.art →</a></div>
+        </article>
+        <article class="app-card" itemscope itemtype="https://schema.org/WebApplication">
+          <span class="app-status live">Members</span>
+          <div class="app-icon img-icon"><img src="icons/aestelink.svg" alt="AesteLink mark" loading="lazy" width="48" height="48"></div>
+          <div class="app-name" itemprop="name">AesteLink</div>
+          <div class="app-tag" itemprop="description">한국 병원 ↔ 일본 수주처 폐쇄형 B2B 수발주 SaaS — 피부·항노화 카테고리. 주문·승인·EMS 배송·정산 전 과정 양방향 확인.</div>
+          <div class="app-footer"><a href="https://aestelink.duckdns.org" itemprop="url" target="_blank" rel="noopener">Visit →</a></div>
+        </article>
+        <article class="app-card" itemscope itemtype="https://schema.org/WebApplication">
+          <span class="app-status live">Live</span>
+          <div class="app-icon img-icon"><img src="icons/cellops.png" alt="CellOps icon" loading="lazy" width="48" height="48"></div>
+          <div class="app-name" itemprop="name">CellOps</div>
+          <div class="app-tag" itemprop="description">배터리·태양광 ESS 실시간 관제 SaaS — 하드웨어 중립, 다중 사이트 1화면 관제. BMS 텔레메트리 수신, 셀 편차·온도·SOC·알람 모니터링.</div>
+          <div class="app-footer"><a href="https://cellops.duckdns.org" itemprop="url" target="_blank" rel="noopener">Visit CellOps →</a></div>
+        </article>
+
+        <div class="group-heading">
+          <h3>베타 · 회원전용<span class="count">2</span></h3>
+          <div class="desc">초대제 또는 베타 진행 중</div>
+        </div>
+        <article class="app-card" itemscope itemtype="https://schema.org/WebApplication">
+          <span class="app-status beta">Beta</span>
+          <div class="app-icon img-icon"><img src="icons/trendreel.svg" alt="TrendReel icon" loading="lazy" width="48" height="48"></div>
+          <div class="app-name" itemprop="name">TrendReel</div>
+          <div class="app-tag" itemprop="description">분야만 입력하면 매일 트렌드 주제로 자동 영상 제작 + YouTube 업로드. 한국어/영어/일본어 동시. Set-and-forget.</div>
+          <div class="app-footer"><a href="https://wowpia.kr/trendreel/" itemprop="url">View landing →</a></div>
+        </article>
+        <article class="app-card" itemscope itemtype="https://schema.org/WebApplication">
+          <span class="app-status beta">Members</span>
+          <div class="app-icon img-icon"><img src="icons/koinonia.svg" alt="Koinonia mark" loading="lazy" width="48" height="48"></div>
+          <div class="app-name" itemprop="name">Koinonia Market</div>
+          <div class="app-tag" itemprop="description">CBMC(기독실업인회) 회원 전용 폐쇄형 마켓 — 회원사 간 B2B/B2C 거래. 초대제, 프리미엄.</div>
+          <div class="app-footer"><a href="https://koinonia.duckdns.org" itemprop="url" target="_blank" rel="noopener">Visit →</a></div>
         </article>
       </div>
     </div>
@@ -575,7 +630,7 @@
         <a href="mailto:wowpia0127@gmail.com">wowpia0127@gmail.com</a>
       </div>
       <p style="margin-top:24px;color:var(--ink-mute);font-size:14px;max-width:560px">
-        B2B SaaS 문의 (CellOps · Canvly · Koinonia · TrendReel), 앱 제휴, 채용 모두 위 메일로 연락 부탁드립니다.<br>
+        B2B SaaS 문의 (Canvly · AesteLink · CellOps · TrendReel · Koinonia), 앱 제휴, 채용 모두 위 메일로 연락 부탁드립니다.<br>
         For business inquiries, partnership, or careers — please reach out via the email above.
       </p>
     </div>
@@ -603,10 +658,14 @@
           'beta': 'beta',
           'soon': 'soon',
         };
+        const CATEGORIES = [
+          { key: 'mobile', icon: '📱', title: 'Mobile Apps',  desc: 'iOS · Android 스토어에 출시·준비중인 모바일 앱들.' },
+          { key: 'saas',   icon: '🌐', title: 'Web Services', desc: '브라우저에서 바로 쓰는 B2B SaaS — 갤러리·KR↔JP 폐쇄형 수발주·ESS 관제·자동 영상·회원 마켓.' },
+        ];
         const GROUPS = [
-          { key: 'live', title: '서비스중', desc: '현재 다운로드/사용 가능' },
-          { key: 'preparing', title: '준비중', desc: '심사 또는 베타 진행 중 — 곧 공개' },
-          { key: 'planned', title: '계획중', desc: '개발 예정' },
+          { key: 'live',      title: '서비스중',         desc: '현재 다운로드/사용 가능' },
+          { key: 'preparing', title: '베타 · 회원전용', desc: '심사·베타·초대제 진행 중' },
+          { key: 'planned',   title: '계획중',           desc: '설계 단계' },
         ];
         const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({
           '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
@@ -647,13 +706,21 @@
             ${footer}
           </div>`;
         };
-        grid.innerHTML = GROUPS.map((g) => {
-          const items = apps.filter((a) => (a.group || 'planned') === g.key);
-          if (items.length === 0) return '';
-          return `<div class="group-heading">
-            <h3>${esc(g.title)}<span class="count">${items.length}</span></h3>
-            <div class="desc">${esc(g.desc)}</div>
-          </div>${items.map(renderCard).join('')}`;
+        grid.innerHTML = CATEGORIES.map((cat) => {
+          const catApps = apps.filter((a) => (a.category || 'mobile') === cat.key);
+          if (catApps.length === 0) return '';
+          const inner = GROUPS.map((g) => {
+            const items = catApps.filter((a) => (a.group || 'planned') === g.key);
+            if (items.length === 0) return '';
+            return `<div class="group-heading">
+              <h3>${esc(g.title)}<span class="count">${items.length}</span></h3>
+              <div class="desc">${esc(g.desc)}</div>
+            </div>${items.map(renderCard).join('')}`;
+          }).join('');
+          return `<div class="cat-heading">
+            <h2><span class="cat-icon">${esc(cat.icon)}</span> ${esc(cat.title)} <span class="cat-count">${catApps.length}</span></h2>
+            <div class="cat-desc">${esc(cat.desc)}</div>
+          </div>${inner}`;
         }).join('');
       } catch (err) {
         grid.innerHTML = '<p style="color:var(--ink-mute);grid-column:1/-1;">Failed to load apps.</p>';

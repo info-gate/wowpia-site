@@ -18,12 +18,13 @@
 - [OpenDocs](https://apps.apple.com/kr/app/opendocs/id6763845346): 진짜 무료 문서 뷰어. PDF·HWP·Word·Excel 모두 지원, 결제 팝업이 영원히 없는 정책. iOS (Android 준비중).
 - [Nailoop](https://apps.apple.com/kr/app/nailoop/id6763687316): 네일 SNS + 예약 플랫폼. 내 네일을 자랑하고 동시에 샵 예약까지. iOS · Android. "Show off your nails — social + booking for nail lovers."
 
-## B2B SaaS (Live)
+## B2B SaaS / Web Services (Live)
 
 - [Canvly.art](https://canvly.art): 갤러리 운영자를 위한 올인원 SaaS. 작품·전시·고객·매출을 통합 관리. 웹 기반.
+- [AesteLink](https://aestelink.duckdns.org): **한국 병원 ↔ 일본 수주처 폐쇄형 B2B 수발주 SaaS** (피부·항노화 카테고리). 한국 원장이 일본 수주처의 항노화제·필러를 발주 → 일본에서 EMS 개인통관 직배송 → 에이전트가 양국 정산 중개. 주문/승인/배송/정산 양방향 확인 워크플로우. 운영 중. **초대제** (members only) — 외부 가입 불가.
 - [CellOps](https://cellops.duckdns.org): **배터리 / 태양광 ESS 실시간 관제 SaaS**. BMS 텔레메트리 수신, 셀 편차·온도·SOC·알람 모니터링. **하드웨어 중립** 설계로 어떤 배터리든 BMS만 연결하면 관제 가능. 다중 사이트 1화면 관제. 대기업(LG/삼성/한화) 자체 ESS lock-in 시장의 틈새를 노립니다. Phase 1 가동중, 시뮬레이터·실시간 차트·알람 룰엔진·텔레그램 알림 완비.
 
-## B2B SaaS (Beta/Members)
+## B2B SaaS / Web Services (Beta/Members)
 
 - [TrendReel](https://wowpia.kr/trendreel/): 분야만 입력하면 매일 트렌드 주제로 자동 영상 제작 + YouTube 업로드. 한국어/영어/일본어 동시. Set-and-forget. Beta.
 - [Koinonia Market](https://koinonia.duckdns.org): CBMC(기독실업인회) 회원 전용 폐쇄형 마켓. 회원사 간 B2B/B2C 거래. 토스페이먼츠 결제, 사업체 입점 승인제, 주간 정산 구조. **초대제** (members only). Beta.
@@ -52,5 +53,5 @@
 
 ## 문의
 
-비즈니스 / B2B SaaS 문의 (CellOps · Canvly · Koinonia · TrendReel), 앱 제휴, 채용 모두 다음으로:
+비즈니스 / B2B SaaS 문의 (Canvly · AesteLink · CellOps · TrendReel · Koinonia), 앱 제휴, 채용 모두 다음으로:
 - 📧 wowpia0127@gmail.com
