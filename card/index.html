@@ -2,55 +2,20 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>박봉준 · (주)인포게이트 대표이사 명함</title>
-  <meta name="description" content="박봉준 · 주식회사 인포게이트 대표이사 · 12년차 소프트웨어 개발. 부산 해운대. Mobile 010-3847-0921 · wowpia0127@gmail.com. 탭 한 번으로 연락처 저장.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(주)인포게이트 디지털 명함</title>
+  <meta name="description" content="주식회사 인포게이트의 디지털 명함 목록. 각 담당자의 이름을 눌러 명함 페이지로 이동, 탭 한 번으로 연락처 저장 가능.">
   <link rel="canonical" href="https://wowpia.kr/card/">
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1e5aa8">
   <link rel="icon" type="image/png" href="../favicon.png">
 
-  <meta property="og:type" content="profile">
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="Info-Gate Inc.">
-  <meta property="og:title" content="박봉준 · (주)인포게이트 대표이사">
-  <meta property="og:description" content="12년차 소프트웨어 개발 · 부산 해운대. 탭 한 번으로 연락처 저장 · wowpia.kr">
+  <meta property="og:title" content="(주)인포게이트 디지털 명함">
+  <meta property="og:description" content="담당자별 디지털 명함 · 탭 한 번으로 연락처 저장 · wowpia.kr">
   <meta property="og:url" content="https://wowpia.kr/card/">
   <meta property="og:image" content="https://wowpia.kr/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="profile:first_name" content="봉준">
-  <meta property="profile:last_name" content="박">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="박봉준 · (주)인포게이트 대표이사">
-  <meta name="twitter:description" content="12년차 소프트웨어 개발 · 부산 해운대. 명함 저장 → wowpia.kr">
-  <meta name="twitter:image" content="https://wowpia.kr/og-image.png">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "박봉준",
-    "alternateName": "BongJun Park",
-    "jobTitle": "대표이사",
-    "email": "wowpia0127@gmail.com",
-    "telephone": "+82-10-3847-0921",
-    "url": "https://wowpia.kr/",
-    "worksFor": {
-      "@type": "Corporation",
-      "name": "주식회사 인포게이트",
-      "alternateName": "Info-Gate Inc.",
-      "url": "https://wowpia.kr/",
-      "taxID": "617-86-11726",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "KR",
-        "addressRegion": "부산광역시",
-        "addressLocality": "해운대구",
-        "streetAddress": "센텀동로 51, 203호",
-        "postalCode": "48059"
-      }
-    }
-  }
-  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,7 +26,6 @@
       --brand: #1e5aa8;
       --brand-dark: #17457f;
       --accent: #f5b800;
-      --wowpia: #1D9E75;
       --ink: #0f1419;
       --ink-soft: #3A3F47;
       --ink-mute: #7A828C;
@@ -70,351 +34,136 @@
       --rule: #E5E5E0;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Noto Sans KR', sans-serif;
       background:
         radial-gradient(1200px 600px at 10% -10%, #d4e0f0 0%, transparent 50%),
         radial-gradient(900px 500px at 90% 110%, #fff3cf 0%, transparent 50%),
         var(--bg);
       color: var(--ink);
+      min-height: 100vh;
       -webkit-font-smoothing: antialiased;
-      display: flex;
+      padding: 40px 20px;
+    }
+    .wrap { max-width: 640px; margin: 0 auto; }
+
+    .header { text-align: center; margin-bottom: 32px; }
+    .brand {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
-    }
-
-    .card {
-      width: 100%;
-      max-width: 420px;
-      background: var(--card);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow:
-        0 30px 60px -20px rgba(15, 20, 25, 0.25),
-        0 12px 24px -12px rgba(30, 90, 168, 0.18),
-        0 0 0 1px rgba(15, 20, 25, 0.04);
-    }
-
-    /* Header — 회사 로고 밴드 */
-    .head {
+      gap: 10px;
       background: linear-gradient(135deg, #1e5aa8 0%, #17457f 100%);
       color: #fff;
-      padding: 20px 24px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .brand { display: flex; align-items: center; gap: 10px; }
-    .brand-mark {
-      width: 36px; height: 36px;
-      border: 3px solid #fff; position: relative;
-      flex-shrink: 0;
-    }
-    .brand-mark::after {
-      content: ""; position: absolute; inset: 6px;
-      background: var(--accent);
-    }
-    .brand-name {
-      font-family: 'Fraunces', serif;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      font-size: 18px;
-    }
-    .brand-name .sub {
-      display: block;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 9.5px;
-      letter-spacing: 1.2px;
-      opacity: 0.85;
-      margin-top: 1px;
-    }
-    .brand-badge {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      padding: 4px 8px;
-      border-radius: 4px;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.3);
-      white-space: nowrap;
-    }
-
-    /* Profile section */
-    .profile { padding: 32px 28px 20px; text-align: center; }
-    .avatar {
-      width: 88px; height: 88px;
-      margin: 0 auto 16px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #1e5aa8, #17457f);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Fraunces', serif;
-      font-weight: 500;
-      font-size: 40px;
-      letter-spacing: -1px;
-      box-shadow: 0 8px 20px -6px rgba(30, 90, 168, 0.45);
-    }
-    .name {
-      font-family: 'Fraunces', serif;
-      font-weight: 500;
-      font-size: 32px;
-      letter-spacing: -0.8px;
-      color: var(--ink);
-      line-height: 1.1;
-    }
-    .name-en {
-      margin-top: 4px;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-    }
-    .title {
-      margin-top: 12px;
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--brand);
-      padding: 4px 12px;
-      border: 1px solid var(--brand);
+      padding: 12px 20px;
       border-radius: 999px;
-      letter-spacing: 0.3px;
-    }
-    .org {
-      margin-top: 14px;
-      font-size: 15px;
-      color: var(--ink-soft);
-      font-weight: 500;
-    }
-    .org strong { color: var(--ink); font-weight: 700; }
-    .location {
-      margin-top: 4px;
-      font-size: 12.5px;
-      color: var(--ink-mute);
-    }
-
-    /* Contact rows */
-    .contacts { padding: 4px 20px 4px; }
-    .row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 12px;
-      border-radius: 12px;
       text-decoration: none;
-      color: var(--ink);
-      transition: background 0.15s;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px -8px rgba(30,90,168,0.4);
     }
-    .row + .row { border-top: 1px solid var(--rule); border-radius: 0; }
-    .row:hover, .row:active { background: rgba(30,90,168,0.05); }
-    .row .ic {
-      width: 40px; height: 40px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 18px;
-    }
-    .row .ic.phone { background: #e8f5ee; color: #157A5A; }
-    .row .ic.mail  { background: #eef2fb; color: #1e5aa8; }
-    .row .ic.web   { background: #fff4d6; color: #b45309; }
-    .row .ic.addr  { background: #f4eefb; color: #7c3aed; }
-    .row .lbl {
-      font-size: 11px;
+    .brand-mark { width: 22px; height: 22px; border: 2.5px solid #fff; position: relative; }
+    .brand-mark::after { content: ""; position: absolute; inset: 4px; background: var(--accent); }
+    .brand span {
+      font-family: 'Fraunces', serif;
       font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-    }
-    .row .val {
+      letter-spacing: 1.5px;
       font-size: 15px;
-      font-weight: 600;
-      color: var(--ink);
-      margin-top: 2px;
-      word-break: break-all;
     }
-    .row .val small { display: block; font-size: 12px; font-weight: 400; color: var(--ink-mute); margin-top: 2px; word-break: keep-all; }
-
-    /* CTA */
-    .cta-wrap { padding: 18px 20px 22px; display: grid; grid-template-columns: 1fr; gap: 10px; }
-    .cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 15px 16px;
-      border-radius: 14px;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
-      -webkit-tap-highlight-color: transparent;
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: clamp(28px, 5vw, 36px);
+      letter-spacing: -0.8px;
+      margin-bottom: 8px;
     }
-    .cta.primary {
-      background: var(--brand);
-      color: #fff;
-      box-shadow: 0 10px 24px -10px rgba(30, 90, 168, 0.55);
-    }
-    .cta.primary:hover, .cta.primary:active {
-      background: var(--brand-dark);
-      transform: translateY(-1px);
-    }
-    .cta.ghost {
-      background: transparent;
-      color: var(--wowpia);
-      border: 1.5px solid var(--wowpia);
-    }
-    .cta.ghost:hover { background: rgba(29, 158, 117, 0.06); }
-
-    /* QR + business info footer */
-    .bottom {
-      background: #FAFAF7;
-      padding: 22px 24px 24px;
-      display: grid;
-      grid-template-columns: 96px 1fr;
-      gap: 16px;
-      align-items: center;
-      border-top: 1px solid var(--rule);
-    }
-    .qr-box {
-      width: 96px; height: 96px;
-      background: #fff;
-      border: 1px solid var(--rule);
-      border-radius: 10px;
-      padding: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #qrcode canvas, #qrcode img { display: block; width: 100%; height: auto; }
-    .biz {
-      font-size: 11.5px;
+    h1 em { font-style: italic; color: var(--brand); font-weight: 500; }
+    .lead {
       color: var(--ink-mute);
+      font-size: 14.5px;
+      max-width: 460px;
+      margin: 0 auto;
       line-height: 1.55;
     }
-    .biz strong { color: var(--ink-soft); font-weight: 600; }
-    .biz .row-b { display: flex; gap: 4px; }
-    .biz .row-b + .row-b { margin-top: 2px; }
 
-    /* Share hint */
-    .share-hint {
-      text-align: center;
-      font-size: 11.5px;
+    .list { display: grid; gap: 14px; }
+    .person {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 12px -6px rgba(15,20,25,0.08), 0 0 0 1px rgba(15,20,25,0.04);
+    }
+    .person:hover, .person:active {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px -12px rgba(30,90,168,0.25), 0 0 0 1px rgba(30,90,168,0.15);
+    }
+    .avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, #1e5aa8, #17457f);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+    .info { flex: 1; min-width: 0; }
+    .info .name { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 500; letter-spacing: -0.3px; }
+    .info .name-en { font-size: 11px; font-weight: 500; color: var(--ink-mute); letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
+    .info .title { margin-top: 6px; font-size: 13px; color: var(--brand); font-weight: 600; }
+    .info .desc { margin-top: 3px; font-size: 12.5px; color: var(--ink-mute); }
+    .arrow {
       color: var(--ink-mute);
-      margin-top: 14px;
-      letter-spacing: 0.2px;
+      font-size: 22px;
+      transition: transform 0.15s, color 0.15s;
     }
-    .share-hint a { color: var(--brand); text-decoration: none; font-weight: 600; }
-    .share-hint a:hover { text-decoration: underline; }
+    .person:hover .arrow { transform: translateX(4px); color: var(--brand); }
 
-    @media (max-width: 380px) {
-      .name { font-size: 28px; }
-      .bottom { grid-template-columns: 84px 1fr; }
-      .qr-box { width: 84px; height: 84px; }
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--ink-mute);
+      line-height: 1.7;
     }
+    .footer a { color: var(--ink-mute); text-decoration: underline; margin: 0 6px; }
+    .footer a:hover { color: var(--brand); }
   </style>
 </head>
 <body>
-
-  <main class="card" role="main">
-    <div class="head">
-      <a class="brand" href="/" aria-label="Info-Gate Inc.">
+  <div class="wrap">
+    <div class="header">
+      <a class="brand" href="/" aria-label="Info-Gate Inc. Home">
         <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-name">INFOGATE<span class="sub">Since 2013 · Busan</span></span>
+        <span>INFOGATE</span>
       </a>
-      <span class="brand-badge">DIGITAL CARD</span>
+      <h1>Digital <em>Cards.</em></h1>
+      <p class="lead">주식회사 인포게이트 담당자별 디지털 명함입니다. 이름을 눌러 명함 페이지로 이동, 탭 한 번으로 연락처를 저장하세요.</p>
     </div>
 
-    <section class="profile">
-      <div class="avatar" aria-hidden="true">박</div>
-      <h1 class="name">박봉준</h1>
-      <div class="name-en">BongJun Park</div>
-      <span class="title">대표이사 · CEO</span>
-      <div class="org"><strong>(주)인포게이트</strong> · Info-Gate Inc.</div>
-      <div class="location">12년차 소프트웨어 개발 · Enterprise SI + wowpia 브랜드</div>
-    </section>
-
-    <section class="contacts" aria-label="연락처">
-      <a class="row" href="tel:+821038470921">
-        <div class="ic phone" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+    <div class="list">
+      <a class="person" href="/card/pbj/">
+        <div class="avatar" aria-hidden="true">박</div>
+        <div class="info">
+          <div class="name">박봉준</div>
+          <div class="name-en">BongJun Park</div>
+          <div class="title">대표이사 · CEO</div>
+          <div class="desc">Enterprise SI + wowpia 브랜드 총괄</div>
         </div>
-        <div>
-          <div class="lbl">Mobile</div>
-          <div class="val">010-3847-0921</div>
-        </div>
-      </a>
-      <a class="row" href="mailto:wowpia0127@gmail.com">
-        <div class="ic mail" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-        </div>
-        <div>
-          <div class="lbl">Email</div>
-          <div class="val">wowpia0127@gmail.com</div>
-        </div>
-      </a>
-      <a class="row" href="https://wowpia.kr/" target="_blank" rel="noopener">
-        <div class="ic web" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
-        </div>
-        <div>
-          <div class="lbl">Website</div>
-          <div class="val">wowpia.kr<small>회사 소개 · 브랜드 wowpia · 실적</small></div>
-        </div>
-      </a>
-      <div class="row">
-        <div class="ic addr" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-        </div>
-        <div>
-          <div class="lbl">Office</div>
-          <div class="val">부산광역시 해운대구<small>센텀동로 51, 203호 (우편번호 48059)</small></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="cta-wrap">
-      <a class="cta primary" href="infogate-bj.vcf" download="박봉준_인포게이트.vcf">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8zM19 8v6M22 11h-6"/></svg>
-        연락처에 저장 (vCard)
-      </a>
-      <a class="cta ghost" href="/wowpia/">
-        wowpia 브랜드 제품 보기 →
+        <div class="arrow" aria-hidden="true">→</div>
       </a>
     </div>
 
-    <div class="bottom">
-      <div class="qr-box"><div id="qrcode" aria-label="QR: wowpia.kr/card/"></div></div>
-      <div class="biz">
-        <div class="row-b"><strong>주식회사 인포게이트</strong></div>
-        <div class="row-b">사업자등록번호 <span>617-86-11726</span></div>
-        <div class="row-b">통신판매업 <span>제 2017-부산해운대-0724 호</span></div>
-        <div class="row-b">정보통신업 · 소프트웨어 개발 · 전자상거래업</div>
-      </div>
+    <div class="footer">
+      © 2013–2026 <strong>Info-Gate Inc.</strong> · 주식회사 인포게이트 · 부산 해운대구<br>
+      <a href="/">회사 소개</a> ·
+      <a href="/wowpia/">wowpia</a> ·
+      <a href="mailto:wowpia0127@gmail.com">wowpia0127@gmail.com</a>
     </div>
-  </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
-  <script>
-    (function () {
-      try {
-        var qr = qrcode(0, 'M');
-        qr.addData('https://wowpia.kr/card/');
-        qr.make();
-        document.getElementById('qrcode').innerHTML = qr.createImgTag(3, 0);
-      } catch (e) {
-        // silent fallback: QR just won't render
-      }
-    })();
-  </script>
+  </div>
 </body>
 </html>
