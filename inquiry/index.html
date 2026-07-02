@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개발 문의 · (주)인포게이트 Info-Gate Inc.</title>
+  <meta name="description" content="주식회사 인포게이트에 소프트웨어 개발 프로젝트 문의를 남기세요. 엔터프라이즈 SI, 모바일 앱, B2B SaaS 개발 상담. 프로젝트 개요를 남기시면 담당자가 1영업일 이내 연락드립니다.">
+  <meta name="keywords" content="인포게이트, 개발 문의, 소프트웨어 개발 상담, 엔터프라이즈 SI, 모바일 앱 개발, B2B SaaS 개발, 부산 소프트웨어 개발 회사">
+  <link rel="canonical" href="https://wowpia.kr/inquiry/">
+  <meta name="theme-color" content="#1e5aa8">
+  <link rel="icon" type="image/png" href="../favicon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Info-Gate Inc.">
+  <meta property="og:title" content="개발 문의 · (주)인포게이트">
+  <meta property="og:description" content="엔터프라이즈 SI · 모바일 앱 · B2B SaaS 개발 상담. 1영업일 이내 답변.">
+  <meta property="og:url" content="https://wowpia.kr/inquiry/">
+  <meta property="og:image" content="https://wowpia.kr/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "개발 문의",
+    "url": "https://wowpia.kr/inquiry/",
+    "inLanguage": "ko-KR",
+    "about": {
+      "@type": "Corporation",
+      "name": "주식회사 인포게이트",
+      "alternateName": "Info-Gate Inc.",
+      "url": "https://wowpia.kr/"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FAFAF7;
+      --bg-alt: #F1F3F7;
+      --ink: #0F1419;
+      --ink-soft: #3A3F47;
+      --ink-mute: #7A828C;
+      --rule: #E5E5E0;
+      --brand: #1e5aa8;
+      --brand-dark: #17457f;
+      --accent: #f5b800;
+      --wowpia: #1D9E75;
+      --danger: #d92d20;
+      --field: #ffffff;
+      --field-focus: #eef2fb;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav.site {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--rule);
+      background: rgba(250,250,247,0.92);
+      backdrop-filter: blur(8px);
+      position: sticky; top: 0; z-index: 10;
+    }
+    nav.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand-link { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand-link img { display: block; height: 34px; width: auto; }
+    .nav-back { color: var(--ink-soft); text-decoration: none; font-size: 13.5px; font-weight: 500; }
+    .nav-back:hover { color: var(--brand); }
+
+    /* Hero */
+    .hero { padding: 56px 0 40px; }
+    .eyebrow {
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: clamp(36px, 5vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -1.2px;
+      margin-bottom: 18px;
+    }
+    h1 em { font-style: italic; font-weight: 500; color: var(--brand); }
+    .lead {
+      font-size: 16.5px;
+      color: var(--ink-soft);
+      max-width: 640px;
+      line-height: 1.55;
+    }
+
+    /* Info strip */
+    .info-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 32px 0 12px;
+    }
+    .info-strip .item {
+      background: var(--bg-alt);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+    .info-strip .item strong { color: var(--brand); font-weight: 700; }
+    @media (max-width: 640px) { .info-strip { grid-template-columns: 1fr; } }
+
+    /* Form */
+    .form-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 20px;
+      padding: 36px 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 30px -20px rgba(15,20,25,0.15);
+    }
+    .form-title {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+      margin-bottom: 6px;
+    }
+    .form-sub { font-size: 13.5px; color: var(--ink-mute); margin-bottom: 28px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 20px;
+    }
+    .field { display: flex; flex-direction: column; }
+    .field.full { grid-column: 1 / -1; }
+    .field label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .field label .req { color: var(--danger); font-weight: 700; }
+    .field label .opt {
+      font-size: 10.5px;
+      font-weight: 500;
+      color: var(--ink-mute);
+      background: var(--bg-alt);
+      padding: 2px 6px;
+      border-radius: 4px;
+      letter-spacing: 0.4px;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      font-family: inherit;
+      font-size: 14.5px;
+      color: var(--ink);
+      background: var(--field);
+      border: 1.5px solid var(--rule);
+      border-radius: 10px;
+      padding: 12px 14px;
+      transition: border-color 0.15s, background 0.15s;
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .field textarea {
+      min-height: 140px;
+      resize: vertical;
+      line-height: 1.55;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--brand);
+      background: var(--field-focus);
+      outline: none;
+    }
+    .field select {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%237A828C' d='M6 8L0 0h12z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+    .field .hint {
+      font-size: 12px;
+      color: var(--ink-mute);
+      margin-top: 6px;
+    }
+    .field input.invalid,
+    .field select.invalid,
+    .field textarea.invalid { border-color: var(--danger); background: #fff5f5; }
+
+    /* Radio pills */
+    .pills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    @media (max-width: 500px) { .pills { grid-template-columns: 1fr; } }
+    .pill {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: var(--field);
+      border: 1.5px solid var(--rule);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .pill:hover { border-color: #c8d3e6; }
+    .pill input {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px; height: 18px;
+      border: 1.5px solid var(--rule);
+      border-radius: 50%;
+      flex-shrink: 0;
+      position: relative;
+      cursor: pointer;
+    }
+    .pill input:checked { border-color: var(--brand); border-width: 5px; background: #fff; }
+    .pill:has(input:checked) { border-color: var(--brand); background: var(--field-focus); }
+    .pill .lbl { font-size: 13.5px; font-weight: 500; color: var(--ink); }
+    .pill .lbl small { display: block; font-size: 11.5px; font-weight: 400; color: var(--ink-mute); margin-top: 2px; }
+
+    /* Consent */
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px 16px;
+      background: var(--bg-alt);
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .consent input {
+      width: 18px; height: 18px;
+      accent-color: var(--brand);
+      margin-top: 2px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .consent label { font-size: 12.5px; color: var(--ink-soft); line-height: 1.5; cursor: pointer; }
+    .consent label a { color: var(--brand); text-decoration: underline; }
+    .consent label .req { color: var(--danger); font-weight: 700; }
+
+    /* Actions */
+    .actions { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-size: 14.5px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      font-family: inherit;
+      transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+    }
+    .btn.primary {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 10px 22px -12px rgba(30,90,168,0.6);
+    }
+    .btn.primary:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .btn.primary:disabled { background: #a8b8cf; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn.ghost {
+      background: transparent;
+      color: var(--ink-soft);
+      border-color: var(--rule);
+    }
+    .btn.ghost:hover { border-color: var(--brand); color: var(--brand); }
+    .note-inline { font-size: 12.5px; color: var(--ink-mute); margin-left: 4px; }
+
+    /* Sent panel */
+    .sent {
+      display: none;
+      background: #f0f9f4;
+      border: 1px solid #b7e2c8;
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-top: 22px;
+    }
+    .sent.on { display: block; }
+    .sent h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      color: #157A5A;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .sent p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; }
+    .sent .fallback {
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      border-radius: 8px;
+      font-family: 'Menlo', 'Consolas', monospace;
+      font-size: 12.5px;
+      color: var(--ink);
+      word-break: break-all;
+    }
+    .sent .fallback a { color: var(--brand); font-weight: 600; text-decoration: none; }
+
+    /* Alternative contact */
+    .alt {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 60px;
+    }
+    @media (max-width: 640px) { .alt { grid-template-columns: 1fr; } }
+    .alt a {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 18px 20px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .alt a:hover { border-color: var(--brand); transform: translateY(-2px); }
+    .alt .ic { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: #eef2fb; color: var(--brand); }
+    .alt .lbl { font-size: 11px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--ink-mute); }
+    .alt .val { font-size: 15px; font-weight: 600; color: var(--ink); margin-top: 2px; }
+
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+      .form-card { padding: 28px 20px; }
+      .hero { padding: 44px 0 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site">
+    <div class="wrap">
+      <a href="/" class="brand-link" aria-label="Info-Gate Inc. Home">
+        <img src="../icons/infogate-logo.svg" alt="INFOGATE" width="150" height="34">
+      </a>
+      <a href="/" class="nav-back">← 회사 소개로</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Inquiry · 개발 문의</div>
+      <h1>프로젝트가 있으시다면,<br/><em>편하게 알려주세요.</em></h1>
+      <p class="lead">엔터프라이즈 시스템 개발부터 모바일 앱, B2B SaaS까지 — (주)인포게이트에서 12년간 축적한 설계·개발·운영 경험으로 함께합니다. 아래 폼을 채워주시면 1영업일 이내 대표이사가 직접 회신드립니다.</p>
+
+      <div class="info-strip">
+        <div class="item"><strong>회신 시간</strong> — 평일 1영업일 이내</div>
+        <div class="item"><strong>상담 비용</strong> — 초기 상담·견적 무료</div>
+        <div class="item"><strong>비밀유지</strong> — NDA 요청 가능</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <form class="form-card" id="inquiry-form" novalidate>
+      <div class="form-title">프로젝트 개요를 알려주세요</div>
+      <div class="form-sub">*표시는 필수 항목입니다. 나머지는 아는 만큼만 채우시면 됩니다.</div>
+
+      <div class="grid">
+        <div class="field">
+          <label for="f-name">담당자 이름 <span class="req">*</span></label>
+          <input id="f-name" name="name" type="text" required placeholder="홍길동" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="f-company">회사 / 소속 <span class="req">*</span></label>
+          <input id="f-company" name="company" type="text" required placeholder="주식회사 예시" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="f-email">이메일 <span class="req">*</span></label>
+          <input id="f-email" name="email" type="email" required placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="f-phone">연락처 <span class="opt">선택</span></label>
+          <input id="f-phone" name="phone" type="tel" placeholder="010-1234-5678" autocomplete="tel">
+        </div>
+
+        <div class="field full">
+          <label>프로젝트 유형 <span class="req">*</span></label>
+          <div class="pills" role="radiogroup" aria-required="true">
+            <label class="pill"><input type="radio" name="type" value="Enterprise SI" required><span class="lbl">엔터프라이즈 SI<small>대기업·기관 맞춤 시스템</small></span></label>
+            <label class="pill"><input type="radio" name="type" value="Mobile App"><span class="lbl">모바일 앱<small>iOS · Android</small></span></label>
+            <label class="pill"><input type="radio" name="type" value="B2B SaaS"><span class="lbl">B2B SaaS<small>웹 기반 업무 시스템</small></span></label>
+            <label class="pill"><input type="radio" name="type" value="Other"><span class="lbl">기타 · 협의<small>애매하면 이걸로</small></span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-budget">예산 규모 <span class="opt">선택</span></label>
+          <select id="f-budget" name="budget">
+            <option value="">- 선택 -</option>
+            <option value="~5,000만원">5,000만원 미만</option>
+            <option value="5,000만원~1억">5,000만원 ~ 1억</option>
+            <option value="1억~3억">1억 ~ 3억</option>
+            <option value="3억 이상">3억 이상</option>
+            <option value="협의">협의</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-timeline">희망 일정 <span class="opt">선택</span></label>
+          <select id="f-timeline" name="timeline">
+            <option value="">- 선택 -</option>
+            <option value="1개월 이내">1개월 이내 (긴급)</option>
+            <option value="1~3개월">1 ~ 3개월</option>
+            <option value="3~6개월">3 ~ 6개월</option>
+            <option value="6개월 이상">6개월 이상</option>
+            <option value="협의">협의</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="f-summary">프로젝트 개요 <span class="req">*</span></label>
+          <textarea id="f-summary" name="summary" required placeholder="예) 산업단지 출입통제 시스템 리뉴얼. 현재 종이 대장 기반, 모바일 앱으로 실시간 승인 프로세스 필요. 도입 사이트 3곳."></textarea>
+          <div class="hint">해결하려는 문제·현재 상태·목표만 적어주셔도 충분합니다. 세부 스펙은 미팅에서.</div>
+        </div>
+        <div class="field full">
+          <label for="f-refs">참고 자료 URL <span class="opt">선택</span></label>
+          <input id="f-refs" name="refs" type="text" placeholder="https:// (기획서, 참고 사이트, 유사 서비스 등)">
+        </div>
+      </div>
+
+      <div class="consent">
+        <input type="checkbox" id="f-consent" name="consent" required>
+        <label for="f-consent">
+          문의 처리를 위한 <strong>개인정보 수집·이용</strong>에 동의합니다. <span class="req">*</span>
+          <br>수집 항목: 이름·회사·이메일·연락처 · 이용 목적: 문의 회신 · 보관 기간: 회신 완료 후 1년.
+        </label>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn primary" id="submit-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+          문의 보내기
+        </button>
+        <a href="mailto:wowpia0127@gmail.com" class="btn ghost">이메일로 직접 보내기</a>
+        <span class="note-inline">전송 시 메일 앱이 열립니다.</span>
+      </div>
+
+      <div class="sent" id="sent-panel" role="status" aria-live="polite">
+        <h3>메일 앱을 열었습니다.</h3>
+        <p>새로 열린 창에서 <strong>내용을 확인하고 '보내기' 버튼</strong>을 눌러주세요. 창이 열리지 않았다면 아래 링크를 눌러 다시 시도해 주세요.</p>
+        <div class="fallback"><a id="fallback-link" href="#">다시 열기 →</a></div>
+      </div>
+    </form>
+
+    <div class="alt">
+      <a href="mailto:wowpia0127@gmail.com">
+        <div class="ic">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+        </div>
+        <div>
+          <div class="lbl">Email</div>
+          <div class="val">wowpia0127@gmail.com</div>
+        </div>
+      </a>
+      <a href="/card/pbj/">
+        <div class="ic">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
+        </div>
+        <div>
+          <div class="lbl">Digital Card</div>
+          <div class="val">대표이사 명함 (연락처 저장)</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var form = document.getElementById('inquiry-form');
+      var sent = document.getElementById('sent-panel');
+      var fallback = document.getElementById('fallback-link');
+      var submitBtn = document.getElementById('submit-btn');
+
+      function buildMailto(data) {
+        var subject = '[개발문의] ' + (data.type || '기타') + ' · ' + (data.company || '') + ' · ' + (data.name || '');
+        var lines = [
+          '(주)인포게이트 개발 문의',
+          '',
+          '━━━━━━━━━━━━━━━━━━━━',
+          '담당자: ' + data.name,
+          '회사·소속: ' + data.company,
+          '이메일: ' + data.email,
+          '연락처: ' + (data.phone || '(미기재)'),
+          '',
+          '프로젝트 유형: ' + data.type,
+          '예산 규모: ' + (data.budget || '(미기재)'),
+          '희망 일정: ' + (data.timeline || '(미기재)'),
+          '━━━━━━━━━━━━━━━━━━━━',
+          '',
+          '■ 프로젝트 개요',
+          data.summary,
+          '',
+          '■ 참고 자료',
+          data.refs || '(없음)',
+          '',
+          '━━━━━━━━━━━━━━━━━━━━',
+          '보낸 곳: https://wowpia.kr/inquiry/'
+        ];
+        var body = lines.join('\r\n');
+        return 'mailto:wowpia0127@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      }
+
+      function markInvalid(field, on) {
+        if (!field) return;
+        if (on) field.classList.add('invalid');
+        else field.classList.remove('invalid');
+      }
+
+      function validate() {
+        var ok = true;
+        var required = ['name', 'company', 'email', 'summary'];
+        required.forEach(function (n) {
+          var el = form.elements[n];
+          if (!el) return;
+          var empty = !el.value || !el.value.trim();
+          markInvalid(el, empty);
+          if (empty) ok = false;
+        });
+        var email = form.elements['email'];
+        if (email && email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+          markInvalid(email, true); ok = false;
+        }
+        var typeChecked = form.querySelector('input[name="type"]:checked');
+        if (!typeChecked) {
+          form.querySelectorAll('.pill').forEach(function(p){ p.style.borderColor = 'var(--danger)'; });
+          ok = false;
+        } else {
+          form.querySelectorAll('.pill').forEach(function(p){ p.style.borderColor = ''; });
+        }
+        var consent = form.elements['consent'];
+        if (consent && !consent.checked) {
+          consent.parentElement.style.background = '#fff5f5';
+          ok = false;
+        } else if (consent) {
+          consent.parentElement.style.background = '';
+        }
+        return ok;
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!validate()) {
+          var firstInvalid = form.querySelector('.invalid');
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+        var data = {
+          name: form.elements['name'].value.trim(),
+          company: form.elements['company'].value.trim(),
+          email: form.elements['email'].value.trim(),
+          phone: form.elements['phone'].value.trim(),
+          type: (form.querySelector('input[name="type"]:checked') || {}).value || '',
+          budget: form.elements['budget'].value,
+          timeline: form.elements['timeline'].value,
+          summary: form.elements['summary'].value.trim(),
+          refs: form.elements['refs'].value.trim()
+        };
+        var href = buildMailto(data);
+        fallback.setAttribute('href', href);
+        sent.classList.add('on');
+        submitBtn.textContent = '메일 앱 다시 열기';
+        window.location.href = href;
+      });
+
+      form.querySelectorAll('input, textarea, select').forEach(function (el) {
+        el.addEventListener('input', function () { markInvalid(el, false); });
+        el.addEventListener('change', function () { markInvalid(el, false); });
+      });
+    })();
+  </script>
+</body>
+</html>
