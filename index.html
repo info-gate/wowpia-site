@@ -321,6 +321,42 @@
       padding: 4px 10px;
       border-radius: 4px;
     }
+    .client .subsystems {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--rule);
+    }
+    .client .subsystems .cap {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 10px;
+    }
+    .client .subsystems .logos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 14px;
+      align-items: center;
+    }
+    .client .subsystems .logos .lg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fafafa;
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 8px 10px;
+      min-height: 40px;
+    }
+    .client .subsystems .logos .lg img {
+      max-width: 100%;
+      max-height: 22px;
+      height: auto;
+      width: auto;
+      display: block;
+    }
 
     /* Brand highlight (wowpia) */
     .brand-card {
@@ -527,8 +563,17 @@
         <div class="client">
           <div class="year">2016</div>
           <div class="name">Trafikwell (말레이시아)</div>
-          <div class="desc">말레이시아 대상 지능형 교통 시스템(I.T.S.) 통합 관제 솔루션 개발. CCTV(PTZ)·VMS(가변정보표지)·AID(자동 사고 검지)·긴급방송 스피커를 지도 기반 콘솔에서 실시간 통합 관제. 하위 시스템 3종(iflexion · trafikonsol · trafikwell) 구성. <strong>국제 수출 사례</strong>.</div>
+          <div class="desc">말레이시아 대상 지능형 교통 시스템(I.T.S. Total Solution) 통합 관제 솔루션. CCTV(PTZ)·VMS(가변정보표지)·AID(자동 사고 검지)·긴급방송 스피커를 지도 기반 콘솔에서 실시간 통합 관제. 하위 시스템 4종으로 구성. <strong>국제 수출 사례</strong>.</div>
           <div class="kind">🇲🇾 Overseas · Enterprise SI</div>
+          <div class="subsystems">
+            <div class="cap">Subsystems</div>
+            <div class="logos">
+              <div class="lg" title="Trafikwell — 통합 교통 관제"><img src="icons/trafikwell/trafikwell.png" alt="Trafikwell" loading="lazy"></div>
+              <div class="lg" title="Trafikonsol — 관제 콘솔"><img src="icons/trafikwell/trafikonsol.png" alt="Trafikonsol" loading="lazy"></div>
+              <div class="lg" title="iFlexion — PTZ 카메라 제어"><img src="icons/trafikwell/iflexion.png" alt="iFlexion" loading="lazy"></div>
+              <div class="lg" title="Clearfon — 긴급방송 스피커"><img src="icons/trafikwell/clearfon.png" alt="Clearfon" loading="lazy"></div>
+            </div>
+          </div>
         </div>
         <div class="client">
           <div class="year">2024</div>
