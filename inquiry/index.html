@@ -380,6 +380,11 @@
 
   <div class="wrap">
     <form class="form-card" id="inquiry-form" novalidate>
+      <!-- Web3Forms integration (fetch-based). access_key 발급 후 아래 값을 채우면 자동 전송 모드 활성화. 값이 비어 있으면 mailto 폴백으로 동작. -->
+      <input type="hidden" name="access_key" value="">
+      <input type="hidden" name="from_name" value="wowpia.kr 개발문의폼">
+      <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
       <div class="form-title">프로젝트 개요를 알려주세요</div>
       <div class="form-sub">*표시는 필수 항목입니다. 나머지는 아는 만큼만 채우시면 됩니다.</div>
 
@@ -456,16 +461,16 @@
       <div class="actions">
         <button type="submit" class="btn primary" id="submit-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
-          문의 보내기
+          <span id="submit-label">문의 보내기</span>
         </button>
         <a href="mailto:wowpia0127@gmail.com" class="btn ghost">이메일로 직접 보내기</a>
-        <span class="note-inline">전송 시 메일 앱이 열립니다.</span>
+        <span class="note-inline" id="submit-note">1영업일 이내 대표이사가 직접 회신드립니다.</span>
       </div>
 
       <div class="sent" id="sent-panel" role="status" aria-live="polite">
-        <h3>메일 앱을 열었습니다.</h3>
-        <p>새로 열린 창에서 <strong>내용을 확인하고 '보내기' 버튼</strong>을 눌러주세요. 창이 열리지 않았다면 아래 링크를 눌러 다시 시도해 주세요.</p>
-        <div class="fallback"><a id="fallback-link" href="#">다시 열기 →</a></div>
+        <h3 id="sent-title">문의가 전송되었습니다.</h3>
+        <p id="sent-body">감사합니다. 남겨주신 이메일로 <strong>1영업일 이내</strong> 회신드리겠습니다. 급한 건은 <a href="mailto:wowpia0127@gmail.com" style="color:#157A5A;font-weight:600;text-decoration:none">wowpia0127@gmail.com</a> 로 직접 연락 주세요.</p>
+        <div class="fallback" id="sent-fallback" style="display:none;"><a id="fallback-link" href="#">메일 앱으로 다시 열기 →</a></div>
       </div>
     </form>
 
@@ -495,12 +500,30 @@
     (function () {
       var form = document.getElementById('inquiry-form');
       var sent = document.getElementById('sent-panel');
+      var sentTitle = document.getElementById('sent-title');
+      var sentBody = document.getElementById('sent-body');
+      var sentFallback = document.getElementById('sent-fallback');
       var fallback = document.getElementById('fallback-link');
       var submitBtn = document.getElementById('submit-btn');
+      var submitLabel = document.getElementById('submit-label');
+      var submitNote = document.getElementById('submit-note');
 
-      function buildMailto(data) {
-        var subject = '[개발문의] ' + (data.type || '기타') + ' · ' + (data.company || '') + ' · ' + (data.name || '');
-        var lines = [
+      function collect() {
+        return {
+          name: form.elements['name'].value.trim(),
+          company: form.elements['company'].value.trim(),
+          email: form.elements['email'].value.trim(),
+          phone: form.elements['phone'].value.trim(),
+          type: (form.querySelector('input[name="type"]:checked') || {}).value || '',
+          budget: form.elements['budget'].value,
+          timeline: form.elements['timeline'].value,
+          summary: form.elements['summary'].value.trim(),
+          refs: form.elements['refs'].value.trim()
+        };
+      }
+
+      function buildBody(data) {
+        return [
           '(주)인포게이트 개발 문의',
           '',
           '━━━━━━━━━━━━━━━━━━━━',
@@ -522,9 +545,12 @@
           '',
           '━━━━━━━━━━━━━━━━━━━━',
           '보낸 곳: https://wowpia.kr/inquiry/'
-        ];
-        var body = lines.join('\r\n');
-        return 'mailto:wowpia0127@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        ].join('\n');
+      }
+
+      function buildMailto(data) {
+        var subject = '[개발문의] ' + (data.type || '기타') + ' · ' + (data.company || '') + ' · ' + (data.name || '');
+        return 'mailto:wowpia0127@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(buildBody(data).replace(/\n/g, '\r\n'));
       }
 
       function markInvalid(field, on) {
@@ -535,8 +561,7 @@
 
       function validate() {
         var ok = true;
-        var required = ['name', 'company', 'email', 'summary'];
-        required.forEach(function (n) {
+        ['name', 'company', 'email', 'summary'].forEach(function (n) {
           var el = form.elements[n];
           if (!el) return;
           var empty = !el.value || !el.value.trim();
@@ -564,29 +589,83 @@
         return ok;
       }
 
-      form.addEventListener('submit', function (e) {
+      function showSuccess() {
+        sentTitle.textContent = '문의가 전송되었습니다.';
+        sentBody.innerHTML = '감사합니다. 남겨주신 이메일로 <strong>1영업일 이내</strong> 회신드리겠습니다. 급한 건은 <a href="mailto:wowpia0127@gmail.com" style="color:#157A5A;font-weight:600;text-decoration:none">wowpia0127@gmail.com</a> 로 직접 연락 주세요.';
+        sentFallback.style.display = 'none';
+        sent.classList.add('on');
+        submitLabel.textContent = '전송 완료';
+        submitBtn.disabled = true;
+        submitNote.textContent = '';
+        form.reset();
+        sent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      function showMailtoFallback(data, reason) {
+        var href = buildMailto(data);
+        fallback.setAttribute('href', href);
+        sentTitle.textContent = '메일 앱으로 다시 시도해 주세요.';
+        sentBody.textContent = reason || '자동 전송에 실패했습니다. 아래 링크를 눌러 메일 앱으로 보내주세요.';
+        sentFallback.style.display = 'block';
+        sent.classList.add('on');
+        submitLabel.textContent = '다시 보내기';
+        submitBtn.disabled = false;
+        window.location.href = href;
+      }
+
+      form.addEventListener('submit', async function (e) {
         e.preventDefault();
         if (!validate()) {
           var firstInvalid = form.querySelector('.invalid');
           if (firstInvalid) firstInvalid.focus();
           return;
         }
-        var data = {
-          name: form.elements['name'].value.trim(),
-          company: form.elements['company'].value.trim(),
-          email: form.elements['email'].value.trim(),
-          phone: form.elements['phone'].value.trim(),
-          type: (form.querySelector('input[name="type"]:checked') || {}).value || '',
-          budget: form.elements['budget'].value,
-          timeline: form.elements['timeline'].value,
-          summary: form.elements['summary'].value.trim(),
-          refs: form.elements['refs'].value.trim()
+        var data = collect();
+        var accessKey = form.elements['access_key'].value.trim();
+
+        // access_key 없으면 즉시 mailto 폴백
+        if (!accessKey) {
+          showMailtoFallback(data, '메일 앱이 곧 열립니다. 열리지 않으면 아래 링크를 눌러주세요.');
+          return;
+        }
+
+        // Web3Forms fetch 전송
+        submitLabel.textContent = '전송 중…';
+        submitBtn.disabled = true;
+
+        var payload = {
+          access_key: accessKey,
+          from_name: 'wowpia.kr 개발문의폼',
+          subject: '[개발문의] ' + data.type + ' · ' + data.company + ' · ' + data.name,
+          botcheck: form.elements['botcheck'].checked,
+          name: data.name,
+          company: data.company,
+          email: data.email,
+          phone: data.phone || '(미기재)',
+          project_type: data.type,
+          budget: data.budget || '(미기재)',
+          timeline: data.timeline || '(미기재)',
+          summary: data.summary,
+          references: data.refs || '(없음)',
+          message: buildBody(data),
+          replyto: data.email
         };
-        var href = buildMailto(data);
-        fallback.setAttribute('href', href);
-        sent.classList.add('on');
-        submitBtn.textContent = '메일 앱 다시 열기';
-        window.location.href = href;
+
+        try {
+          var res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          var json = await res.json();
+          if (res.ok && json && json.success) {
+            showSuccess();
+          } else {
+            showMailtoFallback(data, (json && json.message) ? json.message : '서버 응답이 실패했습니다. 메일 앱으로 다시 시도해 주세요.');
+          }
+        } catch (err) {
+          showMailtoFallback(data, '네트워크 오류입니다. 메일 앱으로 대신 보내주세요.');
+        }
       });
 
       form.querySelectorAll('input, textarea, select').forEach(function (el) {
