@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개인정보처리방침 · (주)인포게이트 Info-Gate Inc.</title>
+  <meta name="description" content="주식회사 인포게이트가 개발·운영하는 모바일 앱의 개인정보처리방침. 수집 항목, 이용 목적, 제3자 제공, 처리 위탁, 이용자의 권리 등을 안내합니다.">
+  <link rel="canonical" href="https://wowpia.kr/privacy/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1e5aa8">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="개인정보처리방침 · (주)인포게이트">
+  <meta property="og:description" content="주식회사 인포게이트 모바일 앱 개인정보처리방침.">
+  <meta property="og:url" content="https://wowpia.kr/privacy/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #1e5aa8;
+      --brand-dark: #17457f;
+      --ink: #0F1419;
+      --ink-soft: #3A3F47;
+      --ink-mute: #7A828C;
+      --rule: #E5E5E0;
+      --bg: #FAFAF7;
+      --bg-alt: #F1F3F7;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav */
+    nav.site {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--rule);
+      background: rgba(250,250,247,0.92);
+      backdrop-filter: blur(8px);
+      position: sticky; top: 0; z-index: 10;
+    }
+    nav.site .wrap { max-width: 1100px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand-link { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand-link img { display: block; height: 34px; width: auto; }
+    .nav-back { color: var(--ink-soft); text-decoration: none; font-size: 13.5px; font-weight: 500; }
+    .nav-back:hover { color: var(--brand); }
+
+    /* Header */
+    header.doc { padding: 56px 0 32px; border-bottom: 1px solid var(--rule); }
+    .eyebrow {
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 12px;
+    }
+    header.doc h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: clamp(32px, 5vw, 44px);
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    header.doc .meta { color: var(--ink-mute); font-size: 14px; margin-top: 12px; }
+    header.doc .meta strong { color: var(--ink-soft); font-weight: 600; margin-right: 6px; }
+    header.doc .meta span + span { margin-left: 20px; padding-left: 20px; border-left: 1px solid var(--rule); }
+    @media (max-width: 560px) {
+      header.doc .meta span + span { margin-left: 0; padding-left: 0; border-left: 0; display: block; margin-top: 6px; }
+    }
+
+    /* Content */
+    article { padding: 40px 0 60px; }
+    article h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: 24px;
+      letter-spacing: -0.3px;
+      margin-top: 44px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--brand);
+      display: inline-block;
+    }
+    article h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+    article p, article li { font-size: 15px; color: var(--ink-soft); }
+    article p { margin-bottom: 12px; }
+    article ul, article ol { padding-left: 22px; margin-bottom: 14px; }
+    article li { margin-bottom: 6px; }
+    article strong { color: var(--ink); font-weight: 600; }
+    article a { color: var(--brand); text-decoration: none; border-bottom: 1px solid transparent; }
+    article a:hover { border-bottom-color: var(--brand); }
+
+    .apps-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 14px 0 18px;
+      font-size: 14px;
+    }
+    .apps-table th, .apps-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--rule); }
+    .apps-table th { background: var(--bg-alt); font-weight: 700; color: var(--ink); font-size: 12.5px; letter-spacing: 0.3px; }
+    .apps-table tr:last-child td { border-bottom: none; }
+    .apps-table code { font-family: 'Menlo','Consolas',monospace; font-size: 12.5px; color: var(--ink-soft); background: var(--bg-alt); padding: 2px 6px; border-radius: 4px; }
+
+    .callout {
+      background: var(--bg-alt);
+      border-left: 3px solid var(--brand);
+      padding: 14px 18px;
+      border-radius: 6px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+    .callout strong { color: var(--brand-dark); }
+
+    .contact-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin: 24px 0 8px;
+    }
+    .contact-card .row { display: flex; gap: 8px; padding: 6px 0; font-size: 14px; }
+    .contact-card .row .k { min-width: 140px; color: var(--ink-mute); font-weight: 600; font-size: 13px; }
+    .contact-card .row .v { color: var(--ink); }
+    .contact-card a { color: var(--brand); }
+    @media (max-width: 480px) {
+      .contact-card .row { flex-direction: column; gap: 2px; }
+    }
+
+    .history {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      font-size: 13px;
+      color: var(--ink-mute);
+    }
+    .history strong { color: var(--ink-soft); }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--ink-mute);
+      border-top: 1px solid var(--rule);
+      background: #fff;
+    }
+    footer a { color: var(--ink-mute); text-decoration: underline; margin: 0 6px; }
+    footer a:hover { color: var(--brand); }
+
+    /* TOC */
+    .toc {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 24px 0 8px;
+      font-size: 14px;
+    }
+    .toc .toc-title { font-weight: 700; color: var(--ink); margin-bottom: 8px; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; }
+    .toc ol { padding-left: 20px; margin: 0; columns: 2; column-gap: 30px; }
+    @media (max-width: 560px) { .toc ol { columns: 1; } }
+    .toc li { margin-bottom: 4px; color: var(--ink-soft); }
+    .toc a { color: var(--ink-soft); text-decoration: none; }
+    .toc a:hover { color: var(--brand); }
+  </style>
+</head>
+<body>
+
+  <nav class="site">
+    <div class="wrap">
+      <a href="/" class="brand-link" aria-label="Info-Gate Inc. Home">
+        <img src="../icons/infogate-logo.svg" alt="INFOGATE" width="150" height="34">
+      </a>
+      <a href="/" class="nav-back">← 회사 소개로</a>
+    </div>
+  </nav>
+
+  <header class="doc">
+    <div class="wrap">
+      <div class="eyebrow">Privacy Policy · 개인정보처리방침</div>
+      <h1>(주)인포게이트 모바일 앱<br>개인정보처리방침</h1>
+      <div class="meta">
+        <span><strong>시행일:</strong>2026년 7월 2일</span>
+        <span><strong>최종 개정:</strong>2026년 7월 2일</span>
+      </div>
+    </div>
+  </header>
+
+  <article>
+    <div class="wrap">
+      <p>주식회사 인포게이트(이하 "회사")는 이용자의 개인정보를 중요하게 생각하며, 「개인정보 보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 및 Google Play 개발자 정책을 준수합니다. 회사는 아래와 같이 개인정보처리방침을 수립·공개합니다.</p>
+
+      <div class="callout">
+        본 방침은 회사가 개발·운영하는 <strong>모바일 앱 전체에 공통 적용</strong>됩니다. 앱별로 수집 항목이 다른 경우 아래 "적용 대상 앱" 표에서 각 앱의 수집 항목을 명시합니다.
+      </div>
+
+      <div class="toc" role="navigation" aria-label="목차">
+        <div class="toc-title">목차</div>
+        <ol>
+          <li><a href="#s1">적용 대상 앱</a></li>
+          <li><a href="#s2">수집하는 개인정보</a></li>
+          <li><a href="#s3">개인정보 이용 목적</a></li>
+          <li><a href="#s4">보관 및 파기</a></li>
+          <li><a href="#s5">제3자 제공</a></li>
+          <li><a href="#s6">처리 위탁</a></li>
+          <li><a href="#s7">저장 위치</a></li>
+          <li><a href="#s8">이용자의 권리</a></li>
+          <li><a href="#s9">광고 안내</a></li>
+          <li><a href="#s10">아동 개인정보</a></li>
+          <li><a href="#s11">안전조치</a></li>
+          <li><a href="#s12">보호책임자·문의</a></li>
+          <li><a href="#s13">방침 변경</a></li>
+        </ol>
+      </div>
+
+      <h2 id="s1">1. 적용 대상 앱</h2>
+      <p>본 방침은 회사가 개발·운영하는 다음 모바일 앱에 적용됩니다.</p>
+      <table class="apps-table">
+        <thead>
+          <tr>
+            <th>앱 이름</th>
+            <th>패키지 명</th>
+            <th>배포처</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>너도나도 타로</td>
+            <td><code>com.nudonadotarot.infogate</code></td>
+            <td>Google Play</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:13px;color:var(--ink-mute);">회사가 새 앱을 배포하는 경우 이 표에 추가되며, 앱별 특이 사항은 해당 앱 스토어 등록 정보와 함께 공개됩니다.</p>
+
+      <h2 id="s2">2. 수집하는 개인정보 항목</h2>
+
+      <h3>2-1. 회원가입 및 로그인 (Google 계정)</h3>
+      <p>이용자가 앱에서 <strong>Google 계정으로 로그인</strong>할 때, Google로부터 아래 항목을 제공받습니다.</p>
+      <ul>
+        <li>이메일 주소</li>
+        <li>이름 (Google 계정에 등록된 표시명)</li>
+        <li>프로필 사진 URL</li>
+        <li>Google 계정 고유 식별자 (sub)</li>
+      </ul>
+      <p style="font-size:13px;color:var(--ink-mute);">별도의 회원가입 절차 없이 Google 로그인만으로 서비스를 이용합니다. Google 비밀번호는 회사가 접근하지 못하며, Google이 제공하는 인증 토큰만 사용합니다.</p>
+
+      <h3>2-2. 서비스 이용 과정에서 자동 수집</h3>
+      <ul>
+        <li><strong>광고 식별자(Google 광고 ID, AAID)</strong> — Google AdMob SDK가 자동 수집</li>
+        <li><strong>IP 주소, 기기 모델·OS 버전, 대략적 위치(국가·지역 단위)</strong> — Google AdMob SDK가 자동 수집</li>
+        <li><strong>인앱 결제 이력(구매 상태·상품 ID·구매 토큰)</strong> — Google Play 결제 시스템이 처리</li>
+      </ul>
+
+      <h3>2-3. 이용자가 앱 사용 중 생성한 데이터</h3>
+      <ul>
+        <li>타로 카드 뽑기 기록, 즐겨찾기, 앱 내 설정</li>
+        <li>이용자별 데이터로서 <strong>회사 서버에 저장</strong>되어 여러 기기에서 동일한 계정으로 로그인 시 동기화됩니다.</li>
+      </ul>
+
+      <div class="callout">
+        <strong>결제 정보 안내:</strong> 신용카드 번호, 결제 비밀번호 등 결제 정보는 <strong>Google Play 결제 시스템만이 처리</strong>합니다. 회사는 결제 정보에 접근하거나 저장하지 않으며, Google로부터 <strong>구매 성공 여부만 확인</strong>합니다.
+      </div>
+
+      <h2 id="s3">3. 개인정보 이용 목적</h2>
+      <ul>
+        <li>회원 인증 및 서비스 제공 (Google 로그인)</li>
+        <li>이용자별 데이터 저장·동기화 (기기 간 데이터 유지)</li>
+        <li>인앱 결제 확인 및 유료 기능 제공</li>
+        <li>Google AdMob을 통한 광고 표시</li>
+        <li>서비스 개선 및 오류 대응</li>
+        <li>법령상 의무 이행</li>
+      </ul>
+
+      <h2 id="s4">4. 개인정보 보관 및 파기</h2>
+      <ul>
+        <li>이용자가 <strong>회원 탈퇴</strong>하거나 <strong>계정 삭제를 요청</strong>하면 지체 없이 파기합니다.</li>
+        <li>다만 관계 법령에 따라 보관해야 하는 정보는 해당 기간까지 안전하게 보관 후 파기합니다.
+          <ul>
+            <li>전자상거래 등에서의 소비자 보호에 관한 법률: 계약·청약철회 기록 5년, 대금결제·재화 공급 기록 5년, 소비자 불만·분쟁 처리 기록 3년</li>
+            <li>통신비밀보호법: 로그 기록 3개월</li>
+          </ul>
+        </li>
+        <li>파기 방법: 전자적 파일은 복구·재생이 불가능한 방법으로 영구 삭제, 종이 문서는 분쇄 또는 소각</li>
+      </ul>
+
+      <h2 id="s5">5. 개인정보의 제3자 제공</h2>
+      <p>회사는 이용자의 개인정보를 원칙적으로 <strong>제3자에게 제공하지 않습니다</strong>. 다만 다음 경우에는 예외적으로 제공될 수 있습니다.</p>
+      <ul>
+        <li>이용자가 사전에 명시적으로 동의한 경우</li>
+        <li>법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 관계 기관의 요구가 있는 경우</li>
+      </ul>
+
+      <h2 id="s6">6. 개인정보 처리 위탁</h2>
+      <p>회사는 서비스 제공을 위해 아래와 같이 개인정보 처리 업무를 위탁하고 있습니다.</p>
+      <table class="apps-table">
+        <thead>
+          <tr>
+            <th>수탁자</th>
+            <th>위탁 업무</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google LLC</td>
+            <td>계정 인증 (Google Sign-In), 광고 서비스 (Google AdMob), 인앱 결제 (Google Play Billing)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Google의 개인정보처리방침: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></p>
+
+      <h2 id="s7">7. 개인정보의 저장 위치</h2>
+      <ul>
+        <li>이용자 계정 정보 및 서비스 이용 데이터는 <strong>대한민국 국내 서버</strong>에 저장·처리됩니다.</li>
+        <li>Google이 제공하는 인증·광고·결제 서비스의 데이터는 Google이 운영하는 글로벌 인프라에서 처리되며, 자세한 내용은 Google 개인정보처리방침을 참고하시기 바랍니다.</li>
+      </ul>
+
+      <h2 id="s8">8. 이용자의 권리 및 행사 방법</h2>
+      <p>이용자는 언제든지 자신의 개인정보에 대해 다음 권리를 행사할 수 있습니다.</p>
+      <ul>
+        <li>개인정보 열람 요청</li>
+        <li>오류가 있는 경우 정정 요청</li>
+        <li>삭제 요청 (회원 탈퇴 포함)</li>
+        <li>처리정지 요청</li>
+      </ul>
+      <p>권리 행사는 앱 내 <strong>계정 삭제 기능</strong>을 이용하시거나, 아래 이메일로 요청하시면 됩니다. 회사는 요청 접수 후 <strong>10일 이내에 처리</strong>하고 결과를 통지합니다.</p>
+
+      <h2 id="s9">9. 광고 관련 안내</h2>
+      <ul>
+        <li>본 앱은 <strong>Google AdMob</strong> 광고 서비스를 사용합니다.</li>
+        <li>Google은 이용자의 광고 식별자(AAID)와 앱 사용 정보를 사용해 맞춤형 광고를 제공할 수 있습니다.</li>
+        <li>이용자는 아래 방법으로 맞춤형 광고를 거부할 수 있습니다.
+          <ul>
+            <li><strong>Android</strong>: 설정 → Google → 광고 → "광고 개인 최적화 사용 안 함" 활성화</li>
+            <li>또는 광고 ID를 초기화 · 삭제</li>
+          </ul>
+        </li>
+        <li>맞춤형 광고 거부 시에도 광고 자체는 계속 표시되지만, 이용자와 무관한 일반 광고가 제공됩니다.</li>
+      </ul>
+
+      <h2 id="s10">10. 아동의 개인정보</h2>
+      <ul>
+        <li>본 앱은 <strong>만 14세 미만 아동을 대상으로 하지 않습니다</strong>.</li>
+        <li>만 14세 미만 아동의 계정 사용이 확인되면 회사는 즉시 해당 계정 및 관련 데이터를 삭제합니다.</li>
+      </ul>
+
+      <h2 id="s11">11. 개인정보 안전조치</h2>
+      <p>회사는 이용자의 개인정보 보호를 위해 다음 조치를 실시합니다.</p>
+      <ul>
+        <li>개인정보 접근 권한 관리 및 접근 통제</li>
+        <li>주요 통신 구간에 대한 암호화 (HTTPS/TLS)</li>
+        <li>개인정보 취급 인원 최소화 및 정기 교육</li>
+        <li>접속 기록 보관 및 위·변조 방지</li>
+      </ul>
+
+      <h2 id="s12">12. 개인정보 보호책임자 및 문의</h2>
+      <div class="contact-card">
+        <div class="row"><div class="k">회사</div><div class="v">주식회사 인포게이트 (Info-Gate Inc.)</div></div>
+        <div class="row"><div class="k">개인정보 보호책임자</div><div class="v">박봉준 (대표이사)</div></div>
+        <div class="row"><div class="k">이메일</div><div class="v"><a href="mailto:wowpia0127@gmail.com">wowpia0127@gmail.com</a></div></div>
+        <div class="row"><div class="k">소재지</div><div class="v">부산광역시 해운대구 센텀동로 51, 203호 (우편번호 48059)</div></div>
+        <div class="row"><div class="k">사업자등록번호</div><div class="v">617-86-11726</div></div>
+      </div>
+      <p style="font-size:13px;color:var(--ink-mute);">개인정보 침해에 대한 신고나 상담이 필요한 경우 아래 기관에 문의할 수 있습니다.</p>
+      <ul style="font-size:13px;color:var(--ink-mute);">
+        <li>개인정보침해신고센터: <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener">privacy.kisa.or.kr</a> / (국번없이) 118</li>
+        <li>개인정보 분쟁조정위원회: <a href="https://kopico.go.kr" target="_blank" rel="noopener">kopico.go.kr</a> / 1833-6972</li>
+        <li>대검찰청 사이버수사과: <a href="https://spo.go.kr" target="_blank" rel="noopener">spo.go.kr</a> / (국번없이) 1301</li>
+        <li>경찰청 사이버수사국: <a href="https://ecrm.police.go.kr" target="_blank" rel="noopener">ecrm.police.go.kr</a> / (국번없이) 182</li>
+      </ul>
+
+      <h2 id="s13">13. 방침의 변경</h2>
+      <p>본 개인정보처리방침은 법령·정책 또는 보안 기술의 변경에 따라 개정될 수 있습니다. 변경 시 앱 내 공지 또는 이 페이지 상단에 개정일을 명시하여 안내합니다.</p>
+
+      <div class="history">
+        <div><strong>개정 이력</strong></div>
+        <div>2026년 7월 2일 — 최초 제정 및 시행</div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="wrap">
+      © 2013–2026 <strong>Info-Gate Inc.</strong> (주식회사 인포게이트) · 부산광역시 해운대구<br>
+      <a href="/">회사 소개</a> ·
+      <a href="/inquiry/">개발 문의</a> ·
+      <a href="/wowpia/">wowpia</a> ·
+      <a href="mailto:wowpia0127@gmail.com">wowpia0127@gmail.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>
