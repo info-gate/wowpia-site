@@ -1,0 +1,12 @@
+# Cloudflare Pages redirects
+# 옛 /wowpia/ 경로 → 새 대문으로 (301, SEO 자산 이전)
+/wowpia          /  301
+/wowpia/         /  301
+/wowpia/*        /  301
+
+# trailing slash 통일 (편의 alias)
+/card            /card/   301
+/inquiry         /inquiry/ 301
+/privacy         /privacy/ 301
+/infogate        /infogate/ 301
+/ads             /ads/    301

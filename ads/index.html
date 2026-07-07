@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배너 광고 신청 · wowpia.kr</title>
+  <meta name="description" content="wowpia.kr 프리미엄 배너 슬롯 광고 신청. 상단 리더보드·네이티브·사각형 슬롯 노출 가능. 카카오 애드핏보다 자유롭고, 브랜드 톤에 맞춘 노출.">
+  <link rel="canonical" href="https://wowpia.kr/ads/">
+  <meta name="theme-color" content="#1D9E75">
+  <link rel="icon" type="image/png" href="../favicon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="wowpia.kr 배너 광고 신청">
+  <meta property="og:description" content="프리미엄 슬롯 광고 신청 · 상단 리더보드·네이티브·사각형">
+  <meta property="og:url" content="https://wowpia.kr/ads/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FAFAF7;
+      --bg-alt: #F1F3F7;
+      --ink: #0F1419;
+      --ink-soft: #3A3F47;
+      --ink-mute: #7A828C;
+      --rule: #E5E5E0;
+      --accent: #1D9E75;
+      --accent-dark: #157A5A;
+      --brand-info: #1e5aa8;
+      --danger: #d92d20;
+      --field: #ffffff;
+      --field-focus: #eef8f2;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+    nav.site {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--rule);
+      background: rgba(250,250,247,0.92);
+      backdrop-filter: blur(8px);
+      position: sticky; top: 0; z-index: 10;
+    }
+    nav.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .logo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 22px; letter-spacing: -0.5px; color: var(--ink); text-decoration: none; }
+    .logo em { color: var(--accent); font-style: normal; }
+    .nav-back { color: var(--ink-soft); text-decoration: none; font-size: 13.5px; font-weight: 500; }
+    .nav-back:hover { color: var(--accent); }
+
+    .hero { padding: 56px 0 40px; }
+    .eyebrow { font-size: 12.5px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    h1 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(36px, 5vw, 52px); line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 18px; }
+    h1 em { font-style: italic; font-weight: 500; color: var(--accent); }
+    .lead { font-size: 16.5px; color: var(--ink-soft); max-width: 640px; line-height: 1.55; }
+
+    /* Slots showcase */
+    .slots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 32px 0 12px;
+    }
+    @media (max-width: 640px) { .slots { grid-template-columns: 1fr; } }
+    .slot {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .slot .id { font-size: 10.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .slot .nm { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 500; margin-bottom: 4px; letter-spacing: -0.2px; }
+    .slot .sz { font-size: 12.5px; color: var(--ink-mute); margin-bottom: 8px; }
+    .slot .dsc { font-size: 13px; color: var(--ink-soft); }
+
+    /* Form */
+    .form-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 20px;
+      padding: 36px 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 30px -20px rgba(15,20,25,0.15);
+    }
+    .form-title { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; letter-spacing: -0.3px; margin-bottom: 6px; }
+    .form-sub { font-size: 13.5px; color: var(--ink-mute); margin-bottom: 28px; }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
+    .field { display: flex; flex-direction: column; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: 13px; font-weight: 600; color: var(--ink-soft); margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
+    .field label .req { color: var(--danger); font-weight: 700; }
+    .field label .opt { font-size: 10.5px; font-weight: 500; color: var(--ink-mute); background: var(--bg-alt); padding: 2px 6px; border-radius: 4px; letter-spacing: 0.4px; }
+    .field input, .field select, .field textarea {
+      font-family: inherit;
+      font-size: 14.5px;
+      color: var(--ink);
+      background: var(--field);
+      border: 1.5px solid var(--rule);
+      border-radius: 10px;
+      padding: 12px 14px;
+      transition: border-color 0.15s, background 0.15s;
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .field textarea { min-height: 120px; resize: vertical; line-height: 1.55; }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--accent);
+      background: var(--field-focus);
+      outline: none;
+    }
+    .field select {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%237A828C' d='M6 8L0 0h12z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+    .field input.invalid, .field select.invalid, .field textarea.invalid { border-color: var(--danger); background: #fff5f5; }
+    .field .hint { font-size: 12px; color: var(--ink-mute); margin-top: 6px; }
+
+    .checks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    @media (max-width: 640px) { .checks { grid-template-columns: 1fr; } }
+    .chk {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: var(--field);
+      border: 1.5px solid var(--rule);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .chk input { accent-color: var(--accent); width: 18px; height: 18px; cursor: pointer; }
+    .chk:has(input:checked) { border-color: var(--accent); background: var(--field-focus); }
+    .chk .lbl { font-size: 13.5px; font-weight: 500; }
+    .chk .lbl small { display: block; font-size: 11.5px; font-weight: 400; color: var(--ink-mute); }
+
+    .consent {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 14px 16px;
+      background: var(--bg-alt);
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .consent input { width: 18px; height: 18px; accent-color: var(--accent); margin-top: 2px; cursor: pointer; flex-shrink: 0; }
+    .consent label { font-size: 12.5px; color: var(--ink-soft); line-height: 1.5; cursor: pointer; }
+    .consent label .req { color: var(--danger); font-weight: 700; }
+
+    .actions { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-size: 14.5px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      font-family: inherit;
+      transition: transform 0.15s, background 0.15s;
+    }
+    .btn.primary { background: var(--accent); color: #fff; box-shadow: 0 10px 22px -12px rgba(29,158,117,0.6); }
+    .btn.primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn.primary:disabled { background: #b8d4c8; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn.ghost { background: transparent; color: var(--ink-soft); border-color: var(--rule); }
+    .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .note-inline { font-size: 12.5px; color: var(--ink-mute); }
+
+    .sent {
+      display: none;
+      background: #f0f9f4;
+      border: 1px solid #b7e2c8;
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-top: 22px;
+    }
+    .sent.on { display: block; }
+    .sent h3 { font-family: 'Fraunces', serif; font-size: 20px; color: #157A5A; font-weight: 500; margin-bottom: 6px; }
+    .sent p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; }
+
+    footer { padding: 30px 0; text-align: center; font-size: 13px; color: var(--ink-mute); border-top: 1px solid var(--rule); }
+    footer a { color: var(--ink-mute); text-decoration: underline; margin: 0 6px; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+      .form-card { padding: 28px 20px; }
+      .hero { padding: 44px 0 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site">
+    <div class="wrap">
+      <a href="/" class="logo">wow<em>pia</em></a>
+      <a href="/" class="nav-back">← 홈으로</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Advertise · 배너 광고 신청</div>
+      <h1>wowpia.kr에<br/><em>배너를 게재하세요.</em></h1>
+      <p class="lead">wowpia.kr 프리미엄 슬롯에 브랜드 톤에 맞춘 배너를 게재할 수 있습니다. 카카오 애드핏보다 훨씬 자유롭고, 특정 카테고리(앱·SaaS·개발) 타겟이 명확한 방문자에게 도달합니다.</p>
+
+      <div class="slots">
+        <div class="slot">
+          <div class="id">Slot A</div>
+          <div class="nm">상단 리더보드</div>
+          <div class="sz">728 × 90 (PC) / 320 × 100 (모바일)</div>
+          <div class="dsc">홈 히어로 바로 아래. 모든 방문자에게 첫 노출.</div>
+        </div>
+        <div class="slot">
+          <div class="id">Slot B</div>
+          <div class="nm">중간 네이티브</div>
+          <div class="sz">반응형 (권장 1200 × 200)</div>
+          <div class="dsc">모바일 앱 그리드와 웹 서비스 그리드 사이. 스크롤 필독 위치.</div>
+        </div>
+        <div class="slot">
+          <div class="id">Slot C</div>
+          <div class="nm">사이드 사각형</div>
+          <div class="sz">300 × 250</div>
+          <div class="dsc">앱 카드 그리드 내부. 서비스 탐색 문맥에서 자연스럽게 노출.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <form class="form-card" id="ads-form" novalidate>
+      <input type="hidden" name="access_key" value="7be80711-43af-4db1-86ca-b1807b5df5a6">
+      <input type="hidden" name="from_name" value="wowpia.kr 광고신청폼">
+      <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
+      <div class="form-title">광고 신청 정보를 알려주세요</div>
+      <div class="form-sub">*표시는 필수입니다. 승인 여부와 견적을 1영업일 이내 회신드립니다.</div>
+
+      <div class="grid">
+        <div class="field">
+          <label for="f-name">담당자 이름 <span class="req">*</span></label>
+          <input id="f-name" name="name" type="text" required placeholder="홍길동" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="f-company">브랜드 · 회사명 <span class="req">*</span></label>
+          <input id="f-company" name="company" type="text" required placeholder="주식회사 예시" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="f-email">이메일 <span class="req">*</span></label>
+          <input id="f-email" name="email" type="email" required placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="f-phone">연락처 <span class="opt">선택</span></label>
+          <input id="f-phone" name="phone" type="tel" placeholder="010-1234-5678" autocomplete="tel">
+        </div>
+
+        <div class="field full">
+          <label>희망 슬롯 <span class="req">*</span> <span class="opt" style="margin-left:6px">복수 선택 가능</span></label>
+          <div class="checks">
+            <label class="chk"><input type="checkbox" name="slot_a"><span class="lbl">Slot A · 상단 리더보드<small>728×90 / 320×100</small></span></label>
+            <label class="chk"><input type="checkbox" name="slot_b"><span class="lbl">Slot B · 중간 네이티브<small>반응형</small></span></label>
+            <label class="chk"><input type="checkbox" name="slot_c"><span class="lbl">Slot C · 사이드 사각형<small>300×250</small></span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-period">희망 게재 기간 <span class="opt">선택</span></label>
+          <select id="f-period" name="period">
+            <option value="">- 선택 -</option>
+            <option value="1주">1주 (테스트)</option>
+            <option value="1개월">1개월</option>
+            <option value="3개월">3개월</option>
+            <option value="6개월">6개월</option>
+            <option value="1년+">1년 이상 (장기)</option>
+            <option value="협의">협의</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-budget">예산 규모 <span class="opt">선택</span></label>
+          <select id="f-budget" name="budget">
+            <option value="">- 선택 -</option>
+            <option value="~50만원">50만원 미만</option>
+            <option value="50~200만원">50만원 ~ 200만원</option>
+            <option value="200~500만원">200만원 ~ 500만원</option>
+            <option value="500만원+">500만원 이상</option>
+            <option value="협의">협의</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="f-summary">광고 대상 · 소구 메시지 <span class="req">*</span></label>
+          <textarea id="f-summary" name="summary" required placeholder="예) 개발자·창업자 대상 코딩 부트캠프 5월 신청 접수 홍보. 앱 개발 관심 타겟이 많은 wowpia 방문자에게 노출하고 싶음."></textarea>
+          <div class="hint">어떤 서비스/제품·어떤 타겟·어떤 메시지인지 알려주세요. 세부는 검토 회신 후 협의.</div>
+        </div>
+        <div class="field full">
+          <label for="f-refs">브랜드 · 랜딩 URL <span class="opt">선택</span></label>
+          <input id="f-refs" name="refs" type="text" placeholder="https:// (브랜드 사이트, 캠페인 랜딩)">
+        </div>
+      </div>
+
+      <div class="consent">
+        <input type="checkbox" id="f-consent" name="consent" required>
+        <label for="f-consent">
+          문의 처리를 위한 <strong>개인정보 수집·이용</strong>에 동의합니다. <span class="req">*</span><br>
+          수집 항목: 이름·회사·이메일·연락처 · 이용 목적: 광고 신청 회신 · 보관 기간: 회신 완료 후 1년.
+        </label>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn primary" id="submit-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+          <span id="submit-label">광고 신청 보내기</span>
+        </button>
+        <span class="note-inline">1영업일 이내 회신드립니다.</span>
+      </div>
+
+      <div class="sent" id="sent-panel" role="status" aria-live="polite">
+        <h3 id="sent-title">신청이 전송되었습니다.</h3>
+        <p id="sent-body">감사합니다. 남겨주신 이메일로 <strong>1영업일 이내</strong> 승인 여부와 견적을 회신드리겠습니다.</p>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    © 2013–2026 <strong>Info-Gate Inc.</strong> · wowpia.kr ·
+    <a href="/">홈</a> ·
+    <a href="/infogate/">회사 소개</a> ·
+    <a href="/inquiry/">개발 문의</a> ·
+    <a href="/privacy/">개인정보처리방침</a>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('ads-form');
+      var sent = document.getElementById('sent-panel');
+      var sentTitle = document.getElementById('sent-title');
+      var sentBody = document.getElementById('sent-body');
+      var submitBtn = document.getElementById('submit-btn');
+      var submitLabel = document.getElementById('submit-label');
+
+      function markInvalid(field, on) {
+        if (!field) return;
+        if (on) field.classList.add('invalid'); else field.classList.remove('invalid');
+      }
+
+      function validate() {
+        var ok = true;
+        ['name', 'company', 'email', 'summary'].forEach(function (n) {
+          var el = form.elements[n];
+          if (!el) return;
+          var empty = !el.value || !el.value.trim();
+          markInvalid(el, empty);
+          if (empty) ok = false;
+        });
+        var email = form.elements['email'];
+        if (email && email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+          markInvalid(email, true); ok = false;
+        }
+        var anySlot = form.elements['slot_a'].checked || form.elements['slot_b'].checked || form.elements['slot_c'].checked;
+        if (!anySlot) {
+          form.querySelectorAll('.chk').forEach(function(c){ c.style.borderColor = 'var(--danger)'; });
+          ok = false;
+        } else {
+          form.querySelectorAll('.chk').forEach(function(c){ c.style.borderColor = ''; });
+        }
+        var consent = form.elements['consent'];
+        if (consent && !consent.checked) { consent.parentElement.style.background = '#fff5f5'; ok = false; }
+        else if (consent) { consent.parentElement.style.background = ''; }
+        return ok;
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        if (!validate()) {
+          var f = form.querySelector('.invalid'); if (f) f.focus(); return;
+        }
+        var slots = [];
+        if (form.elements['slot_a'].checked) slots.push('A · 상단 리더보드');
+        if (form.elements['slot_b'].checked) slots.push('B · 중간 네이티브');
+        if (form.elements['slot_c'].checked) slots.push('C · 사이드 사각형');
+        var data = {
+          name: form.elements['name'].value.trim(),
+          company: form.elements['company'].value.trim(),
+          email: form.elements['email'].value.trim(),
+          phone: form.elements['phone'].value.trim() || '(미기재)',
+          slots: slots.join(', '),
+          period: form.elements['period'].value || '(미기재)',
+          budget: form.elements['budget'].value || '(미기재)',
+          summary: form.elements['summary'].value.trim(),
+          refs: form.elements['refs'].value.trim() || '(없음)'
+        };
+        var message = [
+          'wowpia.kr 배너 광고 신청',
+          '',
+          '━━━━━━━━━━━━━━━━━━━━',
+          '담당자: ' + data.name,
+          '브랜드·회사: ' + data.company,
+          '이메일: ' + data.email,
+          '연락처: ' + data.phone,
+          '',
+          '희망 슬롯: ' + data.slots,
+          '희망 기간: ' + data.period,
+          '예산 규모: ' + data.budget,
+          '━━━━━━━━━━━━━━━━━━━━',
+          '',
+          '■ 광고 대상·소구 메시지',
+          data.summary,
+          '',
+          '■ 랜딩 URL',
+          data.refs,
+          '',
+          '━━━━━━━━━━━━━━━━━━━━',
+          '보낸 곳: https://wowpia.kr/ads/'
+        ].join('\n');
+
+        var payload = {
+          access_key: form.elements['access_key'].value,
+          from_name: 'wowpia.kr 광고신청폼',
+          subject: '[광고신청] ' + data.slots + ' · ' + data.company + ' · ' + data.name,
+          botcheck: form.elements['botcheck'].checked,
+          name: data.name, company: data.company, email: data.email, phone: data.phone,
+          slots: data.slots, period: data.period, budget: data.budget,
+          summary: data.summary, refs: data.refs,
+          message: message, replyto: data.email
+        };
+
+        submitLabel.textContent = '전송 중…';
+        submitBtn.disabled = true;
+
+        try {
+          var res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          var json = await res.json();
+          if (res.ok && json && json.success) {
+            sent.classList.add('on');
+            submitLabel.textContent = '전송 완료';
+            form.reset();
+            sent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            sentTitle.textContent = '전송에 실패했습니다.';
+            sentBody.textContent = (json && json.message) ? json.message : '잠시 후 다시 시도해 주세요.';
+            sent.classList.add('on');
+            submitLabel.textContent = '다시 보내기';
+            submitBtn.disabled = false;
+          }
+        } catch (err) {
+          sentTitle.textContent = '네트워크 오류입니다.';
+          sentBody.textContent = '잠시 후 다시 시도하시거나 wowpia0127@gmail.com 로 직접 연락 주세요.';
+          sent.classList.add('on');
+          submitLabel.textContent = '다시 보내기';
+          submitBtn.disabled = false;
+        }
+      });
+
+      form.querySelectorAll('input, textarea, select').forEach(function (el) {
+        el.addEventListener('input', function () { markInvalid(el, false); });
+        el.addEventListener('change', function () { markInvalid(el, false); });
+      });
+    })();
+  </script>
+</body>
+</html>

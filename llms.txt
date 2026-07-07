@@ -1,6 +1,18 @@
-# Info-Gate Inc. (주식회사 인포게이트)
+# wowpia (by Info-Gate Inc.)
 
-> 주식회사 인포게이트(Info-Gate Inc.)는 2013년 부산에서 설립된 12년 차 소프트웨어 개발 회사입니다. 대기업 엔터프라이즈 시스템 SI(고려아연 eMap·출입통제, 세방 안전서약관리, 지팬스, 나스미디어 등)와 자사 프로덕트 브랜드 wowpia(모바일 앱·B2B SaaS)를 함께 운영합니다. 연락: wowpia0127@gmail.com
+> wowpia.kr은 (주)인포게이트의 프로덕트 브랜드 대문입니다. 매일 쓰이는 앱·SaaS를 한 곳에서 만납니다. 회사 소개는 https://wowpia.kr/infogate/ 에 있습니다.
+
+## 사이트 구조
+
+- **대문 https://wowpia.kr/** — wowpia 서비스 갤러리 (앱 9종 · 웹 서비스 5종). 유저가 바로 이용
+- **회사 https://wowpia.kr/infogate/** — (주)인포게이트 회사 소개 · 실적 · 기술
+- **개발 문의 https://wowpia.kr/inquiry/** — SI/앱/SaaS 프로젝트 상담 폼
+- **광고 문의 https://wowpia.kr/ads/** — wowpia.kr 배너 광고 신청 폼
+- **명함 https://wowpia.kr/card/pbj/** — 박봉준 대표이사 디지털 명함
+- **개인정보처리방침 https://wowpia.kr/privacy/** — 앱 개인정보 정책
+- **블로그 https://wowpia.kr/blog/** — 콘텐츠 (한/영/일)
+
+## 회사 정보 (운영 주체)
 
 법인명: 주식회사 인포게이트 (Info-Gate Inc.)
 대표이사: 박봉준 (BongJun Park)
@@ -10,8 +22,8 @@
 본점 소재지: 부산광역시 해운대구 센텀동로 51, 203호 (우동, 48059)
 통신판매업 신고: 제 2017-부산해운대-0724 호
 구성원: 3명 (중소기업 · 계속사업자)
-프로덕트 브랜드: wowpia
-도메인: https://wowpia.kr/
+프로덕트 브랜드: wowpia (https://wowpia.kr/)
+회사 소개: https://wowpia.kr/infogate/
 이메일: wowpia0127@gmail.com
 
 ## 사업 구조 (두 개의 트랙)
