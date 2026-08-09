@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artwork Inventory System: A Gallery Owner&#39;s Practical Guide — wowpia</title>
+  <meta name="description" content="A solid artwork inventory system saves galleries hours of admin work and prevents costly mistakes. Learn what to track, how to structure it, and which tools work.">
+  <link rel="canonical" href="https://wowpia.kr/blog/en/artwork-inventory-system-a-gallery-owner/">
+  <link rel="alternate" hreflang="en" href="https://wowpia.kr/blog/en/artwork-inventory-system-a-gallery-owner/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Artwork Inventory System: A Gallery Owner&#39;s Practical Guide">
+  <meta property="og:description" content="A solid artwork inventory system saves galleries hours of admin work and prevents costly mistakes. Learn what to track, how to structure it, and which tools work.">
+  <meta property="og:url" content="https://wowpia.kr/blog/en/artwork-inventory-system-a-gallery-owner/">
+  <meta property="og:image" content="https://wowpia.kr/og-image.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-08-09T00:00:00.000Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Artwork Inventory System: A Gallery Owner's Practical Guide",
+  "description": "A solid artwork inventory system saves galleries hours of admin work and prevents costly mistakes. Learn what to track, how to structure it, and which tools work.",
+  "image": "https://wowpia.kr/og-image.png",
+  "datePublished": "2026-08-09T00:00:00.000Z",
+  "inLanguage": "en",
+  "url": "https://wowpia.kr/blog/en/artwork-inventory-system-a-gallery-owner/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "wowpia",
+    "url": "https://wowpia.kr"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "wowpia"
+  }
+}
+  </script>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#1D9E75">
+  <style>
+    :root {
+      --bg: #FAFAF7; --ink: #0F1419; --ink-soft: #3A3F47; --ink-mute: #7A828C;
+      --rule: #E5E5E0; --accent: #1D9E75; --accent-dark: #157A5A;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg); color: var(--ink);
+      font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { color: var(--accent); }
+
+    .nav {
+      max-width: 760px; margin: 0 auto; padding: 24px 24px 16px;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav-brand {
+      font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600;
+      color: var(--ink); text-decoration: none;
+    }
+    .nav-brand em { color: var(--accent); font-style: italic; }
+    .nav-links { display: flex; gap: 20px; font-size: 14px; }
+    .nav-links a { color: var(--ink-soft); text-decoration: none; font-weight: 500; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 32px 24px 80px; }
+
+    .post-meta {
+      color: var(--ink-mute); font-size: 13px; margin-bottom: 8px;
+      display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+    }
+    .post-meta time { font-family: 'JetBrains Mono', monospace; }
+    .post-meta .tag {
+      padding: 2px 8px; background: var(--rule); border-radius: 4px;
+      font-size: 11px; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.4px;
+    }
+
+    article h1 {
+      font-family: 'Fraunces', serif; font-size: 38px; line-height: 1.2;
+      margin-bottom: 8px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em;
+    }
+    article .post-desc {
+      font-size: 18px; color: var(--ink-soft); margin: 8px 0 32px;
+      padding-bottom: 24px; border-bottom: 1px solid var(--rule); line-height: 1.5;
+    }
+    article h2 {
+      font-family: 'Fraunces', serif; font-size: 26px; margin: 36px 0 12px;
+      font-weight: 600; color: var(--ink);
+    }
+    article h3 { font-size: 20px; margin: 28px 0 10px; font-weight: 600; }
+    article p { margin-bottom: 18px; color: var(--ink); }
+    article ul, article ol { margin-bottom: 18px; padding-left: 24px; }
+    article li { margin-bottom: 6px; }
+    article code {
+      background: #F1F0EA; padding: 2px 6px; border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--accent-dark);
+    }
+    article pre {
+      background: #1A1D22; color: #F1F0EA; padding: 18px; border-radius: 8px;
+      margin: 18px 0; overflow-x: auto;
+    }
+    article pre code { background: transparent; color: inherit; padding: 0; font-size: 14px; }
+    article blockquote {
+      border-left: 3px solid var(--accent); padding-left: 18px;
+      color: var(--ink-soft); font-style: italic; margin: 18px 0;
+    }
+    article img { max-width: 100%; height: auto; border-radius: 8px; margin: 18px 0; }
+
+    .post-list { list-style: none; padding: 0; }
+    .post-list li {
+      padding: 24px 0; border-bottom: 1px solid var(--rule);
+    }
+    .post-list li:last-child { border-bottom: none; }
+    .post-list a {
+      text-decoration: none; color: inherit; display: block;
+    }
+    .post-list a:hover .post-title { color: var(--accent); }
+    .post-title {
+      font-family: 'Fraunces', serif; font-size: 22px; line-height: 1.3;
+      margin: 6px 0; color: var(--ink); transition: color 0.15s;
+    }
+    .post-card-desc { color: var(--ink-soft); font-size: 15px; line-height: 1.55; }
+
+    .footer {
+      max-width: 760px; margin: 0 auto; padding: 32px 24px;
+      border-top: 1px solid var(--rule); color: var(--ink-mute); font-size: 13px;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }</style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="nav-brand" href="/">wow<em>pia</em></a>
+    <div class="nav-links">
+      <a href="/" >Home</a>
+      <a href="/blog/en/" aria-current="page">Blog</a>
+      <span style="color:var(--ink-mute);font-size:12px">|</span>
+      <a href="/blog/" style="font-size:12px;color:var(--ink-mute)">KO</a>
+      <a href="/blog/en/" style="font-size:12px;color:var(--accent)">EN</a>
+      <a href="/blog/ja/" style="font-size:12px;color:var(--ink-mute)">JA</a>
+    </div>
+  </nav>
+  <main class="container">
+    <article>
+      <div class="post-meta">
+        <time datetime="2026-08-09">2026-08-09</time>
+        <span class="tag">ArtworkInventory</span><span class="tag">GalleryManagement</span><span class="tag">ArtInventorySystem</span><span class="tag">Canvly</span><span class="tag">ArtCollection</span><span class="tag">GallerySoftware</span><span class="tag">ArtBusiness</span>
+        
+      </div>
+      <h1>Artwork Inventory System: A Gallery Owner&#39;s Practical Guide</h1>
+      <p class="post-desc">A solid artwork inventory system saves galleries hours of admin work and prevents costly mistakes. Learn what to track, how to structure it, and which tools work.</p>
+      <p>An <strong>artwork inventory system</strong> is a structured database that records every detail about each piece in a gallery&#39;s collection — from acquisition cost and provenance to exhibition history and current location. Without one, galleries lose time, make avoidable errors, and struggle to scale.</p>
+<p>If you manage more than a handful of artworks, a proper inventory system isn&#39;t optional. It&#39;s the operational backbone of your gallery.</p>
+<h2>Why Every Gallery Needs an Artwork Inventory System</h2>
+<p>Most galleries start with spreadsheets. A shared Google Sheet, maybe a folder of PDFs. It works — until it doesn&#39;t.</p>
+<p>The moment you&#39;re managing dozens of works across multiple artists, loaning pieces to other venues, or tracking consignments alongside owned works, a flat spreadsheet collapses under its own weight. Data gets duplicated. Fields go inconsistent. Someone updates one row but forgets the linked record.</p>
+<p>A dedicated artwork inventory system solves this by giving every work a single source of truth. Everyone on the team sees the same data. Changes are logged. Nothing falls through the cracks.</p>
+<p>Beyond internal operations, buyers and institutions expect professionalism. When a collector asks for a condition report or a museum requests provenance documentation, you want to pull that in seconds — not spend an afternoon digging through folders.</p>
+<h2>What a Solid Artwork Inventory System Should Track</h2>
+<p>Not all inventory systems are created equal. The fields you capture determine how useful the system is six months from now. Here&#39;s what a well-structured artwork record should include:</p>
+<h3>Core Artwork Details</h3>
+<ul>
+<li><strong>Title, artist, year</strong> — the basics, but format matters (consistent artist name fields prevent duplication)</li>
+<li><strong>Medium and materials</strong> — be specific; &quot;oil on canvas&quot; is searchable, &quot;painting&quot; isn&#39;t</li>
+<li><strong>Dimensions</strong> — store in both centimeters and inches if you work internationally</li>
+<li><strong>Edition info</strong> — for prints and multiples, track edition number, size, and AP status</li>
+<li><strong>Unique identifier / accession number</strong> — a gallery-assigned code that ties all records together</li>
+</ul>
+<h3>Provenance and Acquisition</h3>
+<ul>
+<li>Acquisition date and source</li>
+<li>Purchase price and currency</li>
+<li>Consignment terms (if applicable)</li>
+<li>Previous ownership history</li>
+<li>Certificate of authenticity reference</li>
+</ul>
+<h3>Condition and Conservation</h3>
+<ul>
+<li>Condition at acquisition (with photos)</li>
+<li>Condition reports after each exhibition or loan</li>
+<li>Restoration history</li>
+<li>Framing and crating notes</li>
+</ul>
+<h3>Location and Movement</h3>
+<ul>
+<li>Current physical location (storage room, gallery wall, off-site)</li>
+<li>Loan history — who borrowed it, when, return confirmation</li>
+<li>Exhibition history with dates and venues</li>
+</ul>
+<h3>Valuation and Insurance</h3>
+<ul>
+<li>Current appraised value</li>
+<li>Insurance policy reference</li>
+<li>Last appraisal date</li>
+</ul>
+<h3>Media Files</h3>
+<ul>
+<li>High-resolution photography (front, back, detail shots)</li>
+<li>Installation images</li>
+<li>Documentation scans</li>
+</ul>
+<p>Getting all of this into one place sounds overwhelming. It&#39;s not — if you set up the structure once and maintain it consistently.</p>
+<h2>The Hidden Costs of Poor Artwork Tracking</h2>
+<p>Galleries without a proper artwork inventory system pay a price that doesn&#39;t always show up on a balance sheet.</p>
+<p><strong>Time loss.</strong> Staff spend hours every week answering questions that a database would answer instantly. &quot;Where is the Kim piece right now?&quot; &quot;What did we pay for that sculpture in 2022?&quot; &quot;Has this work been exhibited before?&quot;</p>
+<p><strong>Insurance gaps.</strong> When a work is damaged or stolen, insurers want documentation. Galleries with incomplete records often discover their coverage is weaker than assumed — because they can&#39;t prove value or ownership clearly.</p>
+<p><strong>Consignment disputes.</strong> Without a clean paper trail on consignment terms and return dates, relationships with artists get complicated. A well-maintained system protects both parties.</p>
+<p><strong>Missed sales opportunities.</strong> If your inventory isn&#39;t queryable — if you can&#39;t quickly filter by medium, price range, or availability — you&#39;re slower to respond to collector inquiries. Speed matters in sales.</p>
+<p><strong>Exhibition prep chaos.</strong> Building a show requires pulling works from multiple locations, checking condition, coordinating transport. Without centralized records, this becomes a project in itself instead of a straightforward pull from the database.</p>
+<h2>How to Set Up Your Artwork Inventory System</h2>
+<p>Whether you&#39;re starting from scratch or migrating away from spreadsheets, here&#39;s a process that works:</p>
+<h3>Step 1: Audit What You Have</h3>
+<p>Before building anything, know what you&#39;re working with. Do a physical count of all works in your possession — owned, consigned, on loan out, in storage. This is the unglamorous part, but skipping it means your new system starts with dirty data.</p>
+<h3>Step 2: Define Your Fields and Standards</h3>
+<p>Decide what fields every record must have before it&#39;s considered complete. Set formatting rules: How do you write artist names? How do you format dimensions? What&#39;s your accession number convention?</p>
+<p>Consistency now prevents confusion later. If three people are entering data with three different conventions, your database becomes unsearchable.</p>
+<h3>Step 3: Choose Your Tool</h3>
+<p>This is where galleries diverge. Options range from general-purpose tools to gallery-specific software:</p>
+<table>
+<thead>
+<tr>
+<th>Tool Type</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Spreadsheets (Excel, Google Sheets)</td>
+<td>Free, familiar</td>
+<td>No relational data, hard to scale</td>
+</tr>
+<tr>
+<td>General databases (Notion, Airtable)</td>
+<td>Flexible, affordable</td>
+<td>Requires custom setup, no art-specific features</td>
+</tr>
+<tr>
+<td>Dedicated art inventory software</td>
+<td>Purpose-built features, professional output</td>
+<td>Cost, learning curve</td>
+</tr>
+<tr>
+<td>Gallery management platforms</td>
+<td>Inventory + CRM + exhibitions in one</td>
+<td>Higher investment, bigger commitment</td>
+</tr>
+</tbody></table>
+<p>For small collections or solo artists, a well-structured Airtable base can do the job. For galleries managing dozens of artists and multiple annual exhibitions, purpose-built platforms save significant time. Canvly, for instance, is built specifically for gallery operators and artists, with inventory management as a core feature rather than an afterthought.</p>
+<h3>Step 4: Migrate and Photograph</h3>
+<p>Enter your existing records. This is time-intensive, but batching by artist or medium helps. Simultaneously, photograph any works that don&#39;t have proper documentation images — high-resolution, neutral background, consistent lighting.</p>
+<p>Plan for 2-3 weeks of migration work for a collection of 100+ works, even with help.</p>
+<h3>Step 5: Establish Ongoing Protocols</h3>
+<p>A system only stays useful if it&#39;s maintained. Set clear rules:</p>
+<ul>
+<li>Every incoming work gets entered within 48 hours of arrival</li>
+<li>Every outgoing loan triggers a location update</li>
+<li>Condition reports are filed after every exhibition</li>
+<li>Valuations are reviewed annually</li>
+</ul>
+<p>Assign ownership. Someone is responsible for the integrity of the database. Without accountability, it decays.</p>
+<h2>Choosing the Right Artwork Inventory System for Your Gallery</h2>
+<p>The right system depends on your scale, budget, and how you work.</p>
+<p><strong>For independent artists</strong> managing their own catalog: a lightweight app with good photo management and basic fields is enough. You need to track what you have, where it is, and what it sold for.</p>
+<p><strong>For emerging galleries</strong> (under 200 works, 1-2 staff): look for something with room to grow. You want consignment tracking, basic CRM for collectors, and export options for insurance or loans.</p>
+<p><strong>For established galleries</strong> running multiple programs annually: you need a platform that handles the full workflow — inventory, exhibition management, artist relations, collector communications — without requiring you to stitch together five different tools.</p>
+<p>Whatever you choose, prioritize these three things:</p>
+<ol>
+<li><p><strong>Image storage built in</strong> — artwork lives or dies by its photography. A system that treats images as first-class records is worth more than one that treats them as attachments.</p>
+</li>
+<li><p><strong>Export flexibility</strong> — you will need to share records with insurers, shippers, partner galleries, and institutions. CSV and PDF export at minimum; loan agreement generation is a bonus.</p>
+</li>
+<li><p><strong>Mobile access</strong> — art fairs, storage visits, and studio viewings happen away from a desk. If you can&#39;t update or reference your inventory from a phone, you won&#39;t.</p>
+</li>
+</ol>
+<p>Canvly is designed with exactly this workflow in mind — built for the way Korean galleries and artists actually operate, with the kind of detail-level tracking that professional collection management requires.</p>
+<h2>The Bottom Line</h2>
+<p>An artwork inventory system isn&#39;t bureaucracy for its own sake. It&#39;s what lets a gallery operate with confidence — knowing where every work is, what it&#39;s worth, and what its history is, at any moment.</p>
+<p>Start with consistent fields, enforce clean data entry, and choose a tool that grows with your needs. The investment in setup pays off the first time you need to answer a collector&#39;s question in 30 seconds instead of 30 minutes.</p>
+<p>If you&#39;re running a gallery and still relying on scattered spreadsheets, now is the right time to move to something built for the job. Canvly was made for exactly this — give it a look.</p>
+<hr>
+<h2>📱 Download Canvly</h2>
+<p>👉 <a href="https://wowpia.kr/c">**wowpia.kr/c**</a> — One-tap install</p>
+<p><a href="https://canvly.art" target="_blank" rel="noopener noreferrer">About</a> — <em>Coming soon</em></p>
+
+    </article>
+  </main>
+  <footer class="footer">
+    <div>© 2026 Info-Gate Inc. — wowpia</div>
+    <div><a href="https://wowpia.kr">wowpia.kr</a></div>
+  </footer>
+  <style>
+    .pron-word { display: inline-flex; align-items: center; gap: 4px; padding: 1px 6px; background: #e0f2fe; color: #0369a1; border-radius: 4px; cursor: pointer; font-weight: 600; transition: background 0.15s, transform 0.1s; user-select: none; }
+    .pron-word:hover { background: #bae6fd; }
+    .pron-word:active { transform: scale(0.98); }
+    .pron-word.playing { background: #1d9e75; color: #fff; }
+    .pron-icon { font-size: 0.85em; opacity: 0.7; }
+  </style>
+  <script>
+    (function() {
+      if (!('speechSynthesis' in window)) return;
+      document.querySelectorAll('.pron-word').forEach(el => {
+        const speak = () => {
+          const word = el.dataset.word;
+          if (!word) return;
+          window.speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance(word);
+          u.lang = 'en-US';
+          u.rate = 0.9;
+          el.classList.add('playing');
+          u.onend = () => el.classList.remove('playing');
+          u.onerror = () => el.classList.remove('playing');
+          window.speechSynthesis.speak(u);
+        };
+        el.addEventListener('click', speak);
+        el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); speak(); } });
+      });
+    })();
+  </script>
+</body>
+</html>
